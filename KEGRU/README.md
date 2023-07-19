@@ -78,7 +78,7 @@ python3 kegru_train.py -n <file_name> -p <input_file_directory>
 Options:
 
      -g <0-1>     set which gpu (default: 0)
-     -n <str>     first word about file name (default: init) (FASAT format)
+     -n <str>     first word about file name (default: init) (FASTA format)
      -k <int>     set kmer length  (default: 5)
      -s <int>     set stride when slicing k-mers (default: 2)
      -b <float>   set size of one batch (default: 200)
