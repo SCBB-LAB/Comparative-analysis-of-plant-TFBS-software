@@ -91,7 +91,7 @@ python3 encoding.py ./example/ABF2_positive.fa ./example/ABF2_negative.fa ./outp
 **Output:** 
 The outfile file (`ABF2_datalabel.hdf5`) having specific *k*-mer encoding data is saved in `output/` directory. 
 
-## Training and evaluation of the WSCNNLSTM model
+#### Training and evaluation of the WSCNNLSTM model
 
 **Input:** The output file `datalabel.hdf5` from specific *k*-mer encoding is input file for model training. 
 
