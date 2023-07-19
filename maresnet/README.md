@@ -24,8 +24,7 @@ python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/w
 
 Download and extract the source code for MAResNet and move to parent directory, type following commands:
 ```
-git clone https://github.com/SCBB-LAB/comparative_analysis_of_plant_TFBS_software/maresnet.git
-cd maresnet
+unzip maresnet.zip
 ```
 
 #### 1.3 Software Requirements
