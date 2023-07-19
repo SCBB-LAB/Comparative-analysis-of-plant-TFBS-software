@@ -58,7 +58,7 @@ All data files need to be placed in the same folder before training, such as `ex
 
 **Note that** both the input files should be in the **FASTA** format.
 
-## Input File Format
+- **Input File Format**
 The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
 
 ```
@@ -67,20 +67,20 @@ ACGAACAGATAAAAATCACAGAGAGTACTAAAACCCTAAGGTGGGGTTAGAGGTAGACGAAACAATGAAACGGAATCGTT
 >ID
 AGTTCGCATGGTTTACGGAGATGGAGACAACATCTTCGACGATTCTTGAGAGCCCGATTTTCTCGTCGGAGAAAAAGACGGCTGTCTCGGGGGCTGATGACGTGGCGGTGTTCTTTCCGATGGGAGAAGAGGATGAGTCTTTGTTCGCCGATCTCGGCGAGTTGCCGGAGTGTTCTGTGGTGTTTCGTCACCGGAGTAGCG
 ```
-
+**Train the model**
 **Usage:**
 Run following command in the parent directory:
 
 ```
 python3 Train.py ABF2
 ```
-**Output:** 
+- **Output:** 
 
 **Final model** 
 
 The final six trained models on different filter_length range from 11-22 will be saved to output location `output/ABF2/model/` with `ABF2_pos_train-model-filter_length.hdf5` text files and six different text files `ABF2_pos_train-result-filter_length.txt` on the basis their different filter_length will be saved at `output/ABF2/result/` directory that have the performance metrics on test dataset.
 
-**Prediction of the model** 
+**Prediction of test dataset** 
 - **Input File Format**
 
 Here we provide `ABF2_label.txt` and `ABF2_test.fa` files in the `example/` directory to predict the test sequences using the pre-trained model: 
