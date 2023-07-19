@@ -46,8 +46,8 @@ In this part, we will first introduce the **data information** used in this mode
 
 Please see the example input files **ABF2_positive.fa & ABF2_negative.fa** at [example/] directory. If you are trying to train WSCNNLSTM with your own data, please process your data into the same format as it.
 
-#### 2.2 Model Training Based on Multi-instance learning and hybrid neural network
-#### Input File Format
+## 3 Model Training Based on Multi-instance learning and hybrid neural network
+#### 3.1 Input File Format
 **Note that** both the input files should be in the **FASTA** format.
 The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
 
@@ -91,7 +91,7 @@ python3 encoding.py ./example/ABF2_positive.fa ./example/ABF2_negative.fa ./outp
 **Output:** 
 The outfile file (`ABF2_datalabel.hdf5`) having specific *k*-mer encoding data is saved in `output/` directory. 
 
-#### Training and evaluation of the WSCNNLSTM model
+#### 3.2 Training and evaluation of the WSCNNLSTM model
 
 **Input:** The output file `datalabel.hdf5` from specific *k*-mer encoding is input file for model training. 
 
