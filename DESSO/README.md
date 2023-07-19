@@ -7,6 +7,7 @@ DESSO is a deep learning-based framework that can be used to accurately identify
 </p>
 
 <p align="center"><b>Figure: The model workflow</b></p>
+
 #### 1. Environment setup
 
 We recommend that you use [conda](https://docs.conda.io/en/latest/) to install all of the following software.
