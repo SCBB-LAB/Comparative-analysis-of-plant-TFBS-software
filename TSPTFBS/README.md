@@ -52,7 +52,7 @@ Please see the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** at 
 
 
 #### 2.2 Model Training Based on Convolutional Neural Network (CNN)
-- **Training** 
+**Training** 
 **Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`. 
 All data files need to be placed in the same folder before training, such as `example/train`.
 
@@ -67,6 +67,11 @@ ACGAACAGATAAAAATCACAGAGAGTACTAAAACCCTAAGGTGGGGTTAGAGGTAGACGAAACAATGAAACGGAATCGTT
 >ID
 AGTTCGCATGGTTTACGGAGATGGAGACAACATCTTCGACGATTCTTGAGAGCCCGATTTTCTCGTCGGAGAAAAAGACGGCTGTCTCGGGGGCTGATGACGTGGCGGTGTTCTTTCCGATGGGAGAAGAGGATGAGTCTTTGTTCGCCGATCTCGGCGAGTTGCCGGAGTGTTCTGTGGTGTTTCGTCACCGGAGTAGCG
 ```
+**Training** 
+**Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`. 
+All data files need to be placed in the same folder before training, such as `example/train`.
+
+**Note that** both the input files should be in the **FASTA** format.
 
 - **Usage:**
 Run following command in the parent directory:
@@ -80,7 +85,7 @@ python3 Train.py ABF2
 
 The final six trained models on different filter_length range from 11-22 will be saved to output location `output/ABF2/model/` with `ABF2_pos_train-model-filter_length.hdf5` text files and six different text files `ABF2_pos_train-result-filter_length.txt` on the basis their different filter_length will be saved at `output/ABF2/result/` directory that have the performance metrics on test dataset.
 
-- **Prediction of test dataset**
+ **Prediction of test dataset**
   
 - **Input File Format**
 
