@@ -7,7 +7,7 @@ deepRAM allows users the flexibility to choose a deep learning model by selectin
 <p align="center">
 <img src="deepRAM.jpg">
 </p>
-<p align="center"><br/>Figure: The model workflow<br/></p>
+<p align="center"><b/>Figure: The model workflow<b/></p>
 
 ## 1. Environment setup
 
