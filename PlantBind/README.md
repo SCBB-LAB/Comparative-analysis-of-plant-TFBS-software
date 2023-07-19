@@ -107,7 +107,7 @@ python3 generate_binary_matrix.py test
 python3 generate_binary_matrix.py valid
 ```
 **Output**
-The output files,`train_label.txt`, `test_label.txt`, and `valid_label.txt`, label files are generated.
+The output files `train_label.txt`, `test_label.txt`, and `valid_label.txt`, label files are generated.
 ### 4. Train and Test the model
 - **Training**  
 **Input:** `train_sequence.table`,`train_DNA_shape.npy`,`train_label.txt`.  
