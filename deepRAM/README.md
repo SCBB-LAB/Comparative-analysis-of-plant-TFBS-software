@@ -41,7 +41,6 @@ python3 setup.py install
 #### 1.3 Software Requirements
 
 ***software list***
- <br><br>
 
 -  <a href=https://www.python.org/downloads/source/>Python 3.6 </a> <br>
 -  <a href=https://pytorch.org/>PyTorch 1.0 library </a> (Deep learning library) <br>
