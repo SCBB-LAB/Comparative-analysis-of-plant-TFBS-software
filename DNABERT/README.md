@@ -7,6 +7,7 @@ This repository includes the implementation of 'DNABERT: pre-trained Bidirection
 <img src="DNABERT.png">
 </p>
 <p align="center"><b>Figure: The model workflow</b></p>
+
 ## 1. Environment setup
 
 We recommend you to build a python virtual environment with [Anaconda](https://docs.anaconda.com/anaconda/install/linux/). 
