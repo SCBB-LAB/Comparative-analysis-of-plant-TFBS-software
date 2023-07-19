@@ -134,9 +134,9 @@ You use `gkmpredict` to score any set of sequences.
      test_seqfile: sequence file for test (FASTA format)
      model_file: output of gkmtrain
      output_file: name of output file
-```
-    **Options:**
-```
+
+Options:
+
      -v <0|1|2|3|4>  set the level of verbosity (default: 2)
                        0 -- error msgs only (ERROR)
                        1 -- warning msgs (WARN)
@@ -173,9 +173,9 @@ You may evaluate the model prediction quality as follows:
 
 ``` 
 python3 scripts/evaluate.py -p output/ABF2
-```
-    **Options:**
-```
+
+Options:
+
     -p 	    prediction file name (prediction score file, output file of gkmpredict for positive and negative file)
 ```
 
