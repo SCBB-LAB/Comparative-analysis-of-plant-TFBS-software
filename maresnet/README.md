@@ -33,11 +33,11 @@ unzip maresnet.zip
 
 The required dependencies for MAResNet are in requirements.txt file.
 
-torchvision==0.9.1      
-pandas==1.2.3
-numpy==1.20.2           
-torch==1.8.1
-scikit_learn==0.24.2
+- torchvision==0.9.1      
+- pandas==1.2.3
+- numpy==1.20.2           
+- torch==1.8.1
+- scikit_learn==0.24.2
 
 
 ## 2. Data information
