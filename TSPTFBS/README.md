@@ -52,13 +52,8 @@ Please see the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** at 
 
 
 #### 2.2 Model Training Based on Convolutional Neural Network (CNN)
-**Training** 
-**Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`. 
-All data files need to be placed in the same folder before training, such as `example/train`.
 
-**Note that** both the input files should be in the **FASTA** format.
-
-- **Input File Format**
+**Input File Format**
 The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
 
 ```
