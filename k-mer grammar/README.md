@@ -5,7 +5,7 @@ The architecture of the model and the calibration phase steps are explained in t
 <p align="center">
 <img src="kmer_grammar.jpg"  >
 </p>
-<p align="center">Fig. 1 The model workflow</p>
+<p align="center"><b>Figure: The model workflow</b></p>
 
 ## 1. Environment setup
 
