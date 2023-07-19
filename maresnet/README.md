@@ -45,7 +45,7 @@ The required dependencies for MAResNet are in requirements.txt file.
 #### 2.1 Data processing
 In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with MAResNet input data format (See [example input data](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/maresnet/blob/master/example/ABF2/train.data)). If you are trying to train MAResNet with your own data, please process your data into the same format as it and construct your data into `train.data` , `test.data` and `valid.data`.
+We have provided example data format compatible with MAResNet input data format (See [example input data] at example/ABF2/train.data)). If you are trying to train MAResNet with your own data, please process your data into the same format as it and construct your data into `train.data` , `test.data` and `valid.data`.
 
 #### 2.2 Model Training Based on Top-down and bottom-up attentation mechanism and residual network
 
