@@ -64,7 +64,7 @@ Please see the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** at 
 
 #### 2.2 Model Training Based on XGBoost
 
-## Build and apply a TF-specific model (for example: ABF2)
+#### Build and apply a TF-specific model (for example: ABF2)
 
 Predictions can be made taking into consideration chromatin state features related to different conditions (for ***Arabidopsis***: whole seedlings, seedling roots, non-hair part of seedling roots, flowers in stages 4-5, seed coats, heat-shocked seedlings, dark-grown seedlings, dark-grown seedlings exposed to 30min or 3h of light and dark-grown seedlings exposed to a long-day cycle; for the ***Solanum***: immature and ripening fruits).
 To build and apply a TF-specific model, some functions are defined in this R package. Then, to predict the binding sites of "ABF2" of Arabidopsis, type:
@@ -117,7 +117,7 @@ ABF2model <- buildTFBSmodel(ABF2data.seedlings,
                              model_assessment = TRUE)                                
 ```
 
--**Description of the functions used to build and evaluate a model**
+- **Description of the functions used to build and evaluate a model**
 1. importGenomicData() to import the genomic data for the interested species (for example: genomic data for seedlings of Arabidopsis).
 2. getTFBSdata() to build the dataset of potential binding sites of specific TF (for example: ABF2) for Arabidopsis thaliana.
 3. buildTFBSmodel to get the predictive classifier and, optionally, evaluate the model.
@@ -131,6 +131,6 @@ After the model evaluation, three type of output will be generated for test data
 	
 ## Citation
 
-If you use Wimtrap in your research, please cite the following paper:</br>
+If you use Wimtrap in your research, please cite the following paper:
 "[Exploiting Genomic Features to Improve the Prediction of Transcription Factor-Binding Sites in Plants](https://academic.oup.com/pcp/article/63/10/1457/6633738?login=true)",<br/>
 Plant and Cell Physiology 63, no. 10 (2022): 1457–1473.
