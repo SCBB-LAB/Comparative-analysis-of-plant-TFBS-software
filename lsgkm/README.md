@@ -91,9 +91,9 @@ Train a SVM classifier using `gkmtrain`. It takes three arguments; positive sequ
      posfile: positive sequence file (FASTA format)
      negfile: negative sequence file (FASTA format)
      outprefix: prefix of output file(s) <outprefix>.model.txt or <outprefix>.cvpred.txt
-```
-    **Options:**
-```    
+
+    Options:
+  
      -t <0 ~ 5>   set kernel function (default: 4 wgkm)
                   NOTE: RBF kernels (3 and 5) work best with -c 10 -g 2
                     0 -- gapped-kmer
