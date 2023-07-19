@@ -15,8 +15,6 @@ After downloading and extracting the source codes and move to parent directory, 
 
 ```
 
-git clone https://github.com/Dongwon-Lee/lsgkm.git
-cd lsgkm
 unzip lsgkm.zip
 
 ```
