@@ -137,6 +137,5 @@ The analysis is done by using the [src/inference.py] script and modifying the re
 
 ## Citation
 If you use PlantBind in your research, please cite the following paper:</br>
-<br/>
 [PlantBind: an attention-based multi-label neural network for predicting plant transcription factor binding sites](https://academic.oup.com/bib/article/23/6/bbac425/6713513)",<br/>
 Briefings in Bioinformatics 23, no. 6 (2022): bbac425.
