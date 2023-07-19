@@ -131,7 +131,6 @@ Train a SVM classifier using `gkmtrain`. It takes three arguments; positive sequ
     -T <1|4|16>   set the number of threads for parallel calculation, 1, 4, or 16
                      (default: 1)
 ```
-
 First try to train a model using simple test files. Type the following command in the parent directory:
 
 ```
