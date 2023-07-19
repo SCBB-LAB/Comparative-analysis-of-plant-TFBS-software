@@ -63,6 +63,7 @@ Make sure to make directories to store your input data and output results before
 **To create input data directory**
 ```
 mkdir example/
+cp ABF2_*.txt example/
 ```
 **To create output data directory**
 ```
