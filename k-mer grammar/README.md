@@ -3,7 +3,7 @@
 The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
 
 <p align="center">
-<img src="https://github.com/scbb/comparative_analysis_of_plant_TFBS_software/kmer_grammar/blob/master/kmer_grammar.jpg" width = "600" height = "300" >
+<img src="kmer_grammar.jpg" width = "600" height = "300" >
 </p>
 <p align="center">Fig. 1 The model workflow</p>
 
