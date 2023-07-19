@@ -94,7 +94,7 @@ python3 dna_shape.py test # For test DNA data shape
 python3 dna_shape.py valid # For valid DNA data shape
 ```
 **Output**
-The output files,`train_DNA_shape.npyt`, `test_DNA_shape.npy`, and `valid_DNA_shape.npy`, label files are generated.
+The output files `train_DNA_shape.npyt`, `test_DNA_shape.npy`, and `valid_DNA_shape.npy`, label files are generated.
 #### ***3.6 Data Label*** <a name="Data_Label"/>
 Generating the label matrix is divided into the following steps：  
 (i)  Merge all TF peak files into one file  
