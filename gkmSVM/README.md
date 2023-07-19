@@ -8,7 +8,7 @@ The pipeline overview of the model is explained in this **Figure 1** from the pa
 <p align="center">
 <img src="gkmsvm.jpg">
 </p>
-<p align="center"><b></b>Figure The model workflow</b></p>
+<p align="center"><b>Figure: The model workflow</b></p>
 
 ## 1. Environment setup
 
