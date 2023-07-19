@@ -5,9 +5,9 @@ KEGRU, a model, to identify TF binding sites by combining Bidirectional Gated Re
 The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
 
 <p align="center">
-<img src="https://github.com/SCBB-LAB/comparative_analysis_of_plant_TFBS_software/kegru/blob/master/kegru.jpg" width = "600" height = "300" >
+<img src="kegru.jpg">
 </p>
-<p align="center">Fig. 1 The model workflow</p>
+<p align="center"><b>Figure: The model workflow</b></p>
 
 ## 1. Environment setup
 
