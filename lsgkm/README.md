@@ -206,7 +206,9 @@ You may evaluate the model prediction quality as follows:
 ``` 
 python3 scripts/evaluate.py -p output/ABF2
 ```
+
     **Options:**
+
 ```
     -p 	    prediction file name (prediction score file, output file of gkmpredict for positive and negative file)
 ```
