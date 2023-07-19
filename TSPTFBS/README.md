@@ -67,8 +67,8 @@ ACGAACAGATAAAAATCACAGAGAGTACTAAAACCCTAAGGTGGGGTTAGAGGTAGACGAAACAATGAAACGGAATCGTT
 >ID
 AGTTCGCATGGTTTACGGAGATGGAGACAACATCTTCGACGATTCTTGAGAGCCCGATTTTCTCGTCGGAGAAAAAGACGGCTGTCTCGGGGGCTGATGACGTGGCGGTGTTCTTTCCGATGGGAGAAGAGGATGAGTCTTTGTTCGCCGATCTCGGCGAGTTGCCGGAGTGTTCTGTGGTGTTTCGTCACCGGAGTAGCG
 ```
-**Train the model**
-**Usage:**
+
+- **Usage:**
 Run following command in the parent directory:
 
 ```
@@ -80,7 +80,8 @@ python3 Train.py ABF2
 
 The final six trained models on different filter_length range from 11-22 will be saved to output location `output/ABF2/model/` with `ABF2_pos_train-model-filter_length.hdf5` text files and six different text files `ABF2_pos_train-result-filter_length.txt` on the basis their different filter_length will be saved at `output/ABF2/result/` directory that have the performance metrics on test dataset.
 
-**Prediction of test dataset** 
+- **Prediction of test dataset**
+  
 - **Input File Format**
 
 Here we provide `ABF2_label.txt` and `ABF2_test.fa` files in the `example/` directory to predict the test sequences using the pre-trained model: 
