@@ -47,7 +47,7 @@ In this part, we will first introduce the **data information** used in this mode
 Please see the example input files **ABF2_positive.fa & ABF2_negative.fa** at [example/] directory. If you are trying to train WSCNNLSTM with your own data, please process your data into the same format as it.
 
 #### 2.2 Model Training Based on Multi-instance learning and hybrid neural network
-## Input File Format
+#### Input File Format
 **Note that** both the input files should be in the **FASTA** format.
 The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
 
