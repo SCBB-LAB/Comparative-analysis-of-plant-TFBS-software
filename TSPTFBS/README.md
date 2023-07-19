@@ -76,7 +76,7 @@ python3 Train.py ABF2
 ```
 - **Output:** 
 
-**Final model** 
+ - **Final model** 
 
 The final six trained models on different filter_length range from 11-22 will be saved to output location `output/ABF2/model/` with `ABF2_pos_train-model-filter_length.hdf5` text files and six different text files `ABF2_pos_train-result-filter_length.txt` on the basis their different filter_length will be saved at `output/ABF2/result/` directory that have the performance metrics on test dataset.
 
@@ -88,7 +88,7 @@ To get the performance metrics for the test dataset on different filter_length u
 ```
 python3 Predict.py ABF2
 ```
-**Output:**
+ - **Output:**
 
 Prediction result having accuracy and others metrics (including confusion matrix) on test dataset using various `filter_length` will also be saved to `ABF2_result.txt` located at `output/` directory.
 
