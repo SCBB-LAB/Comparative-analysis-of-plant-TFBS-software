@@ -17,9 +17,9 @@ Download and extract the source code and move to parent directory, type:
 ```
 unzip SeqConv.zip
 ```
-#### 1.2 Software Requirements
+#### 1.3 Software Requirements
 
-***software list***
+**Software list**
 
 - tensorflow or Theano   
 - keras  
