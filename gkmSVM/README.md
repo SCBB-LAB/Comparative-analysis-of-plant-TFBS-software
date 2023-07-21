@@ -12,7 +12,7 @@ The pipeline overview of the model is explained in this **Figure 1** from the pa
 
 ## 1. Environment setup
 
-INSTALLATION for linux or mac (R version 3.5 or later):
+Installation for linux or mac (R version 3.5 or later):
 
 ### 1.1 Installation of Bioconductor packages:
 
