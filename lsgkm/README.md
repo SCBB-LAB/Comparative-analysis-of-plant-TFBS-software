@@ -187,7 +187,7 @@ You need to generate all possible non-redundant *k*-mers using the Python script
 
 If you use KEGRU in your research, please cite the following paper:</br>
 <br/>
-"[Enhanced Regulatory Sequence Prediction Using Gapped k-mer Features](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003711)",<br/>
+"[Enhanced Regulatory Sequence Prediction Using Gapped k-mer Features](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003711)",
 PLoS Comput Biol 10, e1003711 (2014).
-"[LS-GKM: A new gkm-SVM for large-scale Datasets] (https://academic.oup.com/bioinformatics/article/32/14/2196/1742803)",<br/>
-Bioinformatics 32, no. 14 (2016): 2196–2198.
+"[LS-GKM: A new gkm-SVM for large-scale Datasets] (https://academic.oup.com/bioinformatics/article/32/14/2196/1742803)",
+Bioinformatics 32, no. 14 (2016): 2196–2198. </br>
