@@ -44,13 +44,6 @@ In this part, we will first introduce the **data information** used in this mode
 
 We have provided example data format compatible with DESSO input data (DESSO input data format: See `data/encode_201/ABF2_AC.seq.gz`. If you are trying to train DESSO with your own data, please process your data into the same format as given in above example input data.
 
-## 3. Model Training Based on Convolutional Neural Network (CNN)
-
-#### 3.1 Data pre-processing
-**Input:** `ABF2_AC.seq.gz`,`ABF2_B.seq.gz`. 
-
-All data input files need to be placed in the same folder before training, such as in `data/encode_201/`. If you are trying to train DESSO with your own data, please process your data into the same format as it.
-
 If you want to preprocess your TF-species specific input bed file to DESSO input file format, for an example `/data/ABF2/ABF2.bed`.
 
 Therefore, you need to download genome file for your species of interest and place both TF-specific bed file and genome in the [data/] directory.
@@ -88,7 +81,13 @@ python3 processing_peaks.py --name ../data/ABF2/ABF2.bed --peak_flank 100
 | --peak_flank     | Number of flanking base pairs at each side of peak summit (default is 50) |
 
 
-#### 3.2 Training of the model
+## 3. Model Training Based on Convolutional Neural Network (CNN)
+
+#### 3.1 Training of the model
+**Input:** `ABF2_AC.seq.gz`,`ABF2_B.seq.gz`. 
+
+All data input files need to be placed in the same folder before training, such as in `data/encode_201/`. If you are trying to train DESSO with your own data, please process your data into the same format as it.
+
  - if you have your own dataset in FASTA format file, then process the file as shown below containing of four columns with tab separated and first line must contain FoldID, Event, sequence and label as well:
 ```
 FoldID	Event	sequence	label
@@ -119,7 +118,7 @@ python3 train.py --start_index 0 --end_index 1 --peak_flank 100 --network CNN --
 If ```--feature_format Seq``` was used, the trained model can be found at ```/output/encode_201/gc_match/ABF2/Seq/CNN```, together with ```Test_result.txt``` containing al the performance metrics of the trained model in predicting TF-DNA binding specificity on the test data. <br/>
 If ```--feature_format DNAShape``` was used, the trained model is located at ```/output/encode_201/gc_match/ABF2/DNAShape/CNN```.
 
-#### 3.3 Prediction on test datset
+#### 3.2 Prediction on test datset
 ```
 python3 predict.py --start_index 0 --end_index 1 --peak_flank 100 --network CNN --feature_format Seq --start_cutoff 0.01 --end_cutoff 1 --step_cutoff 0.03
 ```
