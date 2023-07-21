@@ -105,5 +105,4 @@ After training, there will be images showing the loss error and val_loss error d
 ## Citation
 
 If you use SeqConv in your research, please cite the following paper:</br>
-"[Deep learning-based prediction of TFBSs in plants](https://www.cell.com/trends/plant-science/fulltext/S1360-1385(21)00158-8)",
-Technology of the Month 26, no. 12 (2021): 1301-1302.<br/>
+"[Deep learning-based prediction of TFBSs in plants](https://www.cell.com/trends/plant-science/fulltext/S1360-1385(21)00158-8)", Technology of the Month 26, no. 12 (2021): 1301-1302.<br/>
