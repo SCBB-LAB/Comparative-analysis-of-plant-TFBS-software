@@ -7,7 +7,7 @@ The architecture of the model and the calibration phase steps are explained in t
 <p align="center">
 <img src="WSCNNLSTM.jpg">
 </p>
-<p align="center"><b/>Figure: The model workflow</b>b></p>
+<p align="center"><b/>Figure: The model workflow</b></p>
 
 ## 1. Environment setup
 
