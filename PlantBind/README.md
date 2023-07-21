@@ -60,7 +60,7 @@ Next, we will mainly introduce how to create the files mentioned above.
   - [DNA Shape Data](docs/make-datasets.md#DNA_Shape_Data)
   - [Data Label](docs/make-datasets.md#Data_Label)
 
-#### 2.1.1 DNA Sequence Data
+### 2.1.1 DNA Sequence Data
 If you are trying to train PlantBind with your own data, please process your data into the same format as defined above. First of all you need to split your dataset into train, valid and test dataset  We also provide a custom python program `dna_shape.py`, `generate_sequence_file.py` in the parent directory for this conversion.
 
 First of all preprocess your positive as well as negative FASTA files to split data into train, test and valid dataset. 
@@ -73,7 +73,7 @@ Split both postive and negative data into train, test and valid dataset by runni
 ```
 python3 train_test.py output_file_pos.txt output_file_neg.txt train_sequence.table valid_sequence.table test_sequence.table
 ```
-#### 2.1.2 DNA Shape Data
+### 2.1.2 DNA Shape Data
 Now all these convert these `.table` file to shape file also using following customized python program:
 ```
 python3 dna_shape.py train # For train DNA data shape
@@ -82,7 +82,7 @@ python3 dna_shape.py valid # For valid DNA data shape
 ```
 **Output**
 The output files `train_DNA_shape.npyt`, `test_DNA_shape.npy`, and `valid_DNA_shape.npy`, label files are generated.
-#### 2.1.3 Data Label
+### 2.1.3 Data Label
 Generating the label matrix is divided into the following steps：  
 (i)  Merge all TF peak files into one file  
 (ii) Use the `bedtools annotate -i merge.bed -files ... -names ... > model-input-labels.txt` generate the label matrix.  
