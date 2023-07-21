@@ -64,14 +64,14 @@ library(BSgenome.Athaliana.TAIR.TAIR10.1)
 genNullSeqs('example/ABF2_pos.bed',nMaxTrials=10,xfold=1,genome = BSgenome.Athaliana.TAIR.TAIR10.1, outputPosFastaFN='example/ABF2_pos.fa', outputBedFN='example/ABF2_neg.bed', outputNegFastaFN='example/ABF2_neg.fa')
 ```
 ## 3. Model Training Based on Support Vector Machine (SVM)
+#### 3.1 Training of the model
+**Input:** `ABF2_pos.fa`,`ABF2_neg.fa`. 
+All data input files need to be placed in the same folder before training, such as in [example/]. If you are trying to train gkmSVM with your own data, please process your data into the same format as it.
 - Calculate kernel matrix using following commond line:
  
 ```
 gkmsvm_kernel('example/ABF2_pos.fa','example/ABF2_neg.fa', 'output/ABF2_kernel.out')
 ```
-#### 3.1 Training of the model
-**Input:** `ABF2_pos.fa`,`ABF2_neg.fa`. 
-All data input files need to be placed in the same folder before training, such as in [example/]. If you are trying to train gkmSVM with your own data, please process your data into the same format as it.
 
 - Perform SVM training with cross-validation:
  
