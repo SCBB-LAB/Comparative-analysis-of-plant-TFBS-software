@@ -53,14 +53,14 @@ All data is in the data directory (PlantBind/data):
 - **Maize-TF-peaks**: the TFBS peak info of 4 maize TFs for trans-species
 - **model**: The file that holds the model, which can be loaded to predict new datasets
 
-#### 2.1 Construction of the dataset
+### 2.1 Construction of the dataset
 Next, we will mainly introduce how to create the files mentioned above.
 - [Data processing methods](docs/make-datasets.md)
   - [DNA Sequence Data](docs/make-datasets.md#DNA_Sequence_Data)
   - [DNA Shape Data](docs/make-datasets.md#DNA_Shape_Data)
   - [Data Label](docs/make-datasets.md#Data_Label)
 
-##### 2.2 DNA Sequence Data
+#### 2.2 DNA Sequence Data
 If you are trying to train PlantBind with your own data, please process your data into the same format as defined above. First of all you need to split your dataset into train, valid and test dataset  We also provide a custom python program `dna_shape.py`, `generate_sequence_file.py` in the parent directory for this conversion.
 
 First of all preprocess your positive as well as negative FASTA files to split data into train, test and valid dataset. 
