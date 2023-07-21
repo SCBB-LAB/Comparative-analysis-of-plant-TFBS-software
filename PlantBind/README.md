@@ -32,6 +32,7 @@ python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/w
 Download and extract the source code for PlantBind and move to parent directory, type following commands:
 ```
 unzip PlantBind.zip
+cd PlantBind
 ```
 
 #### 1.3 Software Requirements
@@ -52,24 +53,14 @@ All data is in the data directory (PlantBind/data):
 - **Maize-TF-peaks**: the TFBS peak info of 4 maize TFs for trans-species
 - **model**: The file that holds the model, which can be loaded to predict new datasets
 
-## 3.  Training and Predicting data formats
-For training, the data mainly consists of three files: (1)DNA sequence file; (2)DNA shape file; (3)data label file  
-For predicting, the data mainly consists of three files: (1)DNA sequence file; (2)DNA shape file  
-
-- [Data Format Details Introduction](docs/data_format.md)
-  - [DNA Sequence File](docs/data_format.md#DNA_Sequence_File)
-  - [DNA Shape File](docs/data_format.md#DNA_Shape_File)
-  - [Data Label File](docs/data_format.md#Data_Label_File)
-
-#### 3.1 Construction of the dataset
+#### 2.1 Construction of the dataset
 Next, we will mainly introduce how to create the files mentioned above.
 - [Data processing methods](docs/make-datasets.md)
   - [DNA Sequence Data](docs/make-datasets.md#DNA_Sequence_Data)
   - [DNA Shape Data](docs/make-datasets.md#DNA_Shape_Data)
   - [Data Label](docs/make-datasets.md#Data_Label)
 
-#### 3.2 *** DNA Sequence Data*** <a name="DNA_Sequence_Data"/>
-
+###### 2.2 DNA Sequence Data
 If you are trying to train PlantBind with your own data, please process your data into the same format as defined above. First of all you need to split your dataset into train, valid and test dataset  We also provide a custom python program `dna_shape.py`, `generate_sequence_file.py` in the parent directory for this conversion.
 
 First of all preprocess your positive as well as negative FASTA files to split data into train, test and valid dataset. 
@@ -82,7 +73,7 @@ Split both postive and negative data into train, test and valid dataset by runni
 ```
 python3 train_test.py output_file_pos.txt output_file_neg.txt train_sequence.table valid_sequence.table test_sequence.table
 ```
-#### ***3.3 DNA Shape Data*** <a name="DNA_Shape_Data"/>
+###### 2.3 DNA Shape Data
 Now all these convert these `.table` file to shape file also using following customized python program:
 ```
 python3 dna_shape.py train # For train DNA data shape
@@ -91,7 +82,7 @@ python3 dna_shape.py valid # For valid DNA data shape
 ```
 **Output**
 The output files `train_DNA_shape.npyt`, `test_DNA_shape.npy`, and `valid_DNA_shape.npy`, label files are generated.
-#### ***3.4 Data Label*** <a name="Data_Label"/>
+###### 2.4 Data Label
 Generating the label matrix is divided into the following steps：  
 (i)  Merge all TF peak files into one file  
 (ii) Use the `bedtools annotate -i merge.bed -files ... -names ... > model-input-labels.txt` generate the label matrix.  
@@ -104,8 +95,20 @@ python3 generate_binary_matrix.py valid
 ```
 **Output**
 The output files `train_label.txt`, `test_label.txt`, and `valid_label.txt`, label files are generated.
-## 4. Model Training Based on attention-based multi-label neural networks
-#### 4.1 Training of the model 
+
+## 3. Model Training Based on attention-based multi-label neural networks
+#### 3.1. Data formats for model training and testing
+
+For training, the data mainly consists of three files: (1)DNA sequence file; (2)DNA shape file; (3)data label file  
+For predicting, the data mainly consists of three files: (1)DNA sequence file; (2)DNA shape file  
+
+- [Data Format Details Introduction](docs/data_format.md)
+  - [DNA Sequence File](docs/data_format.md#DNA_Sequence_File)
+  - [DNA Shape File](docs/data_format.md#DNA_Shape_File)
+  - [Data Label File](docs/data_format.md#Data_Label_File)
+
+
+#### 3.2 Training of the model 
  
 **Input:** `train_sequence.table`,`train_DNA_shape.npy`,`train_label.txt`.  
 All data files need to be placed in the same folder before starting training, such as `data_folder` 
@@ -116,7 +119,7 @@ python3 -m torch.distributed.launch --nproc_per_node=2 src/main.py --inputs exam
 **Output:** 
 **Model** The resulting model file (`trained_model_101_seqs.pkl`) will be saved to `output/` directory.
 
-#### 4.2 Testing of the model 
+#### 3.3 Testing of the model 
 **Input:** `test_sequence.table`,`test_DNA_shape.npy`,`test_label.txt`.   
 All data files need to be placed in the same folder before starting testing, such as `data_folder` 
 
