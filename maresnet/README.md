@@ -26,7 +26,7 @@ unzip maresnet.zip
 
 #### 1.3 Software Requirements
 
-**software list**
+**Software list**
 
 The required dependencies for MAResNet are in requirements.txt file.
 
@@ -43,7 +43,7 @@ In this part, we will first introduce the **data information** used in this mode
 
 We have provided example data format compatible with MAResNet input data format (See `example/ABF2/train.data`). If you are trying to train MAResNet with your own data, please process your data into the same format as it and construct your data into `train.data` , `test.data` and `valid.data`.
 
-#### 3. Model Training Based on Top-down and bottom-up attentation mechanism and residual network
+## 3. Model Training Based on Top-down and bottom-up attentation mechanism and residual network
 
 #### 3.1 Training MAResNet on plant TF datasets
 **Input:** `train.data`, `test.data` and `valid.data`.
