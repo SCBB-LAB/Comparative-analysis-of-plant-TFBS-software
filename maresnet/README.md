@@ -26,7 +26,7 @@ unzip maresnet.zip
 
 #### 1.3 Software Requirements
 
-***software list***
+**software list**
 
 The required dependencies for MAResNet are in requirements.txt file.
 
