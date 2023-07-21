@@ -137,7 +137,7 @@ CAGCAGAGGG 4.335304
 ## Citation
 
 If you use gkmSVM in your research, please cite the following paper:</br>
-"[Enhanced Regulatory Sequence Prediction Using Gapped k-mer Features](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003711)",<br/>
+"[Enhanced Regulatory Sequence Prediction Using Gapped k-mer Features](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003711)",
 PLOS Computational Biology 10, no. 7 (2014): e1003711 :<br/>
-"[gkmSVM: an R package for gapped-kmer SVM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937197/)",<br/>
+"[gkmSVM: an R package for gapped-kmer SVM](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937197/)",
 Bioinformatics, 32(14): 2205–2207 (2016).
