@@ -24,7 +24,7 @@ unzip WSCNNLSTM.zip
 ```
 #### 1.3 Software Requirements
 
-***software list***
+**Software list**
 - python >=3.6
 - pytorch
 - numpy 
