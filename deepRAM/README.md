@@ -150,7 +150,7 @@ The outfile file `ABF2_result.txt` located at `output/` directory contains the p
 
 You need to install <a href=http://weblogo.berkeley.edu/> WebLogo </a> and TOMTOM in <a href=http://meme-suite.org> MEME Suite </a> to match identifyed motifs with known motifs of Transcription Factors. Read documentations about installation and usage.
 
-#### 4.1 visualizating motifs and matching them with known motifs 
+#### 4.1 Visualizating motifs and matching them with known motifs 
 ```
 python3 deepRAM.py --test_data example/ABF2_test.txt --data_type DNA --predict_only True --model_path output/ABF2_model.pkl --motif True --motif_dir motifs --tomtom_dir meme-5.0.3/src/tomtom --out_file output/ABF2_prediction.txt --Embedding False --Conv True --RNN False --conv_layers 1
 ```
