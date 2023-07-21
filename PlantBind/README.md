@@ -60,7 +60,7 @@ Next, we will mainly introduce how to create the files mentioned above.
   - [DNA Shape Data](docs/make-datasets.md#DNA_Shape_Data)
   - [Data Label](docs/make-datasets.md#Data_Label)
 
-###### 2.2 DNA Sequence Data
+##### 2.2 DNA Sequence Data
 If you are trying to train PlantBind with your own data, please process your data into the same format as defined above. First of all you need to split your dataset into train, valid and test dataset  We also provide a custom python program `dna_shape.py`, `generate_sequence_file.py` in the parent directory for this conversion.
 
 First of all preprocess your positive as well as negative FASTA files to split data into train, test and valid dataset. 
