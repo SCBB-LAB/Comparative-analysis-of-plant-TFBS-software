@@ -99,5 +99,5 @@ The outfile file `ABF2_result.txt` located at `output/` directory contains the p
 ## Citation
 
 If you use KEGRU in your research, please cite the following paper:</br>
-"[Recurrent Neural Network for Predicting Transcription Factor Binding Sites](https://www.nature.com/articles/s41598-018-33321-1)",<br/>
+"[Recurrent Neural Network for Predicting Transcription Factor Binding Sites](https://www.nature.com/articles/s41598-018-33321-1)",
 Scientific Reports 8, Article number: 15270 (2018).
