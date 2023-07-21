@@ -38,7 +38,7 @@ unzip WSCNNLSTM.zip
 #### 2.1 Data processing
 In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-Please see the example input files **ABF2_positive.fa & ABF2_negative.fa** at [example/] directory. If you are trying to train WSCNNLSTM with your own data, please process your data into the same format as it.
+Please see the example input files **ABF2_positive.fa & ABF2_negative.fa** at `example/` directory. If you are trying to train **WSCNNLSTM** with your own data, please process your data into the same format as it.
 
 **Note that** both the input files should be in the **FASTA** format.
 The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
