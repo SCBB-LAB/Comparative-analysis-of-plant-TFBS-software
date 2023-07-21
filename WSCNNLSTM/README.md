@@ -75,7 +75,7 @@ Passing arguments:
     "-run", "--run", dest="run", type=str, default='ws', help="order")
 ```
 For example, run following command for the 3 *k*-mer:
-**Input:** `ABF2_positive.fa`,`ABF2_negative.fa` in `example/` directory. 
+- **Input:** `ABF2_positive.fa`,`ABF2_negative.fa` in `example/` directory. 
 
 ```
 python3 encoding.py ./example/ABF2_positive.fa ./example/ABF2_negative.fa ./output/ABF2_datalabel.hdf5 -m ./mappers/3mer.txt -c 120 -s 10 --no-reverse -kmer 3 -run 'ws'
