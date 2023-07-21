@@ -33,7 +33,6 @@ unzip WSCNNLSTM.zip
 - scipy 
 - matplotlib
 
-## Tutorial
 ## 2. Data information
 
 #### 2.1 Data processing
