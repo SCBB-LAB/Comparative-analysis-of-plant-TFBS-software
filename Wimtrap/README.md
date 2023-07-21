@@ -114,13 +114,12 @@ ABF2model <- buildTFBSmodel(ABF2data.seedlings,
                              
                              model_assessment = TRUE)                                
 ```
-
-- **Description of the functions used to build and evaluate a model**
+**Description of the functions used to build and evaluate a model**
 1. importGenomicData() to import the genomic data for the interested species (for example: genomic data for seedlings of Arabidopsis).
 2. getTFBSdata() to build the dataset of potential binding sites of specific TF (for example: ABF2) for Arabidopsis thaliana.
 3. buildTFBSmodel to get the predictive classifier and, optionally, evaluate the model.
 	
-- **Output:** 
+**Output:** 
 
 After the model evaluation, three type of output will be generated for test dataset:
 1. Plot of ROC curve will be saved in the current running directory in `Rplots.pdf` file.  
