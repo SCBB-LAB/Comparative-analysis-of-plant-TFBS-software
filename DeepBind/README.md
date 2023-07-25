@@ -67,7 +67,8 @@ The output file `ABF2_result.txt` located at `output/` directory contains the pe
   return _methods._mean(a, axis=axis, dtype=dtype,
 /user_path/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
   ret = ret.dtype.type(ret / rcount)
-nan```
+nan
+```
 
 ## Citation
 
