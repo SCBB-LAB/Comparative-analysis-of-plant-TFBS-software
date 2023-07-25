@@ -12,7 +12,7 @@ The pipeline overview of the model is explained in this **Figure 1** from the pa
 
 ## 1. Environment setup
 
-Installation for linux or mac (R version 3.5 or later):
+Installation for linux or mac (R version 3.5-4.0):
 
 ### 1.1 Installation of Bioconductor packages:
 
@@ -23,8 +23,6 @@ R
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 
 BiocManager::install()
-
-BiocManager::install(c('GenomicRanges','rtracklayer','BSgenome', 'BSgenome.Hsapiens.UCSC.hg19.masked', 'BSgenome.Hsapiens.UCSC.hg18.masked'))
 
 install.packages('ROCR')
 install.packages('kernlab')
@@ -37,8 +35,6 @@ quit()
 
 ```
 unzip gkmSVM.zip
-
-R CMD INSTALL gkmSVM
 ```
 -- or --
 
@@ -72,7 +68,10 @@ All data input files need to be placed in the same folder before training, such 
 ```
 gkmsvm_kernel('example/ABF2_pos.fa','example/ABF2_neg.fa', 'output/ABF2_kernel.out')
 ```
-
+**Output:**
+**Final result** 
+The kernel output for positive and negative dataset, `ABF2_kernel.out`, is saved to `output/` directory. 
+ 
 - Perform SVM training with cross-validation:
  
 ```
@@ -91,7 +90,7 @@ python3 evaluate.py -p output/ABF2
 
 **Final result** 
 
-The prediction file on test dataset `ABF2_cvpred.out`, are saved to `output/` directory. 
+The prediction file on test dataset `ABF2_cvpred.out`, are saved to `output/` directory. The ROC output and ROC plot, `ABF2_roc.out`, `ABF2_ROC2.pdf`, are also saved to `output` diretcory, respectively.
 The outfile file `ABF2_result.txt` located at `output/` directory contains the performance metrics of the test dataset.  
 
 #### 3.2 *k*-mer classification
