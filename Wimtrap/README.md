@@ -58,7 +58,15 @@ In this part, we will first introduce the **data information** used in this mode
 We have provided example data format compatible with Wimtrap input data format (See `example/`).
 
 Please see the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** at `example/`. If you are trying to train Wimtrap with your own data, please process your data into the same format as it.
+Before training of the model, download species-specific genome by entering the `example/` directory. For example, to download A. thaliana genome:
 
+```
+cd example/
+https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-57/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+unzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+cat Arabidopsis_thaliana.TAIR10.dna.toplevel.fa | cut -d" " -f1 | sed "s/>/>chr/g" | awk '/^>/ {printf("\n%s\n",$0);next;}{printf("%s",$0);} END {printf("\n");}' | grep -A1 ">chr[0-9]" >  GCF_000001735.4_TAIR10.1_genomic-1.fna
+cd ../
+```
 
 ## 3. Model Training Based on XGBoost
 
@@ -104,7 +112,7 @@ imported_genomic_data.seedlings <- importGenomicData(organism = "Arabidopsis tha
 
 ABF2data.seedlings <- getTFBSdata(pfm = "example/PFMs_athal.pfm",
                                TFnames = "ABF2",
-                               organism = "Arabidopsis thaliana",genome_sequence = "example/GCF_000001735.4_TAIR10.1_genomic-1-.fna",
+                               organism = "Arabidopsis thaliana",genome_sequence = "example/GCF_000001735.4_TAIR10.1_genomic-1.fna",
                                imported_genomic_data = imported_genomic_data.seedlings)
 
 # Name the `ChIPpeaks` argument according to the training transcription factor(s)
