@@ -21,7 +21,6 @@ Download and extract the source code for deepRAM and move to parent directory, t
 
 ```
 unzip deepRAM.zip
-cd deepRAM
 pip3 install -r Prerequisites
 python3 setup.py install
 ```
@@ -142,7 +141,7 @@ python3 deepRAM.py --train_data example/ABF2_train.txt --test_data example/ABF2_
 
 **Final result** 
 
-The trained model and prediction file on test dataset, `ABF2_model.pkl` and `ABF2_prediction.txt`, are saved to `output/` directory, respectively. 
+The trained model, best_hyperpamarameters and prediction file on test dataset, `ABF2_model.pkl`, `ABF2_best_hyperpamarameters.pth` and `ABF2_prediction.txt`, are saved to `output/` directory, respectively. 
 The outfile file `ABF2_result.txt` located at `output/` directory contains the performance metrics of the test dataset.
 
 
