@@ -95,9 +95,16 @@ The outfile file `ABF2_result.txt` located at `output/` directory contains the p
 
 #### 3.2 *k*-mer classification
 - Generate 10-mer weights:
- 
+ Download the `nr10mers.fa` in the `example/` directory
+```
+cd example/
+wget http://www.beerlab.org/gkmsvm/downloads/nr10mers.fa
+cd ../
+```
+Now classify the input sequences in 10kmers
 ```
 R
+library(gkmSVM)
 gkmsvm_classify('example/nr10mers.fa',svmfnprfx='output/ABF2', 'output/ABF2_weights.out')
 quit()
 
