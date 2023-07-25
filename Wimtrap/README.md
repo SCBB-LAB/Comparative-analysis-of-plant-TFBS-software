@@ -130,9 +130,10 @@ ABF2model <- buildTFBSmodel(ABF2data.seedlings,
 **Output:** 
 
 After the model evaluation, three type of output will be generated for test dataset:
-1. Plot of ROC curve will be saved in the current running directory in `Rplots.pdf` file.  
-2. Plot the feature importance, in terms of gain will be saved in the current running directory in `Rplots.pdf` file.
-3. Print on the screen the confusion matrix obtained using a prediction score threshold of 0.5, that gives the FP, FN, TP and TN associated to the classification of the potential binding sites of the balanced ‘validation’ dataset by the model.
+1. An annotaion file `annotations.tsv` and model file `model.RData` are saved to parent directory. You may save your output by putting your data by creating TF specific directory.
+2. Plot of ROC curve will be saved in the current running directory in `Rplots.pdf` file.  
+3. Plot the feature importance, in terms of gain will be saved in the current running directory in `Rplots.pdf` file.
+4. Print on the screen the confusion matrix obtained using a prediction score threshold of 0.5, that gives the FP, FN, TP and TN associated to the classification of the potential binding sites of the balanced ‘validation’ dataset by the model.
 	
 ## Citation
 
