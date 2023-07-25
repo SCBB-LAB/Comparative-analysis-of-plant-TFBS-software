@@ -62,6 +62,13 @@ python3 deepbind.py ABF2
 The trained model and best hyperparameter, `ABF2_Model.pth` and `ABF2_best_hyperpamarameters.pth`, are saved in the `output/` directory, respectively. 
 The output file `ABF2_result.txt` located at `output/` directory contains the performance metrics of the test dataset.  
 
+**Note:** A warning massage may appear at the end of the execution of the command as shown below. Please ignore this warning.
+```/user_path/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/user_path/python3.8/site-packages/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+nan```
+
 ## Citation
 
 If you use DeepBind in your research, please cite the following paper:</br>
