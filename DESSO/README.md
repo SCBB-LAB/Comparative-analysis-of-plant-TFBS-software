@@ -20,7 +20,6 @@ Download and extract the source code for DESSO and move to parent directory, typ
 
 ```
 unzip DESSO.zip
-cd DESSO
 ```
 #### 1.3 Prerequisites and Dependencies
 
