@@ -54,7 +54,6 @@ Run the following commands in **R** environment in parent directory:
 
 ```
 R
-
 library(gkmSVM) 
 library(BSgenome.Athaliana.TAIR.TAIR10.1)
 genNullSeqs('example/ABF2_pos.bed',nMaxTrials=10,xfold=1,genome = BSgenome.Athaliana.TAIR.TAIR10.1, outputPosFastaFN='example/ABF2_pos.fa', outputBedFN='example/ABF2_neg.bed', outputNegFastaFN='example/ABF2_neg.fa')
