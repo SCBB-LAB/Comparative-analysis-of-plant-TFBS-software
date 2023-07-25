@@ -47,14 +47,16 @@ If you want to preprocess your TF-species specific input bed file to DESSO input
 
 Therefore, you need to download genome file for your species of interest and place both TF-specific bed file and genome in the [data/] directory.
 For example: 
-- Download [GCF_000001735.3_TAIR10_genomic.fna.gz](https://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/) and put them into `data/` directory.
+- Download [GCF_000001735.3_TAIR10_genomic.fna.gz](https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-57/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz) and put them into `data/` directory.
 - Install bedtools to extract DNA sequences from bed file.
 
 Therefore, run the following commands in the parent directory in Linux terminal:
 
 ```
 cd data/
-wget https://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.fna.gz
+wget https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-57/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+unzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+cat Arabidopsis_thaliana.TAIR10.dna.toplevel.fa | cut -d" " -f1 | sed "s/>/>chr/g" | awk '/^>/ {printf("\n%s\n",$0);next;}{printf("%s",$0);} END {printf("\n");}' | grep -A1 ">chr[0-9]" >  GCF_000001735.4_TAIR10.1_genomic-1.fna
 cd ../code
 ```
 - Input data pre-processing for TFBS bed file:
