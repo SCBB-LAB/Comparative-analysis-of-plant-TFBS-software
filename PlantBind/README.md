@@ -47,7 +47,7 @@ unzip PlantBind.zip
 
 ## 2. Data information and processing
 In this part, we will first introduce the **data information** used in this model, then introduce the training and predicting **data formats**, and finally introduce how to create a data set that meets the model requirements for prediction.  
-All data is in the data directory (PlantBind/data)(https://github.com/wenkaiyan-kevin/PlantBind/tree/main/data):
+All data can be downloaded from the data directory (PlantBind/data)(https://github.com/wenkaiyan-kevin/PlantBind/tree/main/data):
 - **Ath-TF-peaks**: the TFBS peak info of 315 Ath TFs, and one neg.bed file
 - **Maize-TF-peaks**: the TFBS peak info of 4 maize TFs for trans-species
 - **model**: The file that holds the model, which can be loaded to predict new datasets
