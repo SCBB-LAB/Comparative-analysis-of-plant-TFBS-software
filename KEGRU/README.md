@@ -26,7 +26,7 @@ python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/w
 To download and extract the source code for KEGRU and move to parent directory, type following commands:
 
 ```
-unzip kegru.zip
+unzip KEGRU.zip
 ```
 
 #### 1.3 Software Requirements
@@ -94,7 +94,7 @@ python3 kegru_train.py -n ABF2 -p example
 **Final result** 
 
 The best trained model and training history files, `ABF2_bestmodel_5_withlstm.hdf5` and `ABF2_training_history.txt`, are saved to location `output/`, respectively. 
-The outfile file `ABF2_result.txt` located at `output/` directory contains the performance metrics of the test dataset.
+The outfile file `ABF2_result.txt` located at `output/` directory contains the performance metrics on the test dataset.
 
 ## Citation
 
