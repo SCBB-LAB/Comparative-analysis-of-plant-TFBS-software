@@ -72,7 +72,7 @@ python3 src/generator.py example/ABF2_pos.bed
 ```
 Split both postive and negative data to train and test dataset by running this customized python script:
 ```
-python3 train_test.py example/ABF2_pos.txt example/ABF2_neg.txt ABF2_train.txt ABF2_test.txt
+python3 src/train_test.py example/ABF2_pos.txt example/ABF2_neg.txt ABF2_train.txt ABF2_test.txt
 ```
 **Output:**
 Python program `prepare.py` will generate a positive `ABF2_pos.txt` file from bed file and saved to `example/` directory. While, `generator.py` will generate a negative `ABF2_neg.txt` file. This file contains two columns separated by tab delimiter: first columns have label(1 for positive sequences and 0 for negative sequences) and second columns is the dna string. After that you have to split both positive and negative sequences in train and test files to train and evaluate the SeqConv model using `src/SeqConv.py` program.
