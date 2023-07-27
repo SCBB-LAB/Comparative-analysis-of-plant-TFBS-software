@@ -53,6 +53,29 @@ In this part, we will first introduce the **data information** used in this mode
 
 We have provided example data format compatible with SeqConv input data format (See `example/ABF2_train.txt`). If you are trying to train SeqConv with your own data, please process your data into the same format as it.
 
+#### 2.2 Generating train and test dataset on your own datasets using following commands
+
+For generating your own positive dataset using **bed file**, one only needs to provide a TF peak file `example/ABF2_pos.bed` and genome file in **FASTA format** at location `example/`. In this demo, a peak file from *Arabidopsis thaliana* DAP-seq data is used. The bed file should be in sorted order using sorted command the terminal (e.g., sort -k1,1 -k2,2n in.bed > in.sorted.bed for BED files).
+
+For generating positive data, you would need TFBS bed file and species-specific genome. Therefore download the genome file in the `example/` directory. Thus, run following command:
+```
+cd example/
+wget https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-57/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+unzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+cat Arabidopsis_thaliana.TAIR10.dna.toplevel.fa | cut -d" " -f1 | sed "s/>/>chr/g" | awk '/^>/ {printf("\n%s\n",$0);next;}{printf("%s",$0);} END {printf("\n");}' | grep -A1 ">chr[0-9]" >  GCF_000001735.4_TAIR10.1_genomic-1.fna
+cd ../
+python3 src/prepare.py example/ABF2_pos.bed example/GCF_000001735.4_TAIR10.1_genomic-1.fna ABF2_pos.txt
+```
+For generating negative data, run following command:
+```
+python3 src/generator.py example/ABF2_pos.bed
+```
+Split both postive and negative data to train and test dataset by running this customized python script:
+```
+python3 train_test.py example/ABF2_pos.txt example/ABF2_neg.txt ABF2_train.txt ABF2_test.txt
+```
+**Output:**
+Python program `prepare.py` will generate a positive `ABF2_pos.txt` file from bed file and saved to `example/` directory. While, `generator.py` will generate a negative `ABF2_neg.txt` file. This file contains two columns separated by tab delimiter: first columns have label(1 for positive sequences and 0 for negative sequences) and second columns is the dna string. After that you have to split both positive and negative sequences in train and test files to train and evaluate the SeqConv model using `src/SeqConv.py` program.
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 
 #### 3.1 Training SeqConv on plant TF datasets
@@ -71,23 +94,7 @@ python3 src/SeqConv.py ABF2
 
 After training the model, result of the test dataset containing accuracy and others metrics (including confusion matrix) will be saved to `ABF2_result.txt` located at `output/` directory.
 
-#### 3.2 Generating train and test dataset on your own datasets using following commands
 
-For generating your own positive dataset using **bed file**, one only needs to provide a TF peak file `example/ABF2_pos.bed` and genome file in **FASTA format** at location `example/`. In this demo, a peak file from *Arabidopsis thaliana* DAP-seq data is used. The bed file should be in sorted order using sorted command the terminal (e.g., sort -k1,1 -k2,2n in.bed > in.sorted.bed for BED files).
-
-For generating positive data, you would need TFBS bed file and species-specific genome. Therefore download the genome file in the `example/` directory. Thus, run following command:
-```
-cd example/
-wget https://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.fna.gz
-cd ../
-python3 src/prepare.py example/ABF2_pos.bed GCF_000001735.4_TAIR10.1_genomic-1-.fna ABF2_pos_neg_train.txt
-```
-For generating negative data, run following command:
-```
-python3 src/generator.py example/ABF2_pos.bed
-```
-**Output:**
-Python program `prepare.py` will generate a positive `ABF2_pos.txt` file from bed file and saved to `example/` directory. While, `generator.py` will generate a negative `ABF2_neg.txt` file. This file contains two columns separated by tab delimiter: first columns have label(1 for positive sequences and 0 for negative sequences) and second columns is the dna string. After that you have to split both positive and negative sequences in train and test files to train and evaluate the SeqConv model using `src/SeqConv.py` program.
 
 #### 3.3 Motif Visualization
 - For visualizing the the motif predicted by SeqConv, run following command:
