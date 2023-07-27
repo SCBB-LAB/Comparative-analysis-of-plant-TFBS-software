@@ -69,7 +69,7 @@ python3 kgrammar_bag-of-k-mer_training_testing.py 8 False ABF2
 
 **Final result:** The above example will train a model with k=8 without filtering k-mers by complexity and reading the file under `example/`. The resulting model file `kgrammar_bag-of-k-mers_LR_mode_full_ABF2_8_1688192717.pkl` will be saved to `output/` directory together with a database that contains *k*-mer weights `kgrammar_bag-of-k-mers_weights_mode_full_ABF2_8_1688192717.db`.
  
-After training the model, results of the test dataset containg accuracy and others metrics (including confusion matrix) will be saved to `ABF2_grammar_result.txt` and to the log file located at `output/` directory.
+After training the model, results of the test dataset containg accuracy and others performance metrics (including confusion matrix) will be saved to `ABF2_grammar_result.txt` along with ROC, PRC curve plots and the log file is also located at `output/` directory.
 
 #### 3.2 Train and test a "vector-*k*-mers" model
 
@@ -89,7 +89,7 @@ python3 kgrammar_vector-k-mer_training_testing.py 8 5 False ABF2
 ```
 **Output**
 
-**Final result:** The above example will train a model with k=8, window size=5, using uncollapsed *k*-mers and reading the file under `example/`. The vectors for the positive and control sequences will be saved to `output/` directory together with the `ABF2_vector_result.txt` that consists of performance metrics. After training the model, the script with proceed to test and save ROC and PR curves at the same `output/` directory.
+**Final result:** The above example will train a model with k=8, window size=5, using uncollapsed *k*-mers and reading the file under `example/`. The vectors for the positive and control sequences will be saved to `output/` directory together with the `ABF2_vector_result.txt` that consists of performance metrics. After training the model, the script with proceed to test and save ROC and PRC curves and log file at the same `output/` directory.
 
 ## Citation
 
