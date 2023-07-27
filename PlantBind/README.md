@@ -32,7 +32,6 @@ python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/w
 Download and extract the source code for PlantBind and move to parent directory, type following commands:
 ```
 unzip PlantBind.zip
-cd PlantBind
 ```
 
 #### 1.3 Software Requirements
@@ -48,7 +47,7 @@ cd PlantBind
 
 ## 2. Data information and processing
 In this part, we will first introduce the **data information** used in this model, then introduce the training and predicting **data formats**, and finally introduce how to create a data set that meets the model requirements for prediction.  
-All data is in the data directory (PlantBind/data):
+All data is in the data directory (PlantBind/data)(https://github.com/wenkaiyan-kevin/PlantBind/tree/main/data):
 - **Ath-TF-peaks**: the TFBS peak info of 315 Ath TFs, and one neg.bed file
 - **Maize-TF-peaks**: the TFBS peak info of 4 maize TFs for trans-species
 - **model**: The file that holds the model, which can be loaded to predict new datasets
@@ -71,7 +70,7 @@ cat your_neg_fasta_file.fa | paste - - | awk '{print $2}' > output_file_neg.txt 
 Split both postive and negative data into train, test and valid dataset by running following customized python command:
 
 ```
-python3 train_test.py output_file_pos.txt output_file_neg.txt train_sequence.table valid_sequence.table test_sequence.table
+python3 train_valid_test.py output_file_pos.txt output_file_neg.txt train_sequence.table valid_sequence.table test_sequence.table
 ```
 #### 2.1.2 DNA Shape Data
 Now all these convert these `.table` file to shape file also using following customized python program:
