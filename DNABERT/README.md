@@ -61,7 +61,7 @@ export TRAIN_FILE=examples/ABF2/train.tsv
 export TEST_FILE=examples/ABF2/dev.tsv
 export OUTPUT_PATH=examples/ABF2/
 
-python3 example/run_pretrain.py \
+python3 examples/run_pretrain.py \
     --output_dir $OUTPUT_PATH \
     --model_type=dna \
     --tokenizer_name=dna$KMER \
@@ -111,7 +111,7 @@ In the following example, we use DNABERT with *k*-mer=6 as example.
 
 [DNABERT6](https://drive.google.com/file/d/1BJjqb5Dl2lNMg2warsFQ0-Xvn1xxfFXC/view?usp=sharing)
 
-Download the pre-trained model into `example/ABF2/` directory at the same place where your training and testing data is present. (If you would like to replicate the following examples, please download DNABERT6 model). Then unzip the package by running:
+Download the pre-trained model into `examples/` directory at the same place where your training and testing data is present. (If you would like to replicate the following examples, please download DNABERT6 model). Then unzip the package by running:
 
 ```
 unzip 6-new-12w-0.zip
@@ -129,13 +129,14 @@ We have provided example data format compatible with DNABERT input data format (
 Run this customized python script to convert positive (label 1) and negative sequences (label 0) into *k*-mers:
 
 ```
-python3 seq2kmer.py your_fasta_file.fa 1 > output_file_pos.tsv # for positive dataset
-python3 seq2kmer.py your_fasta_file.fa 0 > output_file_neg.tsv # for negative dataset
+cd examples/
+python3 seq2kmer.py your_fasta_file.fa 1 > output_file_pos.tsv # label 1 for positive dataset
+python3 seq2kmer.py your_fasta_file.fa 0 > output_file_neg.tsv # lable 0 for negative dataset
 ```
 Split both postive and negative data to train and test dataset by running this customized python script:
 
 ```
-python3 train_test.py output_file_pos.tsv output_file_neg.tsv train.tsv dev.tsv
+python3 train_test.py output_file_pos.tsv output_file_neg.tsv ABF2/train.tsv ABF2/dev.tsv
 ```
 For training dataset: output file (train.tsv)
 For testing dataset: output file (dev.tsv)
@@ -178,8 +179,7 @@ python3 examples/run_finetune.py \
 **Output:** 
 
 **Final result** 
-
-With the above command, we can fine-tuned our model by using pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `example/6-new-12w-0/`. This fine-tuned model is saved into `examples/ABF2/` directory.
+With the above command, we can fine-tuned our model by using pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `examples/6-new-12w-0/`. This fine-tuned model is saved into `examples/ABF2/` directory.
 
 ## 3.4 Prediction
 **Prediction on test dataset**
@@ -193,16 +193,15 @@ To get evaluation metrics, run the following command by using prediction score t
 
 ```
 cut -f2 examples/ABF2/dev.tsv | sed 1d > examples/ABF2/label.txt 
-python3 txt2npy.py examples/ABF2/label
-python3 compute_result.py --pred_path examples/ABF2/pred_results.npy --label_path examples/ABF2/label.npy --name ABF2
+python3 examples/txt2npy.py examples/ABF2/label
+python3 examples/compute_result.py --pred_path examples/ABF2/pred_results.npy --label_path examples/ABF2/label.npy --name ABF2
 ```
+**Output:** 
 
-Using above commands, the fine-tuned DNABERT model will be loaded from `example/ABF2`, and makes prediction on the `dev.tsv` file and save the prediction result at `example/ABF2` in `pred_results.npy`. 
-
-The evaluation metrics on test dataset (`dev.tsv`) is saved in the `ABF2_result.txt` file at `output/` location.
+**Final result** 
+Using above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2`, and makes prediction on the `dev.tsv` file and save the prediction result at `examples/ABF2` in `pred_results.npy`. The evaluation metrics on test dataset (`dev.tsv`) is saved in the `ABF2_result.txt` file at `examples/ABF2/` location.
 
 ## Citation
 If you have used DNABERT in your research, please kindly cite the following publication:</br>
-<br/>
 "[DNABERT: pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome ](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)",<br/>
 Bioinformatics, 37, Issue 15, 2112–2120 (2021).
