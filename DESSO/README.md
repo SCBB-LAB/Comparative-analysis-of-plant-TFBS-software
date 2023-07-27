@@ -72,6 +72,7 @@ chr2	15784233	15784433 	123
 - Run this command to construct the DESSO specified input sequences:
 
 ```
+cd code/
 python3 processing_peaks.py --name ../data/ABF2/ABF2.bed --peak_flank 100
 ```
 **Output** Above command will generate three files, namely `data/encode_201/ABF2_AC.seq.gz`, `data/encode_201/ABF2_B.seq.gz`, `data/encode_201/ABF2_encode.seq.gz` , that would be saved to the `data/encode_201/` directory. Here first two files are used for training and testing purpose.
@@ -99,6 +100,7 @@ A	peaks	AACTTTAATTAGTAAAATAGATTTGGCTAAACAAATAAAAAAAACTTTTAGGCTAAAAATTGGATTTGACGT
 Now run following command:
 
 ```
+cd code/
 python3 train.py --start_index 0 --end_index 1 --peak_flank 100 --network CNN --feature_format Seq
 ```
 
@@ -121,6 +123,7 @@ If ```--feature_format DNAShape``` was used, the trained model is located at ```
 
 #### 3.2 Prediction on test datset
 ```
+cd code/
 python3 predict.py --start_index 0 --end_index 1 --peak_flank 100 --network CNN --feature_format Seq --start_cutoff 0.01 --end_cutoff 1 --step_cutoff 0.03
 ```
 Arguments | Description
@@ -131,8 +134,8 @@ Arguments | Description
 
 `--feature_format Seq` indicates that sequence motifs will be predicted. To identify shape motifs, use `--feature_format DNAShape` instead.
 
-**FInal Output**
-For `--feature_format Seq`, the predicted sequence motifs are in `output/encode_101/gc_match/ABF2/Seq/CNN/0`. <br/>
+**Final Output**
+For `--feature_format Seq`, the predicted sequence motifs in different `motif` directory are in `output/encode_101/gc_match/ABF2/Seq/CNN/0`. <br/>
 For `--feature_format DNAShape`, four kinds of shape motifs would be predicted.
 
 **Note that** 
