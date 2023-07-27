@@ -94,7 +94,7 @@ The outfile file `ABF2_result.txt` located at `output/` directory contains the p
 
 #### 3.2 *k*-mer classification
 - Generate 10-mer weights:
- Download the `nr10mers.fa` in the `example/` directory
+ Download the `nr10mers.fa`(http://www.beerlab.org/gkmsvm/downloads/nr10mers.fa)  in the `example/` directory
 ```
 cd example/
 wget http://www.beerlab.org/gkmsvm/downloads/nr10mers.fa
