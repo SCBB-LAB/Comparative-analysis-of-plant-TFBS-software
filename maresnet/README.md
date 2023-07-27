@@ -62,12 +62,12 @@ python3 train_on_cell_datasets.py
 
 **Final result** The resulting model files `maresnet-epoch_number-regular.pth` will be saved to `output/checkpoint/ABF2/` directory together with a regular and best models.
  
-After training the model,result of the test dataset containing accuracy and others metrics (including confusion matrix) at each epoch will be saved to `result.csv` located at `output/checkpoint/ABF2/` directory.
+After training the model, result of the test dataset containing accuracy and others metrics (including confusion matrix) at each epoch will be saved to `epoch_wise_result.txt` located at `output/checkpoint/ABF2/` directory. The best epoch performance metrics output `test_result.txt` is also saved at the same location.
 
 The prediction score for test dataset `bestiter.pred` and the log file `df_log2.csv` containing performance metrics at one best epoch will save in `runs/maresnet/ABF2/` folder.
 
 ## Citation
-If you use TSPTFBS in your research, please cite the following paper:</br>
+If you use MAResNet in your research, please cite the following paper:</br>
 <br/>
 [MAResNet: predicting transcription factor binding sites by combining multi-scale bottom-up and top-down attention and residual network](https://academic.oup.com/bib/article/23/1/bbab445/6399874)",<br/>
 Briefings in Bioinformatics 23, no. 1 (2022).
