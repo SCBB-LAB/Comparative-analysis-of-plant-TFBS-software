@@ -113,7 +113,7 @@ python3 train_val_test.py -datalable ./output/ABF2_datalabel.hdf5 -k 3 -run 'ws'
 ```
 **Output:** 
 
-**Final result** 
+**Final result:** 
 All the trained models on k-fold cross validation (params0_bestmodel_(fold_number)fold.hdf5) and prediction scores (score_(fold_number)fold.txt) on k-fold cross validation are saved to output location `output/` directory.
  
 The performance matrics of test dataset are saved in the `result.txt` at `output/` directory. 
