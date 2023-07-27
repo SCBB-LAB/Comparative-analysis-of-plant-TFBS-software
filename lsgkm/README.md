@@ -29,7 +29,7 @@ make install
 
 Now move back to parent directory
 ```
-cd ../lsgkm
+cd ../
 ```
 
 ## 2. Tutorial
