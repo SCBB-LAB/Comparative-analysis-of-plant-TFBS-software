@@ -37,7 +37,7 @@ python3 setup.py install
 #### 2.1 Data processing
 In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided an example data format that is compatible with the deepRAM input data format (deepRAM input data format: See ([example/ABF2_train.txt]). If you intend to train deepRAM with your own data, make sure to format your data in the same way as the example input data provided above.
+We have provided an example data format that is compatible with the deepRAM input data format (deepRAM input data format: See `example/ABF2_train.txt`. If you intend to train deepRAM with your own data, make sure to format your data in the same way as the example input data provided above.
 
 
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
