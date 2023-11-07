@@ -102,7 +102,7 @@ To begin, start by training a model using simple test files. You can initiate th
 
 
 ```
-bin/gkmtrain example/ABF2_pos_train.fa example/ABF2_neg_train.fa output/ABF2_gkmtrain
+bin/gkmtrain -t 5 example/ABF2_pos_train.fa example/ABF2_neg_train.fa output/ABF2_gkmtrain
 ```
 
 After executing the training command, it will generate `ABF2_gkmtrain.model.txt` in the `output/` directory. This model file will be used for scoring of any DNA sequences as described below.
