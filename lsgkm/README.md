@@ -119,11 +119,11 @@ Please note that SVM training will be run *N* times, which can be time-consuming
 The format of the cvpred file is as follows:
   
     [sequenceid] [SVM score] [label] [CV-set]
-    ...
+    
 
-### 2.2 Scoring DNA sequence using gkm-SVM
+### 2.2 Get Prediction Score 
 
-You use `gkmpredict` to score any set of sequences.
+Use `gkmpredict` to score any set of sequences.
 
     **Usage:** gkmpredict [options] <test_seqfile> <model_file> <output_file>
 
