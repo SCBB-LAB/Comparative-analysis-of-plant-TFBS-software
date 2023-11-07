@@ -22,7 +22,7 @@ Install pytorch using following command:
 python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html -U
 ```
 
-To download and extract the source code for DNABERT and move to parent directory, type following commands:
+Extract the source code for DNABERT by typing the following commands:
 
 ```
 unzip DNABERT.zip
@@ -34,9 +34,9 @@ python3 -m pip install -r requirements.txt
 ## 2. Pre-train (Skip this section if you fine-tune on pre-trained models)
 
 #### 2.1 Data processing
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
+In this section, we will begin by introducing the **data information** utilized in this model. Next, we will describe the training **data formats**. Finally, we will provide instructions on how to create a dataset that adheres to the model's requirements.
 
-We have provided example data format compatible with DNABERT input data format (See `example/ABF2/train.tsv`). If you are trying to fine-tune DNABERT with your own data, please process your data into the same format as it. Note that the sequences are in kmer format, so you will need to convert your sequences into that. We also provide a custom python program `seq2kmer.py` in the parent directory for this conversion.
+We have provided an example data format compatible with DNABERT input data format (refer to `example/ABF2/train.tsv`). If you intend to fine-tune DNABERT with your own data, please ensure that your data is processed into the same format. Note that the sequences are in *k*-mer format, so you will need to convert your sequences into that. We also provide a custom python program `seq2kmer.py` in the parent directory for this conversion.
 
 Run this customized python script to convert FASTA sequences into *k*-mers:
 
@@ -50,10 +50,10 @@ For testing dataset: output file (dev.tsv)
 ## 3. Model Training Based on Transformer
 #### 3.1 Training of the model on your own dataset
 **Input:** `train.tsv`,`dev.tsv`. 
-All data input files need to be placed in the same folder before training, such as in `example/ABF2`. If you are trying to train DNABERT with your own data, please process your data into the same format as defined above.
+All data input files need to be placed in the same folder before training, such as in the `example/ABF2` directory. 
 
 **Usage:**
-Run the following command in parent directory:
+Run the following command in the parent directory:
 
 ```
 export KMER=6
@@ -95,9 +95,9 @@ python3 examples/run_pretrain.py \
 
 **Final result** 
 
-The trained model and best hyperparameter are saved to defined (`output/`) directory. 
+The trained model and best hyperparameter are saved to a defined (`output/`) directory. 
 
-In the following example, we use DNABERT with *k*-mer=6 as example.
+In the following example, we use DNABERT with *k*-mer = 6.
 
 ## 3 Fine-tune (Skip this section if you use fine-tuned model)
 
@@ -111,7 +111,7 @@ In the following example, we use DNABERT with *k*-mer=6 as example.
 
 [DNABERT6](https://drive.google.com/file/d/1BJjqb5Dl2lNMg2warsFQ0-Xvn1xxfFXC/view?usp=sharing)
 
-Download the pre-trained model into `examples/` directory at the same place where your training and testing data is present. (If you would like to replicate the following examples, please download DNABERT6 model). Then unzip the package by running:
+Download the pre-trained model to the `examples/` directory, where your training and testing data are located. If you intend to replicate the following examples, please download the DNABERT6 model. Next, unzip the package by executing the following command:
 
 ```
 unzip 6-new-12w-0.zip
@@ -119,21 +119,22 @@ unzip 6-new-12w-0.zip
 
 #### 3.2 Fine-tune with pre-trained model
 
-In the following example, we use DNABERT with *k*-mer=6 as example.
+In the following example, we use DNABERT with *k*-mer = 6.
 
 **Data processing**
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with DNABERT input data format (See `example/ABF2/train.tsv`). If you are trying to fine-tune DNABERT with your own data, please process your data into the same format as defined above. Note that the sequences are in *k*-mer format, so you will need to convert your FASTA format sequences into that. We also provide a custom python program `seq2kmer.py` in the parent directory for this conversion.
+In this section, we will begin by introducing the **data information** used in this model. Next, we will describe the training **data formats**, and finally, we will provide instructions on creating a dataset that aligns with the model's requirements.
 
-Run this customized python script to convert positive (label 1) and negative sequences (label 0) into *k*-mers:
+We have included an example data format that is compatible with DNABERT's input data format (refer to `example/ABF2/train.tsv`). If you intend to fine-tune DNABERT with your own data, please ensure that your data is processed into the same format as described above. It's important to note that the sequences are in k-mer format, so you'll need to convert your FASTA format sequences into this format. To assist with this conversion, we provide a custom Python program, `seq2kmer.py`, in the parent directory.
+
+Run this customized Python script to convert positive (label 1) and negative sequences (label 0) into *k*-mers:
 
 ```
 cd examples/
 python3 seq2kmer.py your_fasta_file.fa 1 > output_file_pos.tsv # label 1 for positive dataset
 python3 seq2kmer.py your_fasta_file.fa 0 > output_file_neg.tsv # lable 0 for negative dataset
 ```
-Split both postive and negative data to train and test dataset by running this customized python script:
+Split both postive and negative data to train and test the dataset by running this customized python script:
 
 ```
 python3 train_test.py output_file_pos.tsv output_file_neg.tsv ABF2/train.tsv ABF2/dev.tsv
@@ -144,7 +145,7 @@ For testing dataset: output file (dev.tsv)
 #### 3.3 Model Training Based on Transformer
 - **Training** 
 **Input:** `train.tsv`,`dev.tsv`. 
-All data input files need to be placed in the same folder before training, such as in `example/ABF2`. If you are trying to train DNABERT with your own data, please process your data into the same format as it.
+All data input files need to be placed in the same folder before training, such as in the `example/ABF2` directory. If you are trying to train DNABERT with your own data, please process your data into the same format as it.
 
 **Usage:**
 ```
@@ -179,17 +180,17 @@ python3 examples/run_finetune.py \
 **Output:** 
 
 **Final result** 
-With the above command, we can fine-tuned our model by using pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `examples/6-new-12w-0/`. This fine-tuned model is saved into `examples/ABF2/` directory.
+With the above command, we can fine-tuned our model by using a pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `examples/6-new-12w-0/`. This fine-tuned model is saved in the `examples/ABF2/` directory.
 
 ## 3.4 Prediction
 **Prediction on test dataset**
-After the model is fine-tuned, we can get prediction score by running following command:
+After the model is fine-tuned, we can get prediction score by running the following command:
 
 ```
 python3 examples/run_finetune.py --model_type dna --tokenizer_name=dna6 --model_name_or_path examples/ABF2/ --task_name dnaprom --do_predict --data_dir examples/ABF2/ --max_seq_length 200 --per_gpu_pred_batch_size=128 --output_dir examples/ABF2/ --predict_dir examples/ABF2/ --n_process 48
 ```
 
-To get evaluation metrics, run the following command by using prediction score that are generated above:
+To get evaluation metrics, run the following command by using prediction score that were generated above:
 
 ```
 cut -f2 examples/ABF2/dev.tsv | sed 1d > examples/ABF2/label.txt 
@@ -199,9 +200,10 @@ python3 examples/compute_result.py --pred_path examples/ABF2/pred_results.npy --
 **Output:** 
 
 **Final result** 
-Using above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2`, and makes prediction on the `dev.tsv` file and save the prediction result at `examples/ABF2` in `pred_results.npy`. The evaluation metrics on test dataset (`dev.tsv`) is saved in the `ABF2_result.txt` file at `examples/ABF2/` location.
+
+Using the above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2` directory, make predictions on the `dev.tsv` file and save the prediction result at `examples/ABF2` in `pred_results.npy` file. The evaluation metrics on the test dataset (`dev.tsv`) are saved in the `ABF2_result.txt` file in the `examples/ABF2/` directory.
 
 ## Citation
-If you have used DNABERT in your research, please kindly cite the following publication:</br>
+If you have used DNABERT in your research, please cite the following paper:</br>
 "[DNABERT: pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome ](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)",<br/>
 Bioinformatics, 37, Issue 15, 2112–2120 (2021).
