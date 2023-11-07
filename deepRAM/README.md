@@ -13,21 +13,10 @@ deepRAM allows users the flexibility to choose a deep learning model by selectin
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have their own choice of how to install required packages. But to efficiently manage the installation packages, Anaconda is recommended. After installing Annocoda, it would also be an good option to use virtual environment in annocoda. `conda activate` can be used to activate a virtual environment, and then install required packages. If users want to exit the virtual environment, simply type `conda deactivate`. 
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`. 
 
 #### 1.2 Install the package and other requirements
 
-Download and extract the source code for deepRAM and move to parent directory, type following commands:
-
-```
-unzip deepRAM.zip
-pip3 install -r Prerequisites
-python3 setup.py install
-```
-
-#### 1.3 Software Requirements
-
-**software list**
 
 -  <a href=https://www.python.org/downloads/source/>Python 3.6 </a> <br>
 -  <a href=https://pytorch.org/>PyTorch 1.0 library </a> (Deep learning library) <br>
@@ -35,18 +24,27 @@ python3 setup.py install
 -  <a href=https://anaconda.org/anaconda/gensim>gensim</a> (library used to train word2vec algorithm) <br>
 -  <a href=https://anaconda.org/anaconda/numpy>numpy</a> <br>
 
+To extract the source code for deepRAM, execute the following commands:
+
+```
+unzip deepRAM.zip
+pip3 install -r Prerequisites
+python3 setup.py install
+```
+
 ## 2. Data information
 
 #### 2.1 Data processing
 In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with DeepBind input data (deepRAM input data format: See [example/ABF2_train.txt]. If you are trying to train deepRAM with your own data, please process your data into the same format as given in above example input data.
+We have provided an example data format that is compatible with the deepRAM input data format (deepRAM input data format: See [example/ABF2_train.txt]). If you intend to train deepRAM with your own data, make sure to format your data in the same way as the example input data provided above.
+
 
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 #### 3.1 Training and testing  
 **Input:** `ABF2_train.txt`,`ABF2_test.txt`. 
 
-All data input files need to be placed in the same folder before training, such as in `example/` directory.
+Before training, ensure that all data input files are placed in the same folder, such as in the `example/` directory.
 
 **Usage:**
 Run the following command in parent directory:
@@ -141,8 +139,7 @@ python3 deepRAM.py --train_data example/ABF2_train.txt --test_data example/ABF2_
 
 **Final result** 
 
-The trained model, best_hyperpamarameters and prediction file on test dataset, `ABF2_model.pkl`, `ABF2_best_hyperpamarameters.pth` and `ABF2_prediction.txt`, are saved to `output/` directory, respectively. 
-The outfile file `ABF2_result.txt` located at `output/` directory contains the performance metrics of the test dataset.
+The trained model, best hyperparameters (`ABF2_best_hyperparameters.pth`), and prediction file on the test dataset (`ABF2_prediction.txt`) are saved in the `output/` directory. Additionally, the `ABF2_result.txt` file in the `output/` directory contains the performance metrics for the test dataset.
 
 
 ## 4. Motifs identification and visualization
