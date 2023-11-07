@@ -59,7 +59,7 @@ To generate your own positive dataset using a **BED file**, you only need to pro
 ```
 cd example/
 wget https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-57/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
-unzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+gzip -d Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
 cat Arabidopsis_thaliana.TAIR10.dna.toplevel.fa | cut -d" " -f1 | sed "s/>/>chr/g" | awk '/^>/ {printf("\n%s\n",$0);next;}{printf("%s",$0);} END {printf("\n");}' | grep -A1 ">chr[0-9]" >  GCF_000001735.4_TAIR10.1_genomic-1.fna
 cd ../
 python3 src/prepare.py example/ABF2_pos.bed example/GCF_000001735.4_TAIR10.1_genomic-1.fna ABF2_pos.txt
