@@ -62,7 +62,6 @@ python3 densenet.py example/ABF2/ABF2
 
 The final trained model, will be saved in the output location `example/ABF2/` as `checkmodel.hdf5` text file. Additionally, separate text files, named `ABF2_performance_metrices` and `ABF2_result.txt`, will also be saved in the `example/ABF2` directory. These text files contain the performance metrics for the test dataset.
 
-```
 
 ## 4. Interpretability
 
