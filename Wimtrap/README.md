@@ -1,6 +1,6 @@
 # Wimtrap
 ## Introduction
-Wimtrap: Integrative tools to predict the location of transcription factor binding sites.
+Wimtrap: An integrative tools to predict the location of transcription factor binding sites.
 
 <p align="center">
 <img src="wimtrap.jpg">
@@ -11,7 +11,7 @@ Wimtrap: Integrative tools to predict the location of transcription factor bindi
 
 #### 1.1 Install the package and other requirements
 
-Download and extract the source code for Wimtrap and move to parent directory, type following commands:
+To extract the source code for Wimtrap, execute the following commands:
 
 ```
 unzip Wimtrap.zip
@@ -53,12 +53,14 @@ sudo apt install libcurl4-gnutls-dev icu-devtools libicu-dev libxml2-dev bzip2-d
 
 #### 2.1 Data processing
 
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
+In this section, we will begin by introducing the data information used in this model. Next, we will explain the training data formats, and finally, we will guide you on creating a dataset that aligns with the model's requirements.
 
-We have provided example data format compatible with Wimtrap input data format (See `example/`).
+We have provided an example data format that is compatible with the Wimtrap input data format (please refer to the `example/` directory).
 
-Please see the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** at `example/`. If you are trying to train Wimtrap with your own data, please process your data into the same format as it.
-Before training of the model, download species-specific genome by entering the `example/` directory. For example, to download A. thaliana genome:
+You can find example input file, namely **ABF2.bed**, in the `example/` directory. If you plan to train Wimtrap with your own data, make sure to prepare your data in the same format.
+
+Before initiating the model training process, you'll need to download a species-specific genome. You can do this by navigating to the `example/` directory. For instance, if you want to download the *A. thaliana* genome:
+
 
 ```
 cd example/
@@ -72,8 +74,9 @@ cd ../
 
 #### 3.1 Build and apply a TF-specific model (for example: ABF2)
 
-Predictions can be made taking into consideration chromatin state features related to different conditions (for ***Arabidopsis***: whole seedlings, seedling roots, non-hair part of seedling roots, flowers in stages 4-5, seed coats, heat-shocked seedlings, dark-grown seedlings, dark-grown seedlings exposed to 30min or 3h of light and dark-grown seedlings exposed to a long-day cycle; for the ***Solanum***: immature and ripening fruits).
-To build and apply a TF-specific model, some functions are defined in this R package. Then, to predict the binding sites of "ABF2" of Arabidopsis, type:
+Predictions can be made by considering chromatin state features related to different conditions. For ***Arabidopsis***, these conditions include whole seedlings, seedling roots, non-hair parts of seedling roots, flowers in stages 4-5, seed coats, heat-shocked seedlings, dark-grown seedlings, dark-grown seedlings exposed to 30 minutes or 3 hours of light, and dark-grown seedlings exposed to a long-day cycle. For ***Solanum***, it encompasses immature and ripening fruits.
+
+To build and apply a TF-specific model, this R package defines specific functions. To predict the binding sites of **ABF2** in Arabidopsis, follow these steps:
 
 ```
 R
