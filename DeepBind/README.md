@@ -46,7 +46,7 @@ unzip DeepBind.zip
 
 In this part, we will first introduce the **data information** used in this model, then describe the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided an example data format compatible with DeepBind input data (DeepBind input data format: See `example/ABF2_pos.txt`). If you are trying to train DeepBind with your own data, please process your data into the same format as given in the above example input data.
+We have provided an example data format compatible with DeepBind input data (DeepBind input data format: See `example/ABF2_train.txt`). If you are trying to train DeepBind with your own data, please process your data into the same format as given in the above example input data.
 
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 #### 3.1 Training and testing 
