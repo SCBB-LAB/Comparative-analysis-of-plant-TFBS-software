@@ -2,7 +2,7 @@
 ## Introduction
 Modeling *in-vivo* protein-DNA binding by combining multiple-instance learning with a hybrid deep neural netwok.
 
-The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
+The architecture of the model and the calibration phase steps are explained in this **Figure** from the paper:
 
 <p align="center">
 <img src="WSCNNLSTM.jpg">
@@ -17,12 +17,6 @@ Users have their own choice of how to install required packages. But to efficien
 
 #### 1.2 Install the package and other requirements
 
-Download and extract the source code for WSCNNLSTM and move to parent directory, type following commands:
-
-```
-unzip WSCNNLSTM.zip
-```
-#### 1.3 Software Requirements
 
 **Software list**
 - python >=3.6
@@ -33,28 +27,27 @@ unzip WSCNNLSTM.zip
 - scipy 
 - matplotlib
 
+To extract the source code for WSCNNLSTM, execute the following commands:
+
+```
+unzip WSCNNLSTM.zip
+```
 ## 2. Data information
 
 #### 2.1 Data processing
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
+In this part, we will first introduce the **data information** used in this model, then describe the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-Please see the example input files **ABF2_positive.fa & ABF2_negative.fa** at `example/` directory. If you are trying to train **WSCNNLSTM** with your own data, please process your data into the same format as it.
+Please refer to the example input files **ABF2_positive.fa** & **ABF2_negative.fa** in the `example/` directory. If you intend to train WSCNNLSTM with your own data, make sure to format your data in the same way.
 
-**Note that** both the input files should be in the **FASTA** format.
-The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
+**Note:** Both input files should be in the FASTA format
 
-```
->Chr4:9901694-9901894 
-TAAACGATAGAAAAATATTCAGCAGAAGCTAAGAAAAAAAAATGTTATCTGACAAAGAAGAAAAGACTTGTGATTGCTTATTGGGAAATAAATTCTGGTATTACCAAAAAAAAGAAGAGAGAGTAGGTGTTTCTTAATTTCTTAAAATACTTTTAAAAAGATTGTTTAATGTTTTTCATCATATGAAACTGATCGTATTCA
->Chr1:14098041-14098241 
-CAACTATAAATACCTATGGCGGTTATATCTATTGTTTGGATTCAAGTTCTAGTTTATTACTCTAGAACTAGCATTAAGAACAATTAAATATGAAGAATTCTACAGATAACCTAGCAGGGGGGCGATCTACTAAACCATATGAATCCCTAATGAGAAACCCTAAACCTAACAAGTGGATTGCTCATACATGATCAAAGAAAC
-```
-
-All data files need to be placed in the same folder before training, such as `example/`.
+All data files should be in the same folder before training, like in the `example/` directory.
 
 #### 2.2 Convert input FASTA sequences into *k*-mer encoding
 **Usage:**
-Run following command in the parent directory to encode positive and negative *k*-mer encoding. 
+
+Execute the following command in the parent directory to perform *k*-mer encoding for both positive and negative sequences.
+
 ```
 python3 encoding.py posfile negfile outfile -m mapperfile -c instance_len -s instance_stride --no-reverse -kmer kmer -run 'run'
 
@@ -74,23 +67,25 @@ Passing arguments:
     "-kmer", "--kmer", dest="kmer", type=int, default=1, help="the length of kmer")
     "-run", "--run", dest="run", type=str, default='ws', help="order")
 ```
-For example, run following command for the 3 *k*-mer:
+For example, run the following command for the 3 *k*-mer:
 - **Input:** `ABF2_positive.fa`,`ABF2_negative.fa` in `example/` directory. 
 
 ```
 python3 encoding.py ./example/ABF2_positive.fa ./example/ABF2_negative.fa ./output/ABF2_datalabel.hdf5 -m ./mappers/3mer.txt -c 120 -s 10 --no-reverse -kmer 3 -run 'ws'
 ```
 **Output:** 
-The outfile file (`ABF2_datalabel.hdf5`) having specific *k*-mer encoding data is saved in `output/` directory. 
+The output file (`ABF2_datalabel.hdf5`) containing specific *k*-mer encoding data is saved in the `output/` directory.
 
 ## 3. Model Training Based on Multi-instance learning and hybrid neural network
 
 #### 3.1 Training and evaluation of the WSCNNLSTM model
 
-**Input:** The output file `datalabel.hdf5` from specific *k*-mer encoding is input file for model training. 
+
+
+**Input:** The output file `datalabel.hdf5` from the specific *k*-mer encoding serves as the input file for model training. 
 
 **Usage:**
-Run the following command in parent directory for model training and to calculate the evaluation metrics on test dataset:
+In the parent directory, execute the following command for model training and the calculation of evaluation metrics on the test dataset:
 
 ```
 python3 train_val_test.py -datalable datalable -k kmer -run 'run' -batchsize batchsize -params params
@@ -105,8 +100,7 @@ python3 train_val_test.py -datalable datalable -k kmer -run 'run' -batchsize bat
     '-plot', dest='plot', action='store_true', default=True, help='only test step')
     '-run', dest='run', type=str, default='nows', help='three encoding methods, including ws, nows')
 ```
-
-For example, run following command to train the model on train dataset and test on test dataset:
+For example, run the following command to train the model on the training dataset and test it on the test dataset
     
 ```
 python3 train_val_test.py -datalable ./output/ABF2_datalabel.hdf5 -k 3 -run 'ws' -batchsize 300 -params 12
@@ -114,9 +108,11 @@ python3 train_val_test.py -datalable ./output/ABF2_datalabel.hdf5 -k 3 -run 'ws'
 **Output:** 
 
 **Final result:** 
-All the trained models on k-fold cross validation (params0_bestmodel_(fold_number)fold.hdf5) and prediction scores (score_(fold_number)fold.txt) on k-fold cross validation are saved to output location `output/` directory.
- 
-The performance matrics of test dataset are saved in the `result.txt` at `output/` directory. 
+
+All the trained models from *k*-fold cross-validation, labeled as    `params0_bestmodel_(fold_number)fold.hdf5`, and prediction scores (named `score_(fold_number)fold.txt`) from *k*-fold cross-validation are stored in the `output/` directory.
+
+The performance metrics for the test dataset are saved in the `result.txt` file, also located in the `output/` directory.
+
 
 ## Citation
 
