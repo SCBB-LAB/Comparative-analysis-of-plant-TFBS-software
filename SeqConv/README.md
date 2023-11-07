@@ -82,10 +82,10 @@ After generating these files, the next step is to split both the positive and ne
 
 #### 3.1 Training SeqConv on plant TF datasets
 **Input:** `ABF2_train.txt`, `ABF2_test.txt` .
-All data files should be in the same folder before training, such as `example/`.
+All data files should be in the same folder before training, such as in the `example/` directory.
 
 **Usage:**
-Run the following command in parent directory:
+Run the following command in the parent directory:
 
 ``` 
 python3 src/SeqConv.py ABF2 
@@ -94,9 +94,7 @@ python3 src/SeqConv.py ABF2
 
 **Final result:** 
 
-The resulting model files, named `ABF2_model.h5`, will be saved in the `output/` directory.
-
-After training the model, the results of the test dataset, including accuracy and other metrics (such as the confusion matrix), will be saved in a file named `ABF2_result.txt` located in the `output/` directory.
+The resulting model files, named `ABF2_model.h5`, will be saved in the `output/` directory. After training the model, the results of the test dataset, including accuracy and other metrics (such as the confusion matrix), will be saved in a file named `ABF2_result.txt` located in the `output/` directory.
 
 
 #### 3.3 Motif Visualization
