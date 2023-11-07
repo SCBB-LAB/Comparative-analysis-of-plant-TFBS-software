@@ -23,10 +23,6 @@ Install pytorch using following command:
 python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html -U
 ```
 
-
-
-#### 1.3 Software Requirements
-
 **software list**
 - python >=3.6
 - pytorch
@@ -51,16 +47,19 @@ In this part, we will first introduce the **data information** used in this mode
 We have included an example data format that is compatible with KEGRU's input data format (refer to `example/ABF2_pos.txt`). If you plan to train KEGRU with your own data, ensure that your data is prepared in the same format as described above. It's important to note that the sequences are in *k*-mer format, so you'll need to convert your FASTA format sequences into this format. To facilitate this conversion, we offer a custom Python program named `seq2kmer.py` in the parent directory.
 
 ```
-python3 seq2kmer.py your_fasta_file.fa 1 > output_file_pos.tsv 
+python3 seq2kmer.py pos_file.fa 1 > output_file_pos.txt # for positive dataset
+python3 seq2kmer.py neg_file.fa 0 > output_file_neg.txt # for negative dataset
 
 ```
 To split both positive and negative data into training and testing datasets, run the provided customized Python script:
 
 ```
-python3 train_test.py output_file_pos.tsv output_file_neg.tsv ABF2_pos.txt ABF2_neg.txt
+python3 train_test.py output_file_pos.tsv output_file_neg.tsv example/ABF2_pos.txt example/ABF2_neg.txt
 ```
 For training dataset: output file `ABF2_pos.txt`
 For testing dataset: output file `ABF2_neg.txt`
+
+**Note:** Do not forget to place both files in same directory.
 
 ## 3. Model Training Based on Recurrent Neural Network (RNN)
 
