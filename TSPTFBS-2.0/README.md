@@ -1,7 +1,20 @@
 # TSPTFBS-2.0
 TSPTFBS 2.0 is a [webserver](http://www.hzau-hulab.com/TSPTFBS/) based on deep learning models for transcription factor binding site (TFBS) prediction. It can be used to mine the potential core motifs within a given sequence by the trained 389 TFBS prediction models of three species (Zea mays, Arabidopsis, Oryza sativa) and the three interpretability algorithms Deeplift，*in-silico* tiling-deletion and *in-silico* mutagenesis. [TSPTFBS 2.0](https://github.com/liulifenyf/TSPTFBS-2.0) is freely accessible for all users. 
-## Python programs for predicting TFBS and performing DeepLIFT, insilico-tilling deletion, insilico-tilling mutagenesis and TF-MoDISco.
-## Dependencies
+
+## 1. Environment setup
+
+#### 1.1 Create and activate a new virtual environment
+
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`.
+
+#### 1.2 Install the package and other requirements
+
+Run following command to install pytorch:
+
+```
+python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html -U
+```
+
 The program requires:
   * python==3.7.13
   * tensorflow-gpu==2.0.0 (for model training)
@@ -13,13 +26,13 @@ The program requires:
   * pandas 
   * numpy 
   * the [bedtools](https://bedtools.readthedocs.io/en/latest/) software
-## Install
+To extract the source code for LS-GKM, execute the following commands:
+
 ```
-git clone git@github.com:liulifenyf/TSPTFBS-2.0.git
+unzip TSPTFBS-2.0.zip
 
 ```
 
-## Tutorial
 ###  Predicting (389 models were employed to predict the binding intensity of inpuy sequences)
 ```
 cd TSPTFBS-2.0
