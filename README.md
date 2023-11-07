@@ -7,7 +7,7 @@ This repository serves as a hub for various tools developed to identify TFBS (Tr
 - Logistic regression
 - XGBoost
 
-3. Deep learning-based algorithms, which encompass:
+2. Deep learning-based algorithms, which encompass:
 - Convolutional Neural Network (CNN)
 - Complex CNN-based algorithms, including:
 (i) ResNet
