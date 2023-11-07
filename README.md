@@ -3,7 +3,7 @@
 This repository serves as a hub for various tools developed to identify TFBS (Transcription Factor Binding Sites) for both human and plant transcription factors. It provides corrected and debugged source codes for a range of deep learning methods that have been evaluated. Users can easily download and utilize these tools for TFBS identification. The tools are based on different algorithms, including:
 
 1. Machine learning-based algorithms, such as:
-#### (a) Support Vector Machine (SVM)
+- Support Vector Machine (SVM)
 - Logistic regression
 - XGBoost
 
