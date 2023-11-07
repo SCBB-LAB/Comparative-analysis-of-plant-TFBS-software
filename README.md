@@ -41,7 +41,7 @@ In this repository, you will discover a collection of 15 TFBS (Transcription Fac
 Each software directory contains its own set of guidelines, usage instructions, and other relevant information in the accompanying `README.md` file.
 
 ## 2. Data preparations
-If you have an example dataset, the next step is to download and prepare the training and testing datasets in accordance with the software's input requirements. This process involves several key steps:
+If you have an example dataset, the next step is to prepare the training and testing datasets in accordance with the software's input requirements.
 
 ### 2.1 DAP-seq data for *A. thaliana*
 
