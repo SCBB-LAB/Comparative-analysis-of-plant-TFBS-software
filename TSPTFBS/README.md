@@ -1,6 +1,6 @@
 # TSPTFBS
 ## Introduction
-The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
+The architecture of the model and the calibration phase steps are explained in this **Figure** from the paper:
 
 <p align="center">
 <img src="TFPTFBS.jpg">
@@ -12,7 +12,7 @@ The architecture of the model and the calibration phase steps are explained in t
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have their own choice of how to install required packages. But to efficiently manage the installation packages, Anaconda is recommended. After installing Annocoda, it would also be an good option to use virtual environment in annocoda. `conda activate` can be used to activate a virtual environment, and then install required packages. If users want to exit the virtual environment, simply type `conda deactivate`. 
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`.
 
 #### 1.2 Software Requirements
 **Software list**
@@ -27,43 +27,31 @@ The program requires:
   * TAIR10 reference genome
   * the [bedtools](https://bedtools.readthedocs.io/en/latest/) software
 
-#### 1.3 Install the package and other requirements
-
-Download and extract the source code for TSPTFBS and move to parent directory, type following commands:
-
+To extract the source code for TSPTFBS, execute the following commands:
 ```
 unzip TSPTFBS.zip
 ```
-## Tutorial
+
 ## 2. Data information
 
 #### 2.1 Data processing
 
 In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with TSPTFBS input data format (See `example/ABF2_train.txt`).
+We have included an example data format that is compatible with TSPTFBS's input data format (refer to `example/ABF2_pos_train.fa`).
 
-Please see the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** at `example/`. If you are trying to train TSPTFBS with your own data, please process your data into the same format as it.
+Please review the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** located in the `example/` directory. If you intend to train TSPTFBS with your own data, ensure that your data is prepared in the same format as the provided examples.
 
-**Input File Format**
-The input file must contain DNA sequences which have a length of 201bp with a FASTA format. A FASTA file of the example is:
-
-```
->ID
-ACGAACAGATAAAAATCACAGAGAGTACTAAAACCCTAAGGTGGGGTTAGAGGTAGACGAAACAATGAAACGGAATCGTTTTAGTACGAGAAACTGCCACGTGGCATTATCTTGCACGTGTCAGTGGCTTTAGAGTTAAATACACATTTTCTGAAAATGATTTTCAACATCTGAAGAAAAGAATCTAGACGACGACAATGG
->ID
-AGTTCGCATGGTTTACGGAGATGGAGACAACATCTTCGACGATTCTTGAGAGCCCGATTTTCTCGTCGGAGAAAAAGACGGCTGTCTCGGGGGCTGATGACGTGGCGGTGTTCTTTCCGATGGGAGAAGAGGATGAGTCTTTGTTCGCCGATCTCGGCGAGTTGCCGGAGTGTTCTGTGGTGTTTCGTCACCGGAGTAGCG
-```
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 
 #### 3.1 Training TSPTFBS on plant TF datasets
 **Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`. 
-All data files need to be placed in the same folder before training, such as `example/train`.
+All data files need to be placed in the same folder before training.
 
 **Note that** both the input files should be in the **FASTA** format.
 
 - **Usage:**
-Run following command in the parent directory:
+Run the following command in the parent directory:
 
 ```
 python3 Train.py ABF2
@@ -72,20 +60,20 @@ python3 Train.py ABF2
 
 **Final model:** 
 
-The final six trained models on different filter_length range from 11-22 will be saved to output location `output/ABF2/model/` with `ABF2_pos_train-model-filter_length.hdf5` text files and six different text files `ABF2_pos_train-result-filter_length.txt` on the basis their different filter_length will be saved at `output/ABF2/result/` directory that have the performance metrics on test dataset.
+The final six trained models, each with a different filter length ranging from 11 to 22, will be saved in the output location `output/ABF2/model/` as `ABF2_pos_train-model-filter_length.hdf5` text files. Additionally, six separate text files, named `ABF2_pos_train-result-filter_length.txt`, based on their respective filter lengths, will be saved in the `output/ABF2/result/` directory. These text files contain the performance metrics for the test dataset.
 
 #### 3.2 Prediction on test dataset 
   
 - **Input File Format**
 
-Here we provide `ABF2_label.txt` and `ABF2_test.fa` files in the `example/` directory to predict the test sequences using the pre-trained model: 
-To get the performance metrics for the test dataset on different filter_length using pre-trained model, run the following command: 
+In the `example/` directory, we provide `ABF2_label.txt` and `ABF2_test.fa` files for predicting the test sequences using the pre-trained model. To obtain performance metrics for the test dataset with different filter lengths using the pre-trained model, execute the following command:
+
 ```
 python3 Predict.py ABF2
 ```
 **Output:**
 
-Prediction result having accuracy and others metrics (including confusion matrix) on test dataset using various `filter_length` will also be saved to `ABF2_result.txt` located at `output/` directory.
+The prediction results, including accuracy and other metrics (such as the confusion matrix) for the test dataset using various filter_length settings, will also be saved to `ABF2_result.txt`, which can be found in the `output/` directory.
 
 ## Citation
 
