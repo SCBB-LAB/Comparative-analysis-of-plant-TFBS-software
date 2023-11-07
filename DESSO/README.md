@@ -14,11 +14,7 @@ DESSO is a deep learning-based framework that can be used to accurately identify
 
 Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`.
 
-#### 1.2  requirements
 
-```
-unzip DESSO.zip
-```
 #### 1.3 Prerequisites and Dependencies
 
 - Tensorflow 1.1.0 [[Install]](https://www.tensorflow.org/install/)
@@ -26,6 +22,12 @@ unzip DESSO.zip
 - Python >= 3.6
 - Biopython 1.7.0
 - Scikit-learn
+
+Unzip the `DESSO.zip` file to access all the files and reositories using the following commans:
+
+```
+unzip DESSO.zip
+```
 
 **Note**
 
@@ -37,11 +39,12 @@ If you want to train your DESSO model on human ChIP-seq data then
 ## 2. Data information
 
 #### 2.1 Data processing
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with DESSO input data (DESSO input data format: See `data/encode_201/ABF2_AC.seq.gz`. If you are trying to train DESSO with your own data, please process your data into the same format as given in above example input data.
+In this section, we will begin by introducing the **data information** utilized in this model. Next, we will describe the training **data formats**. Finally, we will provide instructions on how to create a dataset that adheres to the model's requirements.
 
-If you want to preprocess your TF-species specific input bed file to DESSO input file format, for an example `/data/ABF2/ABF2.bed`.
+We have included an example data format that is compatible with the DESSO input data format (DESSO input data format: See `data/encode_201/ABF2_AC.seq.gz`. If you intend to train DESSO with your own data, please ensure that your data is processed into the same format.
+
+You have to process your TF-species specific input bed file to DESSO input file format. We here provide a `/data/ABF2/ABF2.bed` file for an example.
 
 Therefore, you need to download genome file for your species of interest and place both TF-specific bed file and genome in the [data/] directory.
 For example: 
@@ -57,9 +60,9 @@ unzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
 cat Arabidopsis_thaliana.TAIR10.dna.toplevel.fa | cut -d" " -f1 | sed "s/>/>chr/g" | awk '/^>/ {printf("\n%s\n",$0);next;}{printf("%s",$0);} END {printf("\n");}' | grep -A1 ">chr[0-9]" >  GCF_000001735.4_TAIR10.1_genomic-1.fna
 cd ../code
 ```
-- Input data pre-processing for TFBS bed file:
+- Input data pre-processing for the TFBS bed file:
 
-**Note that** the bed file format must contain four columns:
+**Note that:** The bed file format must contain four columns:
 
 ```
 chr5	9830161	9830361 	123
@@ -67,7 +70,7 @@ chr2	17042539	17042739 	123
 chr2	15771721	15771921 	123
 chr2	15784233	15784433 	123
 ```
-- Run this command to construct the DESSO specified input sequences:
+- Run this command to construct the DESSO-specified input sequences:
 
 ```
 cd code/
@@ -86,16 +89,16 @@ python3 processing_peaks.py --name ../data/ABF2/ABF2.bed --peak_flank 100
 #### 3.1 Training of the model
 **Input:** `ABF2_AC.seq.gz`,`ABF2_B.seq.gz`. 
 
-All data input files need to be placed in the same folder before training, such as in `data/encode_201/`. If you are trying to train DESSO with your own data, please process your data into the same format as it.
+All data input files need to be placed in the same folder before training, such as in `data/encode_201/` directory. If you are trying to train DESSO with your own data, please process your data into the same format as it.
 
- - if you have your own dataset in FASTA format file, then process the file as shown below containing of four columns with tab separated and first line must contain FoldID, Event, sequence and label as well:
+ - If you have your own dataset in FASTA format, then process the file as shown below containing of four columns with tab separated and first line must contain FoldID, Event, seq and label as well:
 ```
-FoldID	Event	sequence	label
+FoldID	Event	seq	label
 A	peaks	GCGCAAGGCCCATAATATTTTTAGTTATTAAAAAAATTAGCAGACGTAGGGTTGACTTAAAAAAGACTCTTATTACATTAGTCGACAAGTAAAAAACACGTGGCATATATTGTGCGTTCGTAGAGACTGTAATAAAGACGGAGAGATTCTTCTAGAGTCAGTTCTTCTTCTTCATCCTCTTCTTCCCCCCAAATCCTCTCT	1
 A	peaks	AACTTTAATTAGTAAAATAGATTTGGCTAAACAAATAAAAAAAACTTTTAGGCTAAAAATTGGATTTGACGTATGAGTAATTGGGGATGAGGGGGACACGTGTCAGAAAATGGGAATGGTATCTTTTGGGGAAAGCATGTAAGTGTGTAATAATGGTCCCCTTCTCTCTCCCATAACCCTACCAAAAATACTTTTCTTTGT	1
 
 ```
-Now run following command:
+Now run the following command:
 
 ```
 cd code/
@@ -138,10 +141,10 @@ For `--feature_format DNAShape`, four kinds of shape motifs would be predicted.
 
 **Note that** 
 if you want to train DESSO with your own negative dataset (non-TFBS sites), then open file `train.py` and open the comment on line numbers 71 and 85 and comment out line 70 and 84.
-- Your own dataset in FASTA format file with negative dataset must contain four columns with tab separated as shown below.
+- Your own dataset in FASTA format with negative dataset must contain four columns with tab separated as shown below.
 
 ```
-FoldID	Event	sequence	label
+FoldID	Event	seq label
 A	peaks	GCGCAAGGCCCATAATATTTTTAGTTATTAAAAAAATTAGCAGACGTAGGGTTGACTTAAAAAAGACTCTTATTACATTAGTCGACAAGTAAAAAACACGTGGCATATATTGTGCGTTCGTAGAGACTGTAATAAAGACGGAGAGATTCTTCTAGAGTCAGTTCTTCTTCTTCATCCTCTTCTTCCCCCCAAATCCTCTCT	1
 A	peaks	AACTTTAATTAGTAAAATAGATTTGGCTAAACAAATAAAAAAAACTTTTAGGCTAAAAATTGGATTTGACGTATGAGTAATTGGGGATGAGGGGGACACGTGTCAGAAAATGGGAATGGTATCTTTTGGGGAAAGCATGTAAGTGTGTAATAATGGTCCCCTTCTCTCTCCCATAACCCTACCAAAAATACTTTTCTTTGT	1
 A	peak	TGTAAATAAATTGTGTAGCTAATTTGATCTATACAACTATTATTTTTATTAAATATCTATATTTAATCTTATTGTATAAACTTTTTGTTTTACAGCCGACAATTTTTTTTTTTTTTAATATAAAAACATCAGGTTTTGATGAGTGATCTGTTAACAGGGAACGGTCCTACAAAAAGGAACATAGTATACTCTTGATTTTAT	0
@@ -162,7 +165,7 @@ python3 train.py --start_index 0 --end_index 1 --peak_flank 500 --network GCNN -
 
 **Final output**
 
-The trained model and its performace metrics `Test_result.txt` on test data is located at `output/encode_1001/gc_match/wgEncodeEH002288/Seq/GCNN`.
+After training the model, result of the test dataset containing accuracy and its performace metrics will be saved to the `output/encode_1001/gc_match/wgEncodeEH002288/Seq/GCNN` directory in the `Test_result.txt` file.
 
 ## Citation
 
