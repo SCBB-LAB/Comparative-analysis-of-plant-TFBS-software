@@ -16,7 +16,7 @@ This repository serves as a hub for various tools developed to identify TFBS (Tr
 - Hybrid deep learning-based algorithms
 - Transformer-based methods
 
-There are many variations of the ML/DL architectures, but they are based on the pattern of layers, as demonstrated in **Figure** below:
+There are many variations of the ML/DL architectures, as demonstrated in **Figure** below:
  
 <p align="center">
 <img src="Figure.png">
