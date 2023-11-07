@@ -1,8 +1,11 @@
 # DeepBind
 ## Introduction
-This repository contains a PyTorch implementation of a DeepBind model that came out in 2015. The model described in the paper ["Predicting the sequence specificities of DNA and RNA-binding proteins by deep learning"](https://www.nature.com/articles/nbt.3300) is implemented within Pytorch was taken from ["DeepBind-with-PyTorch"](https://github.com/MedChaabane/DeepBind-with-PyTorch). The detailed explanation of the architecture can be found in the [supplementary notes of the paper](https://static-content.springer.com/esm/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_BFnbt3300_MOESM51_ESM.pdf). 
 
-The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
+This repository contains a PyTorch implementation of DeepBind model introduced in 2015. The model, as described in the paper titled ["Predicting the sequence specificities of DNA and RNA-binding proteins by deep learning"](https://www.nature.com/articles/nbt.3300), has been implemented in PyTorch. The PyTorch implementation was adapted from the ["DeepBind-with-PyTorch"](https://github.com/MedChaabane/DeepBind-with-PyTorch) repository.
+
+For a detailed explanation of the model's architecture, you can refer to the supplementary notes of the paper [supplementary notes of the paper](https://static-content.springer.com/esm/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_BFnbt3300_MOESM51_ESM.pdf).
+
+The architecture of the model and the calibration phase steps are illustrated in **Figure 1** from the paper.
 
 <p align="center">
 <img src="deepbind.jpg">
