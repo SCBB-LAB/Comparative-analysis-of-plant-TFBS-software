@@ -1,5 +1,21 @@
 # Comparative-analysis-of-plant-TFBS-software: a repository for TFBS identification tools based on different machine and deep learning tools
-This repository provides a hub of all the availble tools that have been developed for TFBS identification for human as well as for plant transcription factors. The corrected and debugged source code links are provided to the evalutated deep learning methods so that the user can easily download and perform the task to identify plant or human TFBS. These the source codes that were developed on various algorithms based on **Machine learning** such as **Support Vector Machine (SVM)**, **XGBoost**, and **deep learning** tools that are based on **Convolutional Neural Network (CNN)**, **Recurrent Neural Network (RNN)**, **Transformer-based** and many other hybrid algorithms. 
+# Comparative-analysis-of-plant-TFBS-software: a repository for TFBS identification tools based on different machine and deep learning tools
+
+This repository serves as a hub for various tools developed to identify TFBS (Transcription Factor Binding Sites) for both human and plant transcription factors. It provides corrected and debugged source codes for a range of deep learning methods that have been evaluated. Users can easily download and utilize these tools for TFBS identification. The tools are based on different algorithms, including:
+
+1. Machine learning-based algorithms, such as:
+(a) Support Vector Machine (SVM)
+(b) Logistic regression
+(c) XGBoost
+
+2. Deep learning-based algorithms, which encompass:
+(c) Convolutional Neural Network (CNN)
+(d) Complex CNN-based algorithms, including:
+(i) ResNet
+(ii) DenseNet
+(e) Recurrent Neural Network (RNN)
+(f) Hybrid deep learning-based algorithms
+(g) Transformer-based methods
 
 ## 1. Environment setup
 
