@@ -19,7 +19,7 @@ This repository serves as a hub for various tools developed to identify TFBS (Tr
 <p align="center">
 <img src="Figure.png">
 </p>
-<p align="center"><b>Figure: The model workflow</b></p> 
+<p align="center"><b>Figure: The models' architectures</b></p> 
 
 ## 1. Environment setup
 
