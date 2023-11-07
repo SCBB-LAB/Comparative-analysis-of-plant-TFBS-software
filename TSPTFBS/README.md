@@ -40,7 +40,7 @@ In this part, we will first introduce the **data information** used in this mode
 
 We have included an example data format that is compatible with TSPTFBS's input data format (refer to `example/ABF2_pos_train.fa`).
 
-Please review the example input files **ABF2_pos_train.fa & ABF2_neg_train.fa** located in the `example/` directory. If you intend to train TSPTFBS with your own data, ensure that your data is prepared in the same format as the provided examples.
+Please review the example input files **ABF2_pos_train.fa** & **ABF2_neg_train.fa** located in the `example/` directory. If you intend to train TSPTFBS with your own data, ensure that your data is prepared in the same format as the provided examples.
 
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 
