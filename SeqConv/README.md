@@ -1,23 +1,16 @@
 # SeqConv
 ## Introduction
 The goal of this model is to predict the binding probability of a specific transcription factor based only on DNA sequence information of the binding region by means of convolutional neural network. 
-The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
+The architecture of the model and the calibration phase steps are explained in this **Figure** from the paper:
 <img src="Figure1.png">
 
 ## 1. Environment setup
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have their own choice of how to install required packages. But to efficiently manage the installation packages, Anaconda is recommended. After installing Annocoda, it would also be an good option to use virtual environment in annocoda. `conda activate` can be used to activate a virtual environment, and then install required packages. If users want to exit the virtual environment, simply type `conda deactivate`. 
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`. 
 
 #### 1.2 Install the package and other requirements
-
-Download and extract the source code and move to parent directory, type:
-
-```
-unzip SeqConv.zip
-```
-#### 1.3 Software Requirements
 
 **Software list**
 
@@ -27,12 +20,18 @@ unzip SeqConv.zip
 - numpy  
 - matplotlib  
 - tqdm  
+
+To extract the source code for SeqConv, execute the following commands:
+
+```
+unzip SeqConv.zip
+```
     
 **R package:**
 
 - To install motifStack:
 
-ENTER R and type following commands:  
+ENTER R and execute the following commands:  
 
 ```
 R
@@ -49,15 +48,14 @@ quit()
 
 #### 2.1 Data processing
 
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
+In this part, we will first introduce the **data information** used in this model, then describe the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with SeqConv input data format (See `example/ABF2_train.txt`). If you are trying to train SeqConv with your own data, please process your data into the same format as it.
+We have included an example data format that is compatible with the SeqConv input data format (refer to `example/ABF2_train.txt`). If you intend to train SeqConv with your own data, please ensure that your data is processed into the same format.
 
 #### 2.2 Generating train and test dataset on your own datasets using following commands
 
-For generating your own positive dataset using **bed file**, one only needs to provide a TF peak file `example/ABF2_pos.bed` and genome file in **FASTA format** at location `example/`. In this demo, a peak file from *Arabidopsis thaliana* DAP-seq data is used. The bed file should be in sorted order using sorted command the terminal (e.g., sort -k1,1 -k2,2n in.bed > in.sorted.bed for BED files).
+To generate your own positive dataset using a **BED file**, you only need to provide a TF peak file, `example/ABF2_pos.bed`, and a genome file in **FASTA format**, which should be located in the `example/` directory. In this demonstration, a peak file from *Arabidopsis thaliana* DAP-seq data is used. Ensure that the BED file is sorted by using the `sort` command in the terminal (e.g., 'sort -k1,1 -k2,2n in.bed > in.sorted.bed' for BED files). Then, run the following command:
 
-For generating positive data, you would need TFBS bed file and species-specific genome. Therefore download the genome file in the `example/` directory. Thus, run following command:
 ```
 cd example/
 wget https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-57/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
@@ -66,21 +64,25 @@ cat Arabidopsis_thaliana.TAIR10.dna.toplevel.fa | cut -d" " -f1 | sed "s/>/>chr/
 cd ../
 python3 src/prepare.py example/ABF2_pos.bed example/GCF_000001735.4_TAIR10.1_genomic-1.fna ABF2_pos.txt
 ```
-For generating negative data, run following command:
+For generating negative data, run the following command:
 ```
 python3 src/generator.py example/ABF2_pos.bed
 ```
-Split both postive and negative data to train and test dataset by running this customized python script:
+To split both the positive and negative data into training and testing datasets, you can use this customized Python script:
 ```
 python3 src/train_test.py example/ABF2_pos.txt example/ABF2_neg.txt ABF2_train.txt ABF2_test.txt
 ```
 **Output:**
-Python program `prepare.py` will generate a positive `ABF2_pos.txt` file from bed file and saved to `example/` directory. While, `generator.py` will generate a negative `ABF2_neg.txt` file. This file contains two columns separated by tab delimiter: first columns have label(1 for positive sequences and 0 for negative sequences) and second columns is the dna string. After that you have to split both positive and negative sequences in train and test files to train and evaluate the SeqConv model using `src/SeqConv.py` program.
+
+The Python program `prepare.py` will generate a positive `ABF2_pos.txt` file from the BED file and save it in the `example/` directory. On the other hand, `generator.py` will create a negative `ABF2_neg.txt` file. This file consists of two columns separated by a tab delimiter. The first column contains labels (1 for positive sequences and 0 for negative sequences), while the second column contains the DNA strings.
+
+After generating these files, the next step is to split both the positive and negative sequences into training and testing datasets. You can do this to prepare for training and evaluating the SeqConv model using the `src/SeqConv.py` program.
+
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 
 #### 3.1 Training SeqConv on plant TF datasets
 **Input:** `ABF2_train.txt`, `ABF2_test.txt` .
-All data files need to be placed in the same folder before training, such as `example/`.
+All data files should be in the same folder before training, such as `example/`.
 
 **Usage:**
 Run the following command in parent directory:
@@ -90,20 +92,21 @@ python3 src/SeqConv.py ABF2
 ```
 **Output:**
 
-**Final result** The resulting model files `ABF2_model.h5` will be saved to `output/` directory.
+**Final result:** 
 
-After training the model, result of the test dataset containing accuracy and others metrics (including confusion matrix) will be saved to `ABF2_result.txt` located at `output/` directory.
+The resulting model files, named `ABF2_model.h5`, will be saved in the `output/` directory.
 
+After training the model, the results of the test dataset, including accuracy and other metrics (such as the confusion matrix), will be saved in a file named `ABF2_result.txt` located in the `output/` directory.
 
 
 #### 3.3 Motif Visualization
-- For visualizing the the motif predicted by SeqConv, run following command:
+- For visualizing the the motif predicted by SeqConv, run the following command:
 ``` 
 python3 src/motifGen.py ABF2
 Rscript src/plot_motif.r ABF2
 ```
 **Output:**
-The two files are generated namely `ABF2_seq.meme` and `ABF2_motif.pdf` and saved to `output/` directory.
+Two files, namely `ABF2_seq.meme` and `ABF2_motif.pdf`, are generated and saved in the `output/` directory.
 
 After training, there will be images showing the loss error and val_loss error during the training step, as well as the ROC curve showing the precision of the trained model. Additional steps are required to extract and plot the binding motif from convolution layer. And the trained model can be easily transfered to predict TFBS in other plants with high accuracy.
 
