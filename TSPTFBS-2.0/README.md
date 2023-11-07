@@ -1,7 +1,7 @@
 # TSPTFBS-2.0
 TSPTFBS 2.0 is a [webserver](http://www.hzau-hulab.com/TSPTFBS/) based on deep learning models for transcription factor binding site (TFBS) prediction. It can be used to mine the potential core motifs within a given sequence by the trained 389 TFBS prediction models of three species (Zea mays, Arabidopsis, Oryza sativa) and the three interpretability algorithms Deeplift，*in-silico* tiling-deletion and *in-silico* mutagenesis. [TSPTFBS 2.0](https://github.com/liulifenyf/TSPTFBS-2.0) is freely accessible for all users. 
 
-## 1. Environment setup
+## 1. Environment setup 
 
 #### 1.1 Create and activate a new virtual environment
 
