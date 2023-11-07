@@ -45,10 +45,11 @@ If you have an example dataset, the next step is to download and prepare the tra
 
 ### 2.1 DAP-seq data for *A. thaliana*
 
-We used *Arabidopsis thaliana* DAP-Seq dataset from [Plant Cistrome Database](http://neomorph.salk.edu/dap_web/pages/browse_table_aj.php). The raw data is derived for 265 plant transcription factors can be easily downloaded.
-- Download both [265_dap_data](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/265_dap_data) of TFBS bed files, then unzip them.
-- For generating FASTA data to 
-- Here we only provide `ABF2` TFBS data as an example for each of the software, owing to the file size limit.
+We used the *Arabidopsis thaliana* DAP-Seq dataset from the [Plant Cistrome Database](http://neomorph.salk.edu/dap_web/pages/browse_table_aj.php). The raw data derived for 265 plant transcription factors can be easily downloaded for both positive and negative datasets ([265_dap_data](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/265_dap_data)) of TFBS bed files, then unzip them.
+
+- For generating FASTA data from bedfiles use either `bedtools getfasta` or `seqtk subseq`.
+- For example: `bedtools getfasta -fi genome -bed example.bed`
+- For `seqtk subseq genome example.bed > out.fa`
 
 ### 2.2 Troubleshooting
 
