@@ -65,7 +65,7 @@ We used the *Arabidopsis thaliana* DAP-Seq dataset from the [Plant Cistrome Data
 If there exists any problem with software package installation or module import error, please check the `Supplementary Material S2.docx` from our article for the detailed description of debugging.
 If you lack other packages when you are running the code, please run `python3.8 pip install -m [package NAME]` directly to the Linux terminal.
 
-Post any questions, issues or bugs on the GitHub repository (https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/issues). They would also be helpful to other users. Or simply drop an email at (dshwljyoti@gmail.com) or (sg927357@gmail.com) if you have any questions.
+Post any questions, issues or bugs on the [GitHub repository](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/issues). They would also be helpful to other users. Or simply drop an email at (dshwljyoti@gmail.com) or (sg927357@gmail.com) if you have any questions.
 
 ## Citation
 
