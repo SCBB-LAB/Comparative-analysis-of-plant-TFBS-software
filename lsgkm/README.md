@@ -4,12 +4,12 @@ gkm-SVM, a sequence-based method for predicting regulatory DNA elements, is a us
 
 ## 1. Installation
 
-Download and extract the source code and move to parent directory, type:
+To extract the source code for LS-GKM, execute the following commands:
 
 ```
 unzip lsgkm.zip
 ```
-- Then move to `src/` directory and **make all dependencies** to compile and build source code files.
+- After navigating to the `src/` directory, you can proceed to build the source code and its dependencies by using the following command:
 
 ```    
 cd src
@@ -21,20 +21,20 @@ If successful, you should be able to find the following executables in the curre
     gkmtrain
     gkmpredict
 
-Then run in linux terminal:
+Then run in the linux terminal:
 ```    
 make install
 ```
 `make install` will simply copy these executables to the `../bin` directory
 
-Now move back to parent directory
+Now move back to the parent directory
 ```
 cd ../
 ```
 
 ## 2. Tutorial
 
-Please refer to help messages for more detailed information of each program. You can access to it by running the programs without any argument/parameter.
+To access more detailed information about each program, please refer to the help messages. You can access these help messages by running the programs without providing any arguments or parameters. These help messages typically contain valuable information about the program's options and usage.
   
 
 ### 2.1 Training of LS-GKM Based on Support Vector Machine (SVM)
@@ -42,14 +42,13 @@ Please refer to help messages for more detailed information of each program. You
 - **Training** 
 **Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`, `ABF2_pos_test.fa`,`ABF2_neg_test.fa`. 
 
-All data input files need to be placed in the same folder before training, such as in `example/`. If you are trying to train LS-GKM with your own data, please process your data into the same format as it.
+Before training, ensure that all data input files are placed in the same folder, such as the `example/` directory. If you intend to train LS-GKM with your own data, you should process your data to match the required format used in the `example/` directory. This ensures that the training process runs smoothly and effectively.
 
 Train a SVM classifier using `gkmtrain`. It takes three arguments; positive sequence file, negative sequence file, and prefix of output.
 
 
     **Usage:** gkmtrain [options] <posfile> <negfile> <outprefix>
 
-    train gkm-SVM using libSVM
 ```
     Arguments:
      posfile: positive sequence file (FASTA format)
@@ -97,23 +96,23 @@ Train a SVM classifier using `gkmtrain`. It takes three arguments; positive sequ
 ```
 
 
-First try to train a model using simple test files. Type the following command in the parent directory:
+To begin, start by training a model using simple test files. You can initiate the process by entering the following command in the parent directory:
 
 
 ```
 bin/gkmtrain example/ABF2_pos_train.fa example/ABF2_neg_train.fa output/ABF2_gkmtrain
 ```
 
-It will generate `ABF2_gkmtrain.model.txt` in the `output/` directory, which will then be used for scoring of any DNA sequences as described below.
+After executing the training command, it will generate `ABF2_gkmtrain.model.txt` in the `output/` directory. This model file will be used for scoring of any DNA sequences as described below.
 
-You can also perform cross-validation (CV) analysis with `-x <N>` option. For example, the following command will perform 5-fold CV. 
+Additionally, you can also perform cross-validation (CV) analysis with the `-x <N>` option. For example, the following command will perform 5-fold CV. 
 
 ```
 bin/gkmtrain -x 5 example/ABF2_pos_train.fa example/ABF2_neg_train.fa output/ABF2_train_gkmtrain
 ```
-The result will be stored in `ABF2_gkmtrain.cvpred.txt` in the `output/` directory.
+The results will be saved in `ABF2_gkmtrain.cvpred.txt` in the output/ directory.
 
-Please note that it will run SVM training *N* times, which can take time if training sets are large. In this case, you can perform CV analysis on a specific set by using `-i <I>` option for parallel runnings. The output will be `<outprefix>.cvpred.<I>.txt`.
+Please note that SVM training will be run *N* times, which can be time-consuming for large training sets. In such cases, you can perform CV analysis on a specific set by using the `-i <I>` option for parallel runs. The output will be saved as `<outprefix>.cvpred.<I>.txt`.
 
 The format of the cvpred file is as follows:
   
@@ -144,18 +143,18 @@ Options:
     -T <1|4|16>      set the number of threads for parallel calculation, 1, 4, or 16
                      (default: 1)
 ```
-Here, you will try to score the positive and the negative test sequences. Run:
+Here, you will calculate prediction scores for both the positive and negative test sequences.
 
-Prediction score for positive sequences. Run following command:
+- To get the prediction scores the positive sequences, please execute the following command:
 
 ```        
 bin/gkmpredict example/ABF2_pos_test.fa output/ABF2_gkmtrain.model.txt output/ABF2_gkmpredict_pos.txt
 ```
 **Output format for positive prediction**
 
-The result will be stored in `output/ABF2_gkmpredict_pos.txt` in the `output/` directory.
+The result will be stored in `output/ABF2_gkmpredict_pos.txt` file in the `output/` directory.
 
-Prediction score for negative sequences. Run following command:
+- To obtain the prediction scores for the negative sequences, please execute the following command:
 
 ```
 bin/gkmpredict example/ABF2_neg_test.fa output/ABF2_gkmtrain.model.txt output/ABF2_gkmpredict_neg.txt
@@ -163,7 +162,7 @@ bin/gkmpredict example/ABF2_neg_test.fa output/ABF2_gkmtrain.model.txt output/AB
   
 **Output format for negative prediction**
 
-The result will be stored in `output/ABF2_gkmpredict_neg.txt` in the `output/` directory.
+The results will be stored in the `output/ABF2_gkmpredict_neg.txt` file in the `output/` directory.
   
 ### 2.3 Evaluating prediction quality 
 
@@ -177,7 +176,8 @@ Options:
     -p 	    prediction file name (prediction score file, output file of gkmpredict for positive and negative file)
 ```
 
-This will output `output/ABF2_result.txt` all the performance matrics such as accuracy, MCC-values, AUROC, etc.
+This command will output the performance metrics, including accuracy, MCC-values, AUROC, etc., in the `output/ABF2_result.txt` file.
+
 
 ### 2.4 Generating weight files for deltaSVM
 
