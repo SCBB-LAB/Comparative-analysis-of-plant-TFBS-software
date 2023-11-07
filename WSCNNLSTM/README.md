@@ -17,7 +17,6 @@ Users have their own choice of how to install required packages. But to efficien
 
 #### 1.2 Install the package and other requirements
 
-
 **Software list**
 - python >=3.6
 - pytorch
@@ -39,9 +38,7 @@ In this part, we will first introduce the **data information** used in this mode
 
 Please refer to the example input files **ABF2_positive.fa** & **ABF2_negative.fa** in the `example/` directory. If you intend to train WSCNNLSTM with your own data, make sure to format your data in the same way.
 
-**Note:** Both input files should be in the FASTA format
-
-All data files should be in the same folder before training, like in the `example/` directory.
+**Note:** Both input files should be in the FASTA format.
 
 #### 2.2 Convert input FASTA sequences into *k*-mer encoding
 **Usage:**
@@ -79,8 +76,6 @@ The output file (`ABF2_datalabel.hdf5`) containing specific *k*-mer encoding dat
 ## 3. Model Training Based on Multi-instance learning and hybrid neural network
 
 #### 3.1 Training and evaluation of the WSCNNLSTM model
-
-
 
 **Input:** The output file `datalabel.hdf5` from the specific *k*-mer encoding serves as the input file for model training. 
 
