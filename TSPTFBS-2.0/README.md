@@ -67,7 +67,7 @@ The final trained model, will be saved in the output location `example/ABF2/` as
 
 ```
 cd TSPTFBS-2.0
-python interpretability.py <input fasta file> <species> <tf>
+python3 interpretability.py <input fasta file> <species> <tf>
 ```
 It should be noted ```<species>``` that one is chosen from 'Zea_mays_models','Arabidopsis_models' and 'Oryza_sativa_models'.
 It should be noted ```<tf>``` that one is chosen from the tf names of selected species.
@@ -79,14 +79,14 @@ python interpretability.py Example/test.fa Zea_mays_models ALF2
 ## 5. TF-MoDISco
 ```
 cd TSPTFBS-2.0
-python modisco_test.py <input fasta file> <species> <tf>
+python3 modisco_test.py <input fasta file> <species> <tf>
 ```
 It should be noted ```<species>``` that one is chosen from 'Zea_mays_models','Arabidopsis_models' and 'Oryza_sativa_models'.
 It should be noted``` <tf>``` that one is chosen from the tf names of selected species.
 After running the program, a dir about tf-modisco results will be generated in the current folder.
 We here provide a test.fa file and employed one of models of Zea mays for an example: 
 ```
-python modisco_test.py Example/test.fa Zea_mays_models ALF2 
+python3 modisco_test.py Example/test.fa Zea_mays_models ALF2 
 ```
 ## Citation
 * Huang, G., et al. Densely Connected Convolutional Networks. IEEE Computer Society 2016.
