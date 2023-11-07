@@ -5,7 +5,7 @@ This repository contains a PyTorch implementation of DeepBind model introduced i
 
 For a detailed explanation of the model's architecture, you can refer to the supplementary notes of the paper [supplementary notes of the paper](https://static-content.springer.com/esm/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_BFnbt3300_MOESM51_ESM.pdf).
 
-The architecture of the model and the calibration phase steps are illustrated in **Figure 1** from the paper.
+The architecture of the model and the calibration phase steps are illustrated in **Figure** from the paper.
 
 <p align="center">
 <img src="deepbind.jpg">
@@ -16,22 +16,15 @@ The architecture of the model and the calibration phase steps are illustrated in
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have their own choice of how to install required packages. But to efficiently manage the installation packages, Anaconda is recommended. After installing Annocoda, it would also be an good option to use virtual environment in annocoda. `conda activate` can be used to activate a virtual environment, and then install required packages. If users want to exit the virtual environment, simply type `conda deactivate`. 
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`. 
 
 #### 1.2 Install the package and other requirements
 
-Run command to install pytorch
+Run the folllowing command to install PyTorch:
 
 ```
 python3 -m pip install --pre torch torchvision -f https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html -U
 ```
-Download and extract the source code for DeepBind and move to parent directory, type following commands:
-
-```
-unzip DeepBind.zip
-```
-#### 1.3 Software Requirements
-
 ***software list***
 - python >=3.6
 - pytorch
@@ -41,18 +34,24 @@ unzip DeepBind.zip
 - scipy 
 - matplotlib
 
+Next, unzip the package by executing the following command:
+
+```
+unzip DeepBind.zip
+```
+
 ## 2. Data information
 
 #### 2.1 Data processing
 
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets to build the model requirements.
+In this part, we will first introduce the **data information** used in this model, then describe the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-We have provided example data format compatible with DeepBind input data (DeepBind input data format: See `example/ABF2_pos.txt`. If you are trying to train DeepBind with your own data, please process your data into the same format as given in above example input data.
+We have provided an example data format compatible with DeepBind input data (DeepBind input data format: See `example/ABF2_pos.txt`). If you are trying to train DeepBind with your own data, please process your data into the same format as given in the above example input data.
 
 ## 3. Model Training Based on Convolutional Neural Network (CNN)
 #### 3.1 Training and testing 
 **Input:** `ABF2_train.txt`, `ABF2_test.txt`. 
-All data input files need to be placed in the same folder before training, such as in `example/` directory.
+All data input files need to be placed in the same folder before training, such as in the `example/` directory.
 
 **Usage:**
 Run the following command in the parent directory:
@@ -63,7 +62,7 @@ python3 deepbind.py ABF2
 
 **Final result** 
 The trained model and best hyperparameter, `ABF2_Model.pth` and `ABF2_best_hyperpamarameters.pth`, are saved in the `output/` directory, respectively. 
-The output file `ABF2_result.txt` located at `output/` directory contains the performance metrics of the test dataset.  
+The output file `ABF2_result.txt` located in the `output/` directory contains the performance metrics of the test dataset.
 
 **Note:** A warning massage may appear at the end of the execution of the command as shown below. Please ignore this warning.
 ```/user_path/python3.8/site-packages/numpy/core/fromnumeric.py:3419: RuntimeWarning: Mean of empty slice.
