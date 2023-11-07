@@ -67,9 +67,3 @@ If you lack other packages when you are running the code, please run `python3.8 
 
 Post any questions, issues or bugs on the [GitHub repository](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/issues). They would also be helpful to other users. Or simply drop an email at (dshwljyoti@gmail.com) or (sg927357@gmail.com) if you have any questions.
 
-## Citation
-
-If you use our tool in your research, please cite the following paper:</br>
-"[Comprehensive evaluation of plant transcription factor binding sites discovery tools]",<br/>
-Briefings in Bioinformatics.
-
