@@ -38,14 +38,23 @@ In this section, we will begin by introducing the **data information** utilized 
 
 We have provided an example data format compatible with DNABERT input data format (refer to `example/ABF2/train.tsv`). If you intend to fine-tune DNABERT with your own data, please ensure that your data is processed into the same format. Note that the sequences are in *k*-mer format, so you will need to convert your sequences into that. We also provide a custom python program `seq2kmer.py` in the parent directory for this conversion.
 
-Run this customized python script to convert FASTA sequences into *k*-mers:
+Run this customized python script to convert positive (label 1) and negative sequences (label 0) into *k*-mers:
 
 ```
-python3 seq2kmer.py your_fasta_file.fa > output_file.tsv
+python3 seq2kmer.py examples/sample_data/ABF2/ABF2_positive.fa 1 > examples/ABF2/ABF2_positive.tsv  # For positive dataset
+
+python3 seq2kmer.py examples/sample_data/ABF2/ABF2_negative.fa 0 > examples/ABF2/ABF2_negative.tsv # For negative dataset
 ```
-For example:
+
+Split both postive and negative data to train and test dataset by running this customized python script:
+
+```
+python3 train_test.py examples/ABF2/ABF2_positive.tsv examples/ABF2/ABF2_negative.tsv examples/ABF2/train.tsv examples/ABF2/dev.tsv
+```
+
 For training dataset: output file (train.tsv)
 For testing dataset: output file (dev.tsv)
+
 
 ## 3. Model Training Based on Transformer
 #### 3.1 Training of the model on your own dataset
@@ -127,18 +136,20 @@ In this section, we will begin by introducing the **data information** used in t
 
 We have included an example data format that is compatible with DNABERT's input data format (refer to `example/ABF2/train.tsv`). If you intend to fine-tune DNABERT with your own data, please ensure that your data is processed into the same format as described above. It's important to note that the sequences are in k-mer format, so you'll need to convert your FASTA format sequences into this format. To assist with this conversion, we provide a custom Python program, `seq2kmer.py`, in the parent directory.
 
-Run this customized Python script to convert positive (label 1) and negative sequences (label 0) into *k*-mers:
+Run this customized python script to convert positive (label 1) and negative sequences (label 0) into *k*-mers:
 
 ```
-cd examples/
-python3 seq2kmer.py your_fasta_file.fa 1 > output_file_pos.tsv # label 1 for positive dataset
-python3 seq2kmer.py your_fasta_file.fa 0 > output_file_neg.tsv # lable 0 for negative dataset
+python3 seq2kmer.py examples/sample_data/ABF2/ABF2_positive.fa 1 > examples/ABF2/ABF2_positive.tsv  # For positive dataset
+
+python3 seq2kmer.py examples/sample_data/ABF2/ABF2_negative.fa 0 > examples/ABF2/ABF2_negative.tsv # For negative dataset
 ```
-Split both postive and negative data to train and test the dataset by running this customized python script:
+
+Split both postive and negative data to train and test dataset by running this customized python script:
 
 ```
-python3 train_test.py output_file_pos.tsv output_file_neg.tsv ABF2/train.tsv ABF2/dev.tsv
+python3 train_test.py examples/ABF2/ABF2_positive.tsv examples/ABF2/ABF2_negative.tsv examples/ABF2/train.tsv examples/ABF2/dev.tsv
 ```
+
 For training dataset: output file (train.tsv)
 For testing dataset: output file (dev.tsv)
 
@@ -201,7 +212,7 @@ python3 examples/compute_result.py --pred_path examples/ABF2/pred_results.npy --
 
 **Final result** 
 
-Using the above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2` directory, make predictions on the `dev.tsv` file and save the prediction result at `examples/ABF2` in `pred_results.npy` file. The evaluation metrics on the test dataset (`dev.tsv`) are saved in the `ABF2_result.txt` file in the `examples/ABF2/` directory.
+Using the above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2` directory, make predictions on the `dev.tsv` file and save the prediction result in the `pred_results.npy` file located at `examples/ABF2`. The evaluation metrics on the test dataset (`dev.tsv`) are saved in the `ABF2_result.txt` file in the `examples/ABF2/` directory.
 
 ## Citation
 If you have used DNABERT in your research, please cite the following paper:</br>
