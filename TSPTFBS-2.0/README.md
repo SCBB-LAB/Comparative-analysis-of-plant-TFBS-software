@@ -30,7 +30,6 @@ To extract the source code for LS-GKM, execute the following commands:
 
 ```
 unzip TSPTFBS-2.0.zip
-
 ```
 
 ## 2. Data information
