@@ -23,7 +23,7 @@ Users have the flexibility to choose how they install the necessary packages. Ho
 - Biopython 1.7.0
 - Scikit-learn
 
-Unzip the `DESSO.zip` file to access all the files and reositories using the following commans:
+To extract the source code for DESSO, execute the following commands:
 
 ```
 unzip DESSO.zip
@@ -76,7 +76,7 @@ chr2	15784233	15784433 	123
 cd code/
 python3 processing_peaks.py --name ../data/ABF2/ABF2.bed --peak_flank 100
 ```
-**Output** Above command will generate three files, namely `data/encode_201/ABF2_AC.seq.gz`, `data/encode_201/ABF2_B.seq.gz`, `data/encode_201/ABF2_encode.seq.gz` , that would be saved to the `data/encode_201/` directory. Here first two files are used for training and testing purpose.
+**Output** Above command will generate three files, namely `data/encode_201/ABF2_AC.seq.gz`, `data/encode_201/ABF2_B.seq.gz`, `data/encode_201/ABF2_encode.seq.gz`, that would be saved to the `data/encode_201/` directory. Here first two files are used for training and testing purpose.
 
 | Arguments        | Description                                                               |
 | ---------------- | ------------------------------------------------------------------------- |
