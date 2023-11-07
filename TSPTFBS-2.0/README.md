@@ -33,33 +33,40 @@ unzip TSPTFBS-2.0.zip
 
 ```
 
-###  Predicting (389 models were employed to predict the binding intensity of inpuy sequences)
+## 2. Data information
+
+#### 2.1 Data processing
+
+In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
+
+We have included an example data format that is compatible with TSPTFBS-2.0's input data format (refer to `example/ABF2_pos.fa`).
+
+Please review the example input files **ABF2_pos.fa** & **ABF2_neg.fa** located in the `example/` directory. If you intend to train TSPTFBS-2.0 with your own data, ensure that your data is prepared in the same format as the provided examples.
+
+## 3. Model Training Based on DenseNet
+
+#### 3.1 Training TSPTFBS-2.0 on plant TF datasets
+**Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`. 
+All data files need to be placed in the same folder before training.
+
+**Note that** both the input files should be in the **FASTA** format.
+
+- **Usage:**
+Run the following command in the parent directory:
+
 ```
-cd TSPTFBS-2.0
-python predict.py <input fasta file>
+python3 densenet.py example/ABF2/ABF2
 ```
-After running the program, a file named 'results.csv' will be generated in the current folder which records the prediction results of the models.
-We here provide a test.fa file for an example: 
+**Output:** 
+
+**Final model:** 
+
+The final trained model, will be saved in the output location `example/ABF2/` as `checkmodel.hdf5` text file. Additionally, separate text files, named `ABF2_performance_metrices` and `ABF2_result.txt`, will also be saved in the `example/ABF2` directory. These text files contain the performance metrics for the test dataset.
+
 ```
-python predict.py Example/test.fa
-```
-#### Input File Format
-The input file must contain DNA sequences which have a length of 500bp with a FASTA format.
-A FASTA file of the example is:
-```
->4:175156999-175157499
-GAATGTGCGTGCTGTGTTGCAGTCGCGTTAGGGCCAAGTCCTAGCCTTTGTGGTGATTAGATTTAGGGGGTGGTCAAGATTCACATATTTATGTTTCTTAACCCTCTCCTGGACTTGGCGACTCTTTTTTTTACCCCCTCCCGAGACAAGTGCCCGTGCGTTTCTTGTTGAACTCTGAATTTGCTTATTCAACAGAAGTTGATAATGATAATAAAAGAAGAGGCATCCTGTGTAAATCGATGCCTCATTTTCTTACTGCCTGTCAGGCTGTCATGGCATGTCAGCAGCTGGGACGGAGATTTGCATGTAAATGTTGTACAGAATTGCATGATCTATCCTGTGAAGCAGAATCAAAATTCTGCTCGGGTAAGATAATGATAAACAGCATAGATGCTGGCTATATGTGTACGAGTACTTGCTACAAAGTGAACCATGGAGCACTTTCTTTTTGATAATTACCATGGTGCAGGTTGAGATGCGAGAATGTTGTATGCCGAGAC
-```
-#### Output File Format
-The output file will seem like below: the first column represents the names of 389 TFs, the remaining columns (The example has one remaining column because the input file has one enquired DNA sequences) record the probabilities of given DNA sequences to be predicted as a TFBS of one of 389 TFs.
-```
-TF  4:175156999-175157499	
-AT3G10113	5.8268368E-05 
-AT3G12130	0.0003848466	
-AT3G52440	0.6031477	
-...
-```
-### interpretability
+
+## 4. Interpretability
+
 ```
 cd TSPTFBS-2.0
 python interpretability.py <input fasta file> <species> <tf>
@@ -71,7 +78,7 @@ We here provide a test.fa file and employed one of models of Zea mays for an exa
 ```
 python interpretability.py Example/test.fa Zea_mays_models ALF2 
 ```
-### TF-MoDISco
+## 5. TF-MoDISco
 ```
 cd TSPTFBS-2.0
 python modisco_test.py <input fasta file> <species> <tf>
@@ -83,7 +90,7 @@ We here provide a test.fa file and employed one of models of Zea mays for an exa
 ```
 python modisco_test.py Example/test.fa Zea_mays_models ALF2 
 ```
-### Citation
+## Citation
 * Huang, G., et al. Densely Connected Convolutional Networks. IEEE Computer Society 2016.
 * Shrikumar, A., Greenside, P. and Kundaje, A. Learning Important Features Through Propagating Activation Differences. 2017.
 * Shrikumar, A., et al. Technical Note on Transcription Factor Motif Discovery from Importance Scores (TF-MoDISco) version 0.5.6.5. In.; 2018. p. arXiv:1811.00416.
