@@ -40,7 +40,9 @@ To access more detailed information about each program, please refer to the help
 ### 2.1 Training of LS-GKM Based on Support Vector Machine (SVM)
 
 - **Training** 
-**Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`, `ABF2_pos_test.fa`,`ABF2_neg_test.fa`. 
+**Input:**
+
+  `ABF2_pos_train.fa`,`ABF2_neg_train.fa`, `ABF2_pos_test.fa`,`ABF2_neg_test.fa`. 
 
 Before training, ensure that all data input files are placed in the same folder, such as the `example/` directory. If you intend to train LS-GKM with your own data, you should process your data to match the required format used in the `example/` directory. This ensures that the training process runs smoothly and effectively.
 
