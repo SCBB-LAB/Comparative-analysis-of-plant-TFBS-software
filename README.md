@@ -20,7 +20,7 @@ This repository serves as a hub for various tools developed to identify TFBS (Tr
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have the freedom to choose how they install the required packages. However, for efficient package management, we recommend using Anaconda. After installing Anaconda, it is also advisable to utilize virtual environments within Anaconda. You can activate a virtual environment using the 'conda activate' command and then proceed to install the required packages. If users wish to exit the virtual environment, they can simply type 'conda deactivate'. 
+Users have the freedom to choose how they install the required packages. However, for efficient package management, we recommend using Anaconda. After installing Anaconda, it is also advisable to utilize virtual environments within Anaconda. You can activate a virtual environment using the `conda activate` command and then proceed to install the required packages. If users wish to exit the virtual environment, they can simply type `conda deactivate`. 
 
 #### 1.2 Install the package and other requirements
 
