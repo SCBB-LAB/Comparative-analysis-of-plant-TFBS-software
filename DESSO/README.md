@@ -12,11 +12,9 @@ DESSO is a deep learning-based framework that can be used to accurately identify
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have their own choice of how to install required packages. But to efficiently manage the installation packages, Anaconda is recommended. After installing Annocoda, it would also be an good option to use virtual environment in annocoda. `conda activate` can be used to activate a virtual environment, and then install required packages. If users want to exit the virtual environment, simply type `conda deactivate`. 
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`.
 
-#### 1.2 Install the package and other requirements
-
-Download and extract the source code for DESSO and move to parent directory, type following commands:
+#### 1.2  requirements
 
 ```
 unzip DESSO.zip
