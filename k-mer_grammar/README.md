@@ -1,7 +1,7 @@
 # *k*-mer grammar
 
 ## Introduction
-The architecture of the model and the calibration phase steps are explained in this **Figure 1** from the paper:
+The architecture of the model and the calibration phase steps are explained in this **Figure** from the paper:
 
 <p align="center">
 <img src="kmer_grammar.jpg">
@@ -12,7 +12,7 @@ The architecture of the model and the calibration phase steps are explained in t
 
 #### 1.1 Create and activate a new virtual environment
 
-Users have their own choice of how to install required packages. But to efficiently manage the installation packages, Anaconda is recommended. After installing Annocoda, it would also be an good option to use virtual environment in annocoda. `conda activate` can be used to activate a virtual environment, and then install required packages. If users want to exit the virtual environment, simply type `conda deactivate`. 
+Users have the flexibility to choose how they install the necessary packages. However, for efficient package management, we recommend using Anaconda. Once Anaconda is installed, creating and utilizing a virtual environment within Anaconda is a wise option. You can activate a virtual environment with `conda activate` and proceed to install the required packages. If you wish to exit the virtual environment, simply type `conda deactivate`.
 
 #### 1.2 Software Requirements
 
@@ -25,9 +25,7 @@ Users have their own choice of how to install required packages. But to efficien
 - scipy 
 - matplotlib
 
-#### 1.3 Installation the package
-
-After downloading and extracting the source codes and move to parent directory, type:
+To extract the source code for k-mer grammar, execute the following commands:
 
 ```
 unzip k-mer_grammar.zip
@@ -37,24 +35,23 @@ unzip k-mer_grammar.zip
 
 #### 2.1 Data processing
 
-In this part, we will first introduce the **data information** used in this model, then introduce the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
+In this section, we will introduce the data information used in this model, explain the training data formats, and guide you on creating a dataset that aligns with the model's requirements.
 
-We have provided example data format compatible with k-mer grammar input data format (See `example/ABF2_train.txt`).
+We have provided an example data format compatible with *k*-mer grammar input data format (See `example/ABF2_train.txt`).
 
-Please see the example input files **ABF2_train.txt & ABF2_test.txt** at `example/`. If you are trying to train *k*mer grammar with your own data, please process your data into the same format as it.
+Please refer to the example input files `ABF2_train.txt` and `ABF2_test.txt` in the `example/` directory. If you intend to train a *k*-mer grammar with your own data, ensure that your data is formatted in the same way.
 
-Each input file including test and train file having two columns separated by **','** in which first column is: "dna_string" char and second columns is: "bound" integer (either 1 for bound state or 0 for non-bound state).
+Each input file, whether for testing or training, consists of two columns separated by a comma. The first column contains `"dna_string"` characters, and the second column contains `"bound"` integers, where 1 indicates a bound state, and 0 indicates a non-bound state.
+
 
 ## 3. Model Training  
 #### 3.1 Train and test a "bag-of-*k*-mers" model
-To find how to train a "bag-of-*k*-mers" model type, run following command:
+To learn how to train a "bag-of-k-mers" model, type the following command:
 
 ```
 python3 kgrammar_bag-of-k-mer_training_testing.py -help
 ```
-This command will help to understand the algorithm's all information and its usage.
-
-To get:
+The following command provides information about the algorithm and its usage.
 
 **Usage:**
 ``` 
@@ -67,13 +64,16 @@ python3 kgrammar_bag-of-k-mer_training_testing.py 8 False ABF2
 
 **Output**
 
-**Final result:** The above example will train a model with k=8 without filtering k-mers by complexity and reading the file under `example/`. The resulting model file `kgrammar_bag-of-k-mers_LR_mode_full_ABF2_8_1688192717.pkl` will be saved to `output/` directory together with a database that contains *k*-mer weights `kgrammar_bag-of-k-mers_weights_mode_full_ABF2_8_1688192717.db`.
- 
-After training the model, results of the test dataset containg accuracy and others performance metrics (including confusion matrix) will be saved to `ABF2_grammar_result.txt` along with ROC, PRC curve plots and the log file is also located at `output/` directory.
+**Final result:** 
+The above example will train a model with k = 8 without filtering *k*-mers by complexity, reading the file under the `example/` directory. The resulting model file, `kgrammar_bag-of-k-mers_LR_mode_full_ABF2_8_1688192717.pkl`, will be saved to the `output/` directory, along with a database that contains k-mer weights, `kgrammar_bag-of-k-mers_weights_mode_full_ABF2_8_1688192717.db`.
+
+After training the model, the results of the test dataset, including accuracy and other performance metrics (including the confusion matrix), will be saved to `ABF2_grammar_result.txt`. ROC and PRC curve plots, along with the log file, are also located in the `output/` directory.
+
 
 #### 3.2 Train and test a "vector-*k*-mers" model
 
-To find how to train a "vector-*k*-mers" model type:
+To learn how to train a "vector-k-mers" model, type:
+
 ```
 python3 kgrammar_vector-k-mer_training_testing.py -help
 ```
@@ -89,7 +89,9 @@ python3 kgrammar_vector-k-mer_training_testing.py 8 5 False ABF2
 ```
 **Output**
 
-**Final result:** The above example will train a model with k=8, window size=5, using uncollapsed *k*-mers and reading the file under `example/`. The vectors for the positive and control sequences will be saved to `output/` directory together with the `ABF2_vector_result.txt` that consists of performance metrics. After training the model, the script with proceed to test and save ROC and PRC curves and log file at the same `output/` directory.
+**Final result:** 
+
+The example above will train a model with k = 8, a window size of 5, and reading the file from the `example/` directory. The vectors for the positive and control sequences will be saved to the `output/` directory, along with the `ABF2_vector_result.txt` file containing performance metrics. After training the model, the script will proceed to test and save ROC and PRC curves, as well as the log file in the same `output/` directory.
 
 ## Citation
 
