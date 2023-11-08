@@ -1,20 +1,21 @@
 # Comparative-analysis-of-plant-TFBS-software: a repository for TFBS identification tools based on different machine and deep learning tools
 
-This repository serves as a hub for various tools developed to identify TFBS (Transcription Factor Binding Sites) for both human and plant transcription factors. It provides corrected and debugged source codes for a range of deep learning methods that have been evaluated. Users can easily download and utilize these tools for TFBS identification. The tools are based on different algorithms, including:
+This repository serves as a hub for 15 software developed to identify TFBS (Transcription Factor Binding Sites) for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these tools for TFBS identification. he tools covered some of the best performing and most recent machine learning (ML) and deep learning (DL) approaches for TFBS discovery.
 
-1. Machine learning-based algorithms, such as:
-- Support Vector Machine (SVM)
-- Logistic regression
-- XGBoost
+<h2>Machine learning-based algorithms, such as:</h2>
+<ol>
+  <li>Support Vector Machine (SVM)</li>
+  <li>Logistic regression</li>
+  <li>XGBoost</li>
+</ol> 
 
-2. Deep learning-based algorithms, which encompass:
-- Convolutional Neural Network (CNN)
-- Complex CNN-based algorithms, including:
-(i) ResNet
-(ii) DenseNet
-- Recurrent Neural Network (RNN)
-- Hybrid deep learning-based algorithms
-- Transformer-based methods
+<h2>Deep learning-based algorithms, which encompass:</h2>
+<ol>
+  <li>Convolutional Neural Network (CNN)</li>
+  <li>Complex CNN-based algorithms, including: (i) ResNet (ii) DenseNet</li>
+  <li>Recurrent Neural Network (RNN)</li>
+  <li>Transformers</li>
+</ol> 
 
 There are many variations of the ML/DL architectures, as demonstrated in **Figure** below:
  
