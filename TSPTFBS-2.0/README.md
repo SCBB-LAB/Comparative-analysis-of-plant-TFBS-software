@@ -53,7 +53,7 @@ Please review the example input files **ABF2_pos.fa** & **ABF2_neg.fa** located 
 **Input:** `ABF2_pos_train.fa`,`ABF2_neg_train.fa`. 
 All data files need to be placed in the same folder before training.
 
-**Note that** both the input files should be in the **FASTA** format.
+**Note*:* Both the input files should be in the **FASTA** format.
 
 - **Usage:**
 Run the following command in the parent directory:
