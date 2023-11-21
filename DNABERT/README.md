@@ -104,6 +104,7 @@ python3 examples/run_pretrain.py \
 
 **Final result** 
 
+
 The trained model and best hyperparameter are saved to a defined (`output/`) directory. 
 
 In the following example, we use DNABERT with *k*-mer = 6.
@@ -191,6 +192,8 @@ python3 examples/run_finetune.py \
 **Output:** 
 
 **Final result** 
+
+
 With the above command, we can fine-tuned our model by using a pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `examples/6-new-12w-0/`. This fine-tuned model is saved in the `examples/ABF2/` directory.
 
 ## 3.4 Prediction
