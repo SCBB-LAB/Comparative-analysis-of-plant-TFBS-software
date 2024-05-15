@@ -36,9 +36,9 @@ unzip DeepSTF.zip
 #### 2.1 Data processing
 In this part, we will first introduce the **data information** used in this model, then describe the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-Please refer to the example input files **ABF2_positive.fa** & **ABF2_negative.fa** in the `example/` directory. If you intend to train WSCNNLSTM with your own data, make sure to format your data in the same way.
+Please refer to the example input files **example/ABF2/Sequence/Train_seq.csv** & **example/ABF2/Sequence/Test_seq.csv** in the `example/` directory for train and test files, respectively. The shape files are in the **example/ABF2/Shape/**. To generate the shape files use **DNAshapeR(https://www.bioconductor.org/packages/release/bioc/html/DNAshapeR.html)**. If you intend to train **DeepSTF** with your own data, make sure to format your data in the same way.
 
-**Note:** Both input files should be in the FASTA format.
+**Note:** Both input files should be in the "csv" format.
 
 #### 2.2 Convert input FASTA sequences into *k*-mer encoding
 **Usage:**
