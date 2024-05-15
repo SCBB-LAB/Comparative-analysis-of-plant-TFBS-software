@@ -1,6 +1,6 @@
-# Comparative-analysis-of-plant-TFBS-software: a repository for TFBS identification tools based on different machine and deep learning tools
+# Comparative-analysis-of-plant-TFBS-software: a repository for TFBSs/TFBRs identification tools based on different machine and deep learning tools
 
-This repository serves as a hub for 15 software developed to identify TFBS (Transcription Factor Binding Sites) for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these tools for TFBS identification. The tools covered some of the best performing and most recent machine learning (ML) and deep learning (DL) approaches for TFBS discovery.
+This repository serves as a hub for 17 software developed to identify Transcription Factor Binding Sites/Rehions (TFBSs/TFBRs) for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these tools for TFBSs/TFBRs identification. The tools covered some of the best performing and most recent machine learning (ML) and deep learning (DL) approaches for TFBSs/TFBRs discovery.
 
 <h2>Machine learning-based algorithms</h2>
 <ol>
@@ -44,7 +44,7 @@ git clone https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-softwar
 cd Comparative-analysis-of-plant-TFBS-software
 ```
 
-In this repository, you will discover a collection of 15 TFBS (Transcription Factor Binding Sites) identification software packages. Consequently, all you have to do is navigate into any of these directories, and then follow the instructions outlined in the respective `README.md` file provided for each of the specific software packages.
+In this repository, you will discover a collection of 17 TFBS (Transcription Factor Binding Sites) identification software packages. Consequently, all you have to do is navigate into any of these directories, and then follow the instructions outlined in the respective `README.md` file provided for each of the specific software packages.
 
 Each software directory contains its own set of guidelines, usage instructions, and other relevant information in the accompanying `README.md` file.
 
