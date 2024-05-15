@@ -57,13 +57,11 @@ python3.8 train.py ABF2
 
 **Final result:** 
 
-All the trained models from *k*-fold cross-validation, labeled as `params0_bestmodel_(fold_number)fold.hdf5`, and prediction scores (named `score_(fold_number)fold.txt`) from *k*-fold cross-validation are stored in the `output/` directory.
-
-The performance metrics for the test dataset are saved in the `result.txt` file, also located in the `output/` directory.
+The trained model for specific TF is saved in the `model/` dirctory. The performance metrics for the test dataset are saved in the `ABF2_stats.txt` file, located in the `output/` directory.
 
 
 ## Citation
 
-If you use WSCNNLSTM in your research, please cite the following paper:</br>
-"[Modeling in-vivo protein-DNA binding by combining multiple-instance learning with a hybrid deep neural network](https://www.nature.com/articles/s41598-019-44966-x)",<br/>
-Scientific Reports 9, Article number: 8484 (2019).
+If you use DeepSTF in your research, please cite the following paper:</br>
+"[DeepSTF: predicting transcription factor binding sites by interpretable deep neural networks combining sequence and shape](https://academic.oup.com/bib/article/24/4/bbad231/7199560)",<br/>
+Briefings in Bioinformatics 24, (2023).
