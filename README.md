@@ -5,7 +5,6 @@ This repository serves as a hub for 17 software developed to identify Transcript
 <h2>Machine learning-based algorithms</h2>
 <ol>
   <li>Support Vector Machine (SVM)</li>
-  <li>Logistic regression</li>
   <li>XGBoost</li>
 </ol> 
 
