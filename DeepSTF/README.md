@@ -36,7 +36,7 @@ unzip DeepSTF.zip
 #### 2.1 Data processing
 In this part, we will first introduce the **data information** used in this model, then describe the training **data formats**, and finally introduce how to create a data set that meets the model requirements.
 
-Please refer to the example input files **example/ABF2/Sequence/Train_seq.csv** & **example/ABF2/Sequence/Test_seq.csv** in the `example/` directory for train and test files, respectively. The shape files are in the **example/ABF2/Shape/**. To generate the shape files use **DNAshapeR** (https://www.bioconductor.org/packages/release/bioc/html/DNAshapeR.html. If you intend to train **DeepSTF** with your own data, make sure to format your data in the same way.
+Please refer to the example input files **example/ABF2/Sequence/Train_seq.csv** & **example/ABF2/Sequence/Test_seq.csv** in the `example/` directory for train and test files, respectively. The shape files are in the **example/ABF2/Shape/**. To generate the shape files use [DNAshapeR] (https://www.bioconductor.org/packages/release/bioc/html/DNAshapeR.html. If you intend to train **DeepSTF** with your own data, make sure to format your data in the same way.
 
 **Note:** Both input files should be in the "csv" format.
 
@@ -104,7 +104,7 @@ python3 train_val_test.py -datalable ./output/ABF2_datalabel.hdf5 -k 3 -run 'ws'
 
 **Final result:** 
 
-All the trained models from *k*-fold cross-validation, labeled as    `params0_bestmodel_(fold_number)fold.hdf5`, and prediction scores (named `score_(fold_number)fold.txt`) from *k*-fold cross-validation are stored in the `output/` directory.
+All the trained models from *k*-fold cross-validation, labeled as `params0_bestmodel_(fold_number)fold.hdf5`, and prediction scores (named `score_(fold_number)fold.txt`) from *k*-fold cross-validation are stored in the `output/` directory.
 
 The performance metrics for the test dataset are saved in the `result.txt` file, also located in the `output/` directory.
 
