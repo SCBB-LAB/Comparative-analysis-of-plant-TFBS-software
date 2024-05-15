@@ -5,7 +5,7 @@ DeepSTF, a unique architecture integrating CNN, improved transformer encoder str
 The architecture of the model and the calibration phase steps are explained in this **Figure** from the paper:
 
 <p align="center">
-<img src="WSCNNLSTM.jpg">
+<img src="deepstf.png">
 </p>
 <p align="center"><b/>Figure: The model workflow</b></p>
 
@@ -26,10 +26,10 @@ Users have their own choice of how to install required packages. But to efficien
 - scipy 
 - matplotlib
 
-To extract the source code for WSCNNLSTM, execute the following commands:
+To extract the source code for DeepSTF, execute the following commands:
 
 ```
-unzip WSCNNLSTM.zip
+unzip DeepSTF.zip
 ```
 ## 2. Data information
 
