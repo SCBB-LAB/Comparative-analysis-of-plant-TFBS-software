@@ -40,65 +40,18 @@ Please refer to the example input files **example/ABF2/Sequence/Train_seq.csv** 
 
 **Note:** Both input files should be in the "csv" format.
 
-#### 2.2 Convert input FASTA sequences into *k*-mer encoding
-**Usage:**
+## 3. Model Training on integrated CNN, transformer encoder structure, and Bi-LSTM
 
-Execute the following command in the parent directory to perform *k*-mer encoding for both positive and negative sequences.
+#### 3.1 Training and evaluation of the DeepSTF model
 
-```
-python3 encoding.py posfile negfile outfile -m mapperfile -c instance_len -s instance_stride --no-reverse -kmer kmer -run 'run'
-
-Passing arguments:
-
-    "posfile",  type=str, help="Positive sequences in FASTA/TSV format (with .fa/.fasta or .tsv extension)")
-    "negfile",  type=str,help="Negative sequences in FASTA/TSV format")
-    "outfile",  type=str, help="Output file (example: $MODEL_TOPDIR$/output/train.hdf5). ")
-    "-m", "--mapperfile", dest="mapperfile", default="", help="A file mapping each nucleotide to a vector.")
-    "-l", "--labelname", dest="labelname",default='label', help="The group name for labels in the HDF5 file")
-    "-d", "--dataname", dest="dataname",default='data', help="The group name for data in the HDF5 file")
-    "-c", "--instance_len", dest="instance_len", type=int, default=100, help="The length of instance")
-    "-s", "--instance_stride", dest="instance_stride", type=int, default=20, help="The stride of getting instance")
-    "-kernel", "--kernelsize", dest="kernelsize", type=int, default=24, help="The stride of getting instance")
-    '--reverse', dest='reverse', action='store_true', help='build the reverse complement.')
-    '--no-reverse', dest='reverse', action='store_false', help='not to build the reverse complement.')
-    "-kmer", "--kmer", dest="kmer", type=int, default=1, help="the length of kmer")
-    "-run", "--run", dest="run", type=str, default='ws', help="order")
-```
-For example, run the following command for the 3 *k*-mer:
-- **Input:** `ABF2_positive.fa`,`ABF2_negative.fa` in `example/` directory. 
-
-```
-python3 encoding.py ./example/ABF2_positive.fa ./example/ABF2_negative.fa ./output/ABF2_datalabel.hdf5 -m ./mappers/3mer.txt -c 120 -s 10 --no-reverse -kmer 3 -run 'ws'
-```
-**Output:** 
-The output file (`ABF2_datalabel.hdf5`) containing specific *k*-mer encoding data is saved in the `output/` directory.
-
-## 3. Model Training Based on Multi-instance learning and hybrid neural network
-
-#### 3.1 Training and evaluation of the WSCNNLSTM model
-
-**Input:** The output file `datalabel.hdf5` from the specific *k*-mer encoding serves as the input file for model training. 
+**Input:** The output files shold be in sequence and shape format for the model training as provided in the `example/ABF2/` directory.
 
 **Usage:**
 In the parent directory, execute the following command for model training and the calculation of evaluation metrics on the test dataset:
 
 ```
-python3 train_val_test.py -datalable datalable -k kmer -run 'run' -batchsize batchsize -params params
+python3.8 train.py ABF2
 
-    '-datalable', dest='datalable', type=str, help='Positive data for training, testing')
-    '-k', dest='k_folds', type=int, default=3, help='k-folds cross-validation')
-    '-kernelsize', dest='kernelsize', type=int, default=24, help='the kernel size of convolutional layer')
-    '-batchsize', dest='batchsize', type=int, default=300, help='the size of one batch')
-    '-ratio', dest='ratio', type=float, default=0.125, help='the propotion of validation data over the training data')
-    '-params', dest='params', type=int, default=1, help='the number of paramter settings')
-    '-train', dest='train', action='store_true', default=True, help='only test step')
-    '-plot', dest='plot', action='store_true', default=True, help='only test step')
-    '-run', dest='run', type=str, default='nows', help='three encoding methods, including ws, nows')
-```
-For example, run the following command to train the model on the training dataset and test it on the test dataset
-    
-```
-python3 train_val_test.py -datalable ./output/ABF2_datalabel.hdf5 -k 3 -run 'ws' -batchsize 300 -params 12
 ```
 **Output:** 
 
