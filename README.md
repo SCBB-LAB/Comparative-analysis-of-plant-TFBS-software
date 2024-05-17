@@ -14,6 +14,7 @@ This repository serves as a hub for 17 software developed to identify Transcript
   <li>Complex CNN-based algorithms, including: (i) ResNet (ii) DenseNet</li>
   <li>Recurrent Neural Network (RNN)</li>
   <li>Transformers</li>
+  <li>Hybrid (i) CNN+RNN and (ii) DesnseNet+Transformer</li>
 </ol> 
 
 There are many variations of the ML/DL architectures, as demonstrated in **Figure** below:
