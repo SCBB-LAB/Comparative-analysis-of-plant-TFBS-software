@@ -1,4 +1,4 @@
-# Comparative-analysis-of-plant-TFBS-software: a repository for TFBSs/TFBRs identification tools based on different machine and deep learning tools
+# Comparative-analysis-of-plant-TFBS-software: a repository for TFBSs/TFBRs identification tools based on different machine and deep learning algorithms
 
 This repository serves as a hub for 17 software developed to identify Transcription Factor Binding Sites/Rehions (TFBSs/TFBRs) for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these tools for TFBSs/TFBRs identification. The tools covered some of the best performing and most recent machine learning (ML) and deep learning (DL) approaches for TFBSs/TFBRs discovery.
 
