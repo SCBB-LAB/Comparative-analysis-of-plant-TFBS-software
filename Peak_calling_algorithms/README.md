@@ -173,18 +173,17 @@ MUSIC -help
 
 
 ## 4. Ritornello 
-# Ritornello
 Ritornello is a ChIP-seq peak calling algorithm based on signal processing that can accurately call binding events without the need to do a pair total DNA input or IgG control sample.  It has been tested for use with narrow binding events such as transcription factor ChIP-seq.
 
 [Ritornello Preprint](http://biorxiv.org/content/early/2015/12/11/034090)
 
-# Download precompiled binaries
+##### Download precompiled binaries
 
 Currently compiled for ubuntu x64. Mac and Windows versions coming soon.
 
 [Download](https://github.com/kstant0725/Ritornello/releases)
 
-# Compiling on ubuntu:
+##### Compiling on ubuntu:
 
 install dependencies:
 
@@ -213,7 +212,7 @@ Compile:
 The executable is then made at `bin/Ritornello`.
 You can move it where ever you like and/or add it to your path, or simply run it from its bin location.
 
-# Creating a sorted bam file:
+#### Creating a sorted bam file:
 
 This tutorial assumes the user starts with sequenced ChIP-seq reads in the fastq format, `MyFile.fastq` for singled end or `MyFile_1.fastq` and `MyFile_2.fastq` for paired-end.
 
@@ -243,7 +242,7 @@ Indexing the bam file is useful so that it can be used with other tools such as 
 
 This will create an index `MySortedBamFile.bam.bai` file in the same directory
 
-# Using Ritornello:
+#### Using Ritornello:
 -basic usage
 
 `./Ritornello -f MySortedBamFile.bam -o file_name`
@@ -254,7 +253,7 @@ Where `MySortedBamFile.bam` is an index/sorted bam file that can be obtained by 
 The full script with details on how to create all required files and run the script is provided
 [here](https://github.com/KlugerLab/Ritornello/blob/master/Scripts/AnalyzeRitornelloOutput.R)
  
-# Ritornello options:
+#### Ritornello options:
 `--help`	print the help message
 
 `--version`	print Ritornello's current version
@@ -276,7 +275,7 @@ Ex. `-o /home/MyUser/MyOutputPrefix` would report called peaks to `/home/MyUser/
 
 `--no-artifact-handling`	Specifying the `--no-artifact-handling` option tells Ritornello not to try to detect and remove read length artifacts.  You can add this option if your reads are fairly long and you suspect there wont be any issues with artifacts related to mismapping of reads.
 
-# Ritornello advanced options:
+#### Ritornello advanced options:
 
 `--debug-folder`	Specify a folder to print out debug files (must end with a "/").  This is mainly used for development purposes.
 
