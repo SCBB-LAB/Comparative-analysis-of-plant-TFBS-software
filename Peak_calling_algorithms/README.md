@@ -17,7 +17,7 @@ It contains the following tools:
 2. `lc`: library complexity calculator useful for QC statistics. Calculates the ratio of unique reads over total reads. Only accepts bam files.
 3. `nr`: a noise ratio estimator useful for QC statistics. Estimates signal to noise ratio which is an indicator for ChIP enrichment.
 4. `bcp`: ChIP-Seq peak caller. Tuned for the discovery of broad peaks. BCP supports HTML-based annotation reports.
-5. `ccat`: ChIP-Seq peak caller. Tuned for the discovery of broad peaks. CCAT supports HTML-based annotation reports. Peakranger is installed on [Biowulf.](https://hpc.nih.gov/apps/peakranger.html) 
+5. `ccat`: ChIP-Seq peak caller. Tuned for the discovery of broad peaks. CCAT supports HTML-based annotation reports.
 
 ##### Peak calling using PeakRanger 
 
@@ -283,20 +283,16 @@ Ex. `-o /home/MyUser/MyOutputPrefix` would report called peaks to `/home/MyUser/
 
 `--FLD-file`		Specify a fragment length distribution for use with this run.  FLD files are printed to fld.txt in the debug folder when the option is specified.  It is simply a vector giving the distibution of the fragment lengths.  Mainly used for development purposes
 
-
 <hr>
-
 
 ## 2. MACS2 
 ##### Description:
 MACS empirically models the length of the sequenced ChIP fragments, which tends to be shorter than sonication or library construction size estimates, and uses it to improve the spatial resolution of predicted binding sites. MACS also uses a dynamic Poisson distribution to effectively capture local biases in the genome sequence, allowing for more sensitive and robust prediction. MACS compares favorably to existing ChIP-Seq peak-finding algorithms and can be used for ChIP-Seq with or without control samples.
 
 
-
 ##### Running MACS2 (Narrow Peak Mode):  
 
 macs2 callpeak -t TF.bam -c control.bam --format=BAM --name=TF --gsize=genome_size_of_specise --tsize=26
-
 
 Input file options
 
@@ -305,9 +301,7 @@ Input file options
 -    -f: format of input file; Default is “AUTO” which will allow MACS to decide the format automatically.
 -    -g: mappable genome size which is defined as the genome size which can be sequenced; some precompiled values provided.
 
-
 Output arguments
-
 
 -   --outdir: MACS2 will save all output files into speficied folder for this option
 -   -n: The prefix string for output files
@@ -319,7 +313,6 @@ Output arguments
 ##### Description:
 
 **LanceOtron** is a machine learning, genomic data extraction and analysis tool trained for ATAC-seq, ChIP-seq, and DNase-seq peak calling. A freely available and fully-featured webtool version, utilising the graphical user interface [MLV](https://mlv.molbiol.ox.ac.uk) and hosted at the [MRC WIMM Centre of Computational Biology, University of Oxford](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology), can be found at [LanceOtron.molbiol.ox.ac.uk](https://lanceotron.molbiol.ox.ac.uk).
-
 
 ## Python Package and Requirements
 
@@ -388,7 +381,6 @@ All LanceOtron modules require a bigwig file to supply the model with coverage d
 > `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`
 
 The options used in this command are important, as they affect the shape of peaks and therefore the neural network's assessment. Extending the reads out to the fragment length represents a more accurate picture of coverage (N.B for paired end sequencing the extension length is automatically determined, single end tracks will require the user to specify the `--extendReads` length), as does using a bin size of 1 (the `--bs` flag). We recommend RPKM normalisation, as this was also used for the training data.
-
 
 ## Citation
 
