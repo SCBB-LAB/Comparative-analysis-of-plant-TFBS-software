@@ -21,8 +21,9 @@ It contains the following tools:
 
 ##### Peak calling using PeakRanger 
 
+```
 ./peakranger ranger -d input.bam -c control.bam -o out_file.txt --format bam
-
+```
 
 ## ranger
   input
