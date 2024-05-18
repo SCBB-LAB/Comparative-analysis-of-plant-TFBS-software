@@ -1,10 +1,24 @@
-#PTFSpot
+# PTFSpot
 
-##Description
+<p align="center">
+  <img src="logo.png" style="width:80%; height: 450px; " />
+</p>
 
-PTFSpot: Deep co-learning on transcription factors and their binding regions attains impeccable universality in plants.
+
+## Description
+
+<i><b>PTFSpot</b></i>: Deep co-learning on transcription factors and their binding regions attains impeccable universality in plants.
 
 Unlike animals, variability in transcription factors (TF) and their binding regions (TFBR) across the plants species is a major problem which most of the existing TFBR finding software fail to tackle, rendering them hardly of any use. This limitation has resulted into underdevelopment of plant regulatory research and rampant use of Arabidopsis like model species, generating misleading results. Here we report a revolutionary transformers based deep-learning approach, PTFSpot, which learns from TF structures and their binding regions co-variability to bring a universal TF-DNA interaction model to detect TFBR with complete freedom from TF and species specific models’ limitations. During a series of extensive benchmarking studies over multiple experimentally validated data, it not only outperformed the existing software by >30% lead, but also delivered consistently >90% accuracy even for those species and TF families which were never encountered during model building process. PTFSpot makes it possible now to accurately annotate TFBRs across any plant genome even in the total lack of any TF information, completely free from the bottlenecks of species and TF specific models.
+
+## Architecture
+
+<p align="center">
+  <img src="Figure.png" style="width:70%; height: 900px; " />
+</p>
+
+
+<b>Figure: Implementation of the PTFSpot Deep Co-learning system using Transformers and DenseNet to identify TF binding regions across plant genomes.</b> The first part is a 14 heads attention transformers which learn from the dimeric, pentameric and heptameric words representations of any given sequence arising from anchoring prime motif’s context. In the parallel, the bound TF’s structure is learned by the DenseNet. Learning by both partners are joined finally together, which is passed on to the final fully connected layers to generate the probability score for existence of binding region in the center.
 
 ## Web server
 
