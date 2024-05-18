@@ -1,4 +1,4 @@
-# Benchmarking ChIP-Seq Peak Callers
+# Benchmarking Peak Callers for plant-specific ChIP-seq dataset
 
 ## Table of Contents
 > 1. **[PeakRanger](#1-peakranger)**
