@@ -217,6 +217,66 @@ python3 examples/compute_result.py --pred_path examples/ABF2/pred_results.npy --
 
 Using the above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2` directory, make predictions on the `dev.tsv` file and save the prediction result in the `pred_results.npy` file located at `examples/ABF2`. The evaluation metrics on the test dataset (`dev.tsv`) are saved in the `ABF2_result.txt` file in the `examples/ABF2/` directory.
 
+## 4. Visualization
+
+Visualiazation of DNABERT consists of 2 steps. Calcualate attention scores and Plot.
+
+#### 4.1 Calculate attention scores
+
+calculate with only one model (For example, DNABERT6)
+
+```
+export KMER=6
+export MODEL_PATH=examples/ABF2
+export DATA_PATH=examples/ABF2
+export PREDICTION_PATH=examples/ABF2
+
+python3.8 examples/run_finetune.py \
+    --model_type dna \
+    --tokenizer_name=dna$KMER \
+    --model_name_or_path $MODEL_PATH \
+    --task_name dnaprom \
+    --do_visualize \
+    --visualize_data_dir $DATA_PATH \
+    --visualize_models $KMER \
+    --data_dir $DATA_PATH \
+    --max_seq_length 81 \
+    --per_gpu_pred_batch_size=16   \
+    --output_dir $MODEL_PATH \
+    --predict_dir $PREDICTION_PATH \
+    --n_process 96
+```
+
+With the above command, the fine-tuned DNABERT model will be loaded from `MODEL_PATH` , and calculates attention scores on the `dev.tsv` file that saved in `DATA_PATH` and save the result at `PREDICTION_PATH`.
+
+Add --fp16 tag if you want to perfrom mixed precision. (You have to install the 'apex' from source first).
+
+## 5. Motif analysis
+
+Once the attention scores are generated, we can proceed further to perform motif analysis using `motif/find_motifs.py`:
+
+```
+
+export KMER=6
+export DATA_PATH=examples/ABF2
+export PREDICTION_PATH=examples/ABF2
+export MOTIF_PATH=examples/ABF2
+
+python3.8 motif/find_motifs.py \
+    --data_dir $DATA_PATH \
+    --predict_dir $PREDICTION_PATH \
+    --window_size 24 \
+    --min_len 5 \
+    --pval_cutoff 0.005 \
+    --min_n_motif 3 \
+    --align_all_ties \
+    --save_file_dir $MOTIF_PATH \
+    --verbose
+```
+
+The script will generate a .txt file and a weblogo .png file for each motif under `MOTIF_PATH`.
+
+
 ## Citation
 If you have used DNABERT in your research, please cite the following paper:</br>
 "[DNABERT: pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome ](https://academic.oup.com/bioinformatics/article/37/15/2112/6128680)",<br/>
