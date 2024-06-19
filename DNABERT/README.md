@@ -196,7 +196,7 @@ python3 examples/run_finetune.py \
 
 With the above command, we can fine-tuned our model by using a pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `examples/6-new-12w-0/`. This fine-tuned model is saved in the `examples/ABF2/` directory.
 
-## 4.4 Prediction
+#### 4.4 Prediction
 **Prediction on test dataset**
 After the model is fine-tuned, we can get prediction score by running the following command:
 
