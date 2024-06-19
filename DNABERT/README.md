@@ -109,9 +109,9 @@ The trained model and best hyperparameter are saved to a defined (`output/`) dir
 
 In the following example, we use DNABERT with *k*-mer = 6.
 
-## 3 Fine-tune (Skip this section if you use fine-tuned model)
+## 4 Fine-tune (Skip this section if you use fine-tuned model)
 
-#### 3.1 Download pre-trained DNABERT
+#### 4.1 Download pre-trained DNABERT
 
 [DNABERT3](https://drive.google.com/file/d/1nVBaIoiJpnwQxiz4dSq6Sv9kBKfXhZuM/view?usp=sharing)
 
@@ -127,7 +127,7 @@ Download the pre-trained model to the `examples/` directory, where your training
 unzip 6-new-12w-0.zip
 ```
 
-#### 3.2 Fine-tune with pre-trained model
+#### 4.2 Fine-tune with pre-trained model
 
 In the following example, we use DNABERT with *k*-mer = 6.
 
@@ -154,7 +154,7 @@ python3 train_test.py examples/ABF2/ABF2_positive.tsv examples/ABF2/ABF2_negativ
 For training dataset: output file (train.tsv)
 For testing dataset: output file (dev.tsv)
 
-#### 3.3 Model Training Based on Transformer
+#### 4.3 Model Training Based on Transformer
 - **Training** 
 **Input:** `train.tsv`,`dev.tsv`. 
 All data input files need to be placed in the same folder before training, such as in the `example/ABF2` directory. If you are trying to train DNABERT with your own data, please process your data into the same format as it.
@@ -196,7 +196,7 @@ python3 examples/run_finetune.py \
 
 With the above command, we can fine-tuned our model by using a pre-trained DNABERT model on 6-*k*-mer and it will be loaded from `examples/6-new-12w-0/`. This fine-tuned model is saved in the `examples/ABF2/` directory.
 
-## 3.4 Prediction
+## 4.4 Prediction
 **Prediction on test dataset**
 After the model is fine-tuned, we can get prediction score by running the following command:
 
@@ -217,11 +217,11 @@ python3 examples/compute_result.py --pred_path examples/ABF2/pred_results.npy --
 
 Using the above commands, the fine-tuned DNABERT model will be loaded from `examples/ABF2` directory, make predictions on the `dev.tsv` file and save the prediction result in the `pred_results.npy` file located at `examples/ABF2`. The evaluation metrics on the test dataset (`dev.tsv`) are saved in the `ABF2_result.txt` file in the `examples/ABF2/` directory.
 
-## 4. Visualization
+## 5. Visualization
 
 Visualiazation of DNABERT consists of 2 steps. Calcualate attention scores and Plot.
 
-#### 4.1 Calculate attention scores
+#### 5.1 Calculate attention scores
 
 calculate with only one model (For example, DNABERT6)
 
@@ -251,7 +251,7 @@ With the above command, the fine-tuned DNABERT model will be loaded from `MODEL_
 
 Add --fp16 tag if you want to perfrom mixed precision. (You have to install the 'apex' from source first).
 
-## 5. Motif analysis
+## 6. Motif analysis
 
 Once the attention scores are generated, we can proceed further to perform motif analysis using `motif/find_motifs.py`:
 
