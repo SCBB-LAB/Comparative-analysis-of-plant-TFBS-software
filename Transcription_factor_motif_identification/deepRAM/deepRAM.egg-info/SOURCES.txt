@@ -1,0 +1,7 @@
+setup.py
+deepRAM.egg-info/PKG-INFO
+deepRAM.egg-info/SOURCES.txt
+deepRAM.egg-info/dependency_links.txt
+deepRAM.egg-info/entry_points.txt
+deepRAM.egg-info/requires.txt
+deepRAM.egg-info/top_level.txt

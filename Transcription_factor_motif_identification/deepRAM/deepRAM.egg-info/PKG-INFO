@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: deepRAM
+Version: 1.0.0
+Summary: sequence specificities prediction of DNA- and RNA-binding proteins using deep learning approach
+Home-page: https://github.com/MedChaabane/deepRAM
+Author: Ameni Trabelsi, Mohamed Chaabane and Asa Ben Hur
+Author-email: asa@cs.colostate.edu
+Maintainer: Ameni Trabelsi, Mohamed Chaabane
+Maintainer-email: chaabanemohamed2@gmail.com
