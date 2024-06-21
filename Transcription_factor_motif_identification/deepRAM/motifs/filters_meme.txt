@@ -1,0 +1,7 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+Background letter frequencies:
+A 0.3193 C 0.1763 G 0.1783 T 0.3261
+
