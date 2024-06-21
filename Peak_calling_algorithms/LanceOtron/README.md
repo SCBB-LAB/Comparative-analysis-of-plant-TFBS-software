@@ -34,7 +34,7 @@ There are three ways to install LanceOTron. The first and second methods are rec
 LanceOTron is [hosted on Pypi](https://pypi.org/project/lanceotron/) and can be easily installed using `pip`. 
 
 ```sh
-pip install lanceotron
+python3 -m pip install lanceotron
 ```
 
 ### Method 2: Conda installation
@@ -58,9 +58,9 @@ We recommend using a fresh virtual environment with Python 3.7+.
 git clone git@github.com:LHentges/LanceOtron.git # Step 1
 cd LanceOTron/lanceotron
 
-pip install -r requirements.txt # Step 2
+python3 -m pip install -r requirements.txt # Step 2
 
-pip install -e . # Step 3
+python3 -m pip install -e . # Step 3
 
 python -m unittest # Step 4
 ```
@@ -78,6 +78,19 @@ All LanceOtron modules require a bigwig file to supply the model with coverage d
 > `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`
 
 The options used in this command are important, as they affect the shape of peaks and therefore the neural network's assessment. Extending the reads out to the fragment length represents a more accurate picture of coverage (N.B for paired end sequencing the extension length is automatically determined, single end tracks will require the user to specify the `--extendReads` length), as does using a bin size of 1 (the `--bs` flag). We recommend RPKM normalisation, as this was also used for the training data.
+
+```
+samtools index SRR8525028_sorted.bam
+samtools flagstat SRR8525028_sorted.bam
+bamCoverage --bam SRR8525028_sorted.bam -o SRR8525028
+```
+The output file for bamCoverage will be generated in `.bw` format.
+
+Finally run `LanceOtron` on your sorted bam files
+
+```
+lanceotron callPeaksInput control_file.bw  -i treated_file.bw -f treated_neg
+```
 
 
 ## Citation
