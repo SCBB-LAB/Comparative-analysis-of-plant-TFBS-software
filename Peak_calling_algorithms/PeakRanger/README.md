@@ -35,108 +35,18 @@ System Requirement
 
 How PeakRanger works 
 =================
+To extract the source code for PeakRanger, execute the following commands:
 
-`ranger`:
-It calles narrow peaks
-It turns out that ranger servers better as a narrow-peak caller. It behaves in a conservative but sensitive way compared to similar algorithms.
+```
+unzip PeakRanger.zip
+```
+Now enter into parent directory by typying:
 
-The algorithm uses a staged algorithm to discover enriched regions and the summits within them. In the first step, PeakRanger implements a FDR based adapative thresholding algorithm, which was originally proposed by PeakSeq. PeakRanger uses this thresholder to find regions with enriched reads that exceed expects. After that, PeakRanger searches for summits in these regions. The summit-search algorithm first looks for the location with largest number of reads. It then searchs for sub-summits with the sensitivity, the delta -r, specified by the user. Smaller -r will generate more summits.The coverage profiles are smoothed and padded before calling summits. The smoothing grade varies with -b. Higher smoothing bandwidth results less false summits at the cost of degraded summit accuracy .To measure the significance of the enriched regions, PeakRanger uses binormial distribution to model the relative enrichment of sample over control. A p value is generated as a result. Users can thus select highly significant peaks by using a smaller -p.
+```
+cd PeakRanger
+```
 
-`Reads extending`:
-ranger extends reads before calling peaks. The default reads extension length is 200. However, users can change this by -l if the datasets come with a different fragment size. The extension length will change the reads coverages generated from the raw reads as it will change the heights of peaks.
-
-`wigpe and wig`:
-To help visualizing the results, wigpe and wig generates reads coverage files in the wig format. These files can then be loaded into browsers to evaluate the authenticity of called peaks. Since smaller wiggle files take less time and memory to load, --split can be set to generate one small wig file per chromosome.
-
-`ccat`:
-Calling broad peaks
-Calling broad peaks remain unsolved for the ChIP-Seq community. It seems the CCAT algorithm is one of those that is designed for this problem, especially for calling histone modification marks.
-
-For details of the algorithm, please refer to the original manuscript of CCAT:
-
-Xu, H., L. Handoko, et al. (2010).A signal-noise model for significance analysis of ChIP-seq with negative control.Bioinformatics 26(9): 1199-1204.(http://bioinformatics.oxfordjournals.org/content/26/9/1199)
-
-`bcp`:
-Calling broad peaks
-bcp also serves as a broad peak caller. In many situations we perfer bcp over ccat while there are certain scenarios ccat outperforms. A drawback of the current implementation is that it does not support summit calling which is supported by `ranger` and `ccat`.
-
-The algorithm
-For details of the algorithm, please refer to the original manuscript of bcp:
-
-Xing H, Mo Y, Liao W, Zhang MQ (2012) Genome-Wide Localization of Protein-DNA Binding and Histone Modification by a Bayesian Change-Point Method with ChIP-seq Data. PLoS Comput Biol 8(7): e1002613. doi:10.1371/journal.pcbi.1002613.(http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002613)
-
-`nr`:
-nr is a module of the original CCAT algorithm that estimates the similarity of data and control. It indicates roughly how data departs from control
-
-`lc`:
-lc measures the percentage of unique reads. The result measures how diversified the reads are in the dataset. The idea is from:
-
-Chen, Yiwen, Nicolas Negre, Qunhua Li, Joanna O. Mieczkowska, Matthew Slattery, Tao Liu, Yong Zhang, et al. 2012. Systematic evaluation of factors influencing ChIP-seq fidelity. Nature Methods 9(6): 609-614.(http://www.nature.com/nmeth/journal/v9/n6/full/nmeth.1985.html)
-
-Compiling PeakRanger from source codes
-======================================
-
-Compiling in Ubuntu
-------------------
-
-Required libraries before compiling:
-
-1. The Boost library v1.56 or newer
-
-2. Pthread
-
-3. g++
-
-4. zlib
-
-Install any missing items via `apt-get install` .
-Once all the libraries are installed, go to the root path of the unzipped package and type:
-
- `make`
-
-This will generate `bin/peakranger`. Compilation in other Linux distributions is similar.
-
-We suggest that you modify the `STATIC` variable in the makefile:
-
-  `STATIC = -static`
-
-This will produce a stand-alone binary file that is easier to use.
-
-Compiling in Mac OSX
-------------------
-
-Required libraries before compiling:
-
-1. Xcode developer tool kit from Apple
-
-2. The Boost library v1.56 or newer
-
-3. zlib
-
-4. Pthread
-
-The Xcode kit can be installed using the OSX installation disk. If you dont have the installation disk, you can also get it for free from Apple Developer. The tool kit installs essential command line tools such as make and C++ compilers. The Boost library can be installed by following the instructions on its website. If you do not have root access,
-modify the BOOST_PATH variable in the make file:
-
-  `BOOST_PATH = -I/path/to/your/boost/header -L/path/to/your/boost/library`
-
-Once all the libraries are installed, go to the root path of the unzipped package and type:
-
-  `make` 
-
-If the compilation failed, double check the BOOST_PATH variable is correctly set.
-The resulting binaries require dynamic boost library files, to make sure `peakranger` can find
-these files, type :
-
-  `export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/path/to/your/boost/library`
-
-please change the `path` accordingly.
-
-Compiling in Windows
-------------------
-Not supported but should be possible.
-
-Synopsis
+Usage
 ===================
   peakranger lc sample.bam 
   
@@ -592,3 +502,38 @@ Boost: http://www.boost.org/
 IGV: http://www.broadinstitute.org/igv/
 Hadoop Streaming: http://hadoop.apache.org/common/docs/r0.15.2/streaming.html
 NGS: http://en.wikipedia.org/wiki/DNA_sequencing
+
+```
+./peakranger ranger -d treated_file_name.bam -c control_file_name.bam -o treated_file_name_out.txt --format bam
+```
+Here, option `ranger` is used for peak calling for ChIP-seq dataset. The data input for both treated as well as control files are in the `bam` file format.
+
+`ranger`:
+It turns out that ranger servers better as a narrow-peak caller. It behaves in a conservative but sensitive way compared to similar algorithms. The algorithm uses a staged algorithm to discover enriched regions and the summits within them. In the first step, PeakRanger implements a FDR based adapative thresholding algorithm, which was originally proposed by PeakSeq. PeakRanger uses this thresholder to find regions with enriched reads that exceed expects. After that, PeakRanger searches for summits in these regions. The summit-search algorithm first looks for the location with largest number of reads. It then searchs for sub-summits with the sensitivity, the delta -r, specified by the user. Smaller -r will generate more summits.The coverage profiles are smoothed and padded before calling summits. The smoothing grade varies with -b. Higher smoothing bandwidth results less false summits at the cost of degraded summit accuracy .To measure the significance of the enriched regions, PeakRanger uses binormial distribution to model the relative enrichment of sample over control. A p value is generated as a result. Users can thus select highly significant peaks by using a smaller -p.
+
+`Reads extending`:
+ranger extends reads before calling peaks. The default reads extension length is 200. However, users can change this by -l if the datasets come with a different fragment size. The extension length will change the reads coverages generated from the raw reads as it will change the heights of peaks.
+
+`wigpe and wig`:
+To help visualizing the results, wigpe and wig generates reads coverage files in the wig format. These files can then be loaded into browsers to evaluate the authenticity of called peaks. Since smaller wiggle files take less time and memory to load, --split can be set to generate one small wig file per chromosome.
+
+`ccat`: Calling broad peaks remain unsolved for the ChIP-Seq community. It seems the CCAT algorithm is one of those that is designed for this problem, especially for calling histone modification marks.
+
+For details of the algorithm, please refer to the original manuscript of CCAT:
+
+Xu, H., L. Handoko, et al. (2010).A signal-noise model for significance analysis of ChIP-seq with negative control.Bioinformatics 26(9): 1199-1204.(http://bioinformatics.oxfordjournals.org/content/26/9/1199)
+
+`bcp`:
+Calling broad peaks
+bcp also serves as a broad peak caller. In many situations we perfer bcp over ccat while there are certain scenarios ccat outperforms. A drawback of the current implementation is that it does not support summit calling which is supported by `ranger` and `ccat`. For details of the algorithm, please refer to the original manuscript of bcp:
+
+Xing H, Mo Y, Liao W, Zhang MQ (2012) Genome-Wide Localization of Protein-DNA Binding and Histone Modification by a Bayesian Change-Point Method with ChIP-seq Data. PLoS Comput Biol 8(7): e1002613. doi:10.1371/journal.pcbi.1002613.(http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002613)
+
+`nr`:
+nr is a module of the original CCAT algorithm that estimates the similarity of data and control. It indicates roughly how data departs from control
+
+`lc`:
+lc measures the percentage of unique reads. The result measures how diversified the reads are in the dataset. The idea is from:
+
+Chen, Yiwen, Nicolas Negre, Qunhua Li, Joanna O. Mieczkowska, Matthew Slattery, Tao Liu, Yong Zhang, et al. 2012. Systematic evaluation of factors influencing ChIP-seq fidelity. Nature Methods 9(6): 609-614.(http://www.nature.com/nmeth/journal/v9/n6/full/nmeth.1985.html)
+
