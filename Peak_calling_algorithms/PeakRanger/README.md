@@ -74,7 +74,11 @@ Muliple usage options are available to run different algorithms on bam files as 
   peakranger bcp --format bam sample.bam contro.bam bcp_result_with_HTML_report_5kb_region --report --gene_annot_file hg19refGene.txt --plot_region 10000
 
 ```
-
+Example for `PeakRanger` peak calling:
+```
+./peakranger ranger -d treated_file_name.bam -c control_file_name.bam -o treated_file_name_out.txt --format bam
+```
+Here, option `ranger` is used for peak calling for ChIP-seq dataset. The data input for both treated as well as control files are in the `bam` file format.
 Command line options
 ===================
 ## nr
@@ -481,25 +485,6 @@ Similar to ranger
   bcp
 Similar to ranger but it does not provide the `_summit.bed` file.
 
-PeakRanger: http://ranger.sourceforge.net
-modENCODE: http://www.modencode.org
-PeakSeq: http://info.gersteinlab.org/PeakSeq
-sourceforge: http://ranger.sourceforge.net
-ChIP-Seq: http://en.wikipedia.org/wiki/Chip-Sequencing
-GNU Scientific Library (GSL): http://www.gnu.org/software/gsl/
-Ubuntu: http://www.ubuntu.com
-confuse option file parser: http://www.nongnu.org/confuse/
-Bowtie: http://bowtie-bio.sourceforge.net
-Hadoop: http://hadoop.apache.org/
-Boost: http://www.boost.org/
-IGV: http://www.broadinstitute.org/igv/
-Hadoop Streaming: http://hadoop.apache.org/common/docs/r0.15.2/streaming.html
-NGS: http://en.wikipedia.org/wiki/DNA_sequencing
-
-```
-./peakranger ranger -d treated_file_name.bam -c control_file_name.bam -o treated_file_name_out.txt --format bam
-```
-Here, option `ranger` is used for peak calling for ChIP-seq dataset. The data input for both treated as well as control files are in the `bam` file format.
 
 `ranger`:
 It turns out that ranger servers better as a narrow-peak caller. It behaves in a conservative but sensitive way compared to similar algorithms. The algorithm uses a staged algorithm to discover enriched regions and the summits within them. In the first step, PeakRanger implements a FDR based adapative thresholding algorithm, which was originally proposed by PeakSeq. PeakRanger uses this thresholder to find regions with enriched reads that exceed expects. After that, PeakRanger searches for summits in these regions. The summit-search algorithm first looks for the location with largest number of reads. It then searchs for sub-summits with the sensitivity, the delta -r, specified by the user. Smaller -r will generate more summits.The coverage profiles are smoothed and padded before calling summits. The smoothing grade varies with -b. Higher smoothing bandwidth results less false summits at the cost of degraded summit accuracy .To measure the significance of the enriched regions, PeakRanger uses binormial distribution to model the relative enrichment of sample over control. A p value is generated as a result. Users can thus select highly significant peaks by using a smaller -p.
