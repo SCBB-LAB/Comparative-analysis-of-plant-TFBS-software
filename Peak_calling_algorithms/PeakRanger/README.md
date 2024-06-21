@@ -48,6 +48,7 @@ cd PeakRanger
 
 Usage
 ===================
+Muliple usage options are used to run different algorithms on bam files as follows:
 ```
   peakranger lc sample.bam 
   
