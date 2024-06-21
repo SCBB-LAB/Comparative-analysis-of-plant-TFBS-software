@@ -36,7 +36,7 @@ System Requirement
 How PeakRanger works 
 =================
 
-* ranger
+`ranger`
  Calling narrow peaks
 It turns out that ranger servers better as a narrow-peak caller. It behaves in a conservative but sensitive way compared to similar algorithms.
 
