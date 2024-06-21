@@ -15,17 +15,6 @@ The suite contains the following tools:
 
 `wigpe` can also generate coverage files for bam files containing spliced reads, such as those from RNA-Seq experiments.
 
-If you use PeakRanger in your research, please cite:
-
-Feng X, Grossman R, Stein L: PeakRanger:A cloud-enabled peak caller for ChIP-seq data.BMC Bioinformatics 2011, 12(1):139.(http://www.biomedcentral.com/1471-2105/12/139/)
-
-If you use the `ccat` tool, please also cite:
-
-Xu, H., L. Handoko, et al. (2010).A signal-noise model for significance analysis of ChIP-seq with negative control.Bioinformatics 26(9): 1199-1204.(http://bioinformatics.oxfordjournals.org/content/26/9/1199)
-
-If you use the `bcp` tool, please also cite:
-
-Xing H, Mo Y, Liao W, Zhang MQ (2012) Genome-Wide Localization of Protein-DNA Binding and Histone Modification by a Bayesian Change-Point Method with ChIP-seq Data. PLoS Comput Biol 8(7): e1002613. doi:10.1371/journal.pcbi.1002613.(http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002613)
 
 System Requirement
 ===================
@@ -523,15 +512,11 @@ To help visualizing the results, wigpe and wig generates reads coverage files in
 
 `ccat`: Calling broad peaks remain unsolved for the ChIP-Seq community. It seems the CCAT algorithm is one of those that is designed for this problem, especially for calling histone modification marks.
 
-For details of the algorithm, please refer to the original manuscript of CCAT:
-
-Xu, H., L. Handoko, et al. (2010).A signal-noise model for significance analysis of ChIP-seq with negative control.Bioinformatics 26(9): 1199-1204.(http://bioinformatics.oxfordjournals.org/content/26/9/1199)
 
 `bcp`:
 Calling broad peaks
 bcp also serves as a broad peak caller. In many situations we perfer bcp over ccat while there are certain scenarios ccat outperforms. A drawback of the current implementation is that it does not support summit calling which is supported by `ranger` and `ccat`. For details of the algorithm, please refer to the original manuscript of bcp:
 
-Xing H, Mo Y, Liao W, Zhang MQ (2012) Genome-Wide Localization of Protein-DNA Binding and Histone Modification by a Bayesian Change-Point Method with ChIP-seq Data. PLoS Comput Biol 8(7): e1002613. doi:10.1371/journal.pcbi.1002613.(http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002613)
 
 `nr`:
 nr is a module of the original CCAT algorithm that estimates the similarity of data and control. It indicates roughly how data departs from control
@@ -539,5 +524,22 @@ nr is a module of the original CCAT algorithm that estimates the similarity of d
 `lc`:
 lc measures the percentage of unique reads. The result measures how diversified the reads are in the dataset. The idea is from:
 
-Chen, Yiwen, Nicolas Negre, Qunhua Li, Joanna O. Mieczkowska, Matthew Slattery, Tao Liu, Yong Zhang, et al. 2012. Systematic evaluation of factors influencing ChIP-seq fidelity. Nature Methods 9(6): 609-614.(http://www.nature.com/nmeth/journal/v9/n6/full/nmeth.1985.html)
 
+
+Citations:
+===============
+If you use PeakRanger in your research, please cite:
+
+"Feng X, Grossman R, Stein L: PeakRanger:A cloud-enabled peak caller for ChIP-seq data.BMC Bioinformatics 2011," 12(1):139.(http://www.biomedcentral.com/1471-2105/12/139/)
+
+If you use the `ccat` tool, please also cite:
+
+Xu, H., L. Handoko, et al. (2010).A signal-noise model for significance analysis of ChIP-seq with negative control.Bioinformatics 26(9): 1199-1204.(http://bioinformatics.oxfordjournals.org/content/26/9/1199)
+
+If you use the `bcp` tool, please also cite:
+
+Xing H, Mo Y, Liao W, Zhang MQ (2012) Genome-Wide Localization of Protein-DNA Binding and Histone Modification by a Bayesian Change-Point Method with ChIP-seq Data. PLoS Comput Biol 8(7): e1002613. doi:10.1371/journal.pcbi.1002613.(http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002613)
+
+If you use the `lc` tool, please also cite:
+
+Chen, Yiwen, Nicolas Negre, Qunhua Li, Joanna O. Mieczkowska, Matthew Slattery, Tao Liu, Yong Zhang, et al. 2012. Systematic evaluation of factors influencing ChIP-seq fidelity. Nature Methods 9(6): 609-614.(http://www.nature.com/nmeth/journal/v9/n6/full/nmeth.1985.html)
