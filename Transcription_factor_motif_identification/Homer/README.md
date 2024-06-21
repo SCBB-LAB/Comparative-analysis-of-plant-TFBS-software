@@ -7,8 +7,6 @@ See http://biowhat.ucsd.edu/homer/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-If Homer is having problems, call Chuck Norris
-
 ===============================================
 Installation:
 
