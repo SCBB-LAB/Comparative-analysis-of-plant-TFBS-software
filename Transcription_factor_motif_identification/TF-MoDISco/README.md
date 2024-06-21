@@ -1,7 +1,7 @@
 # TF-MoDISco
 TF-MoDISco (Transcription Factor MotifDiscovery from Importance Scores), a novel algorithm that leverages per-base importance scores to simultaneously incorporate information from all neurons in the network and generate high-quality, consolidated, non-redundant motifs.
 
-## Python programs for predicting Transcription factor sites (TFBSs) or motif identification and performing DeepLIFT.
+## Python programs for Transcription factor sites (TFBSs) or motif identification.
 ## Dependencies
 The program requires:
   * python==3.7.13
