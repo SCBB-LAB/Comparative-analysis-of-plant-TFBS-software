@@ -1,0 +1,29 @@
+Contact:
+
+Xin Feng 
+peak.ranger@gmail.com
+
+Xin Feng wrote PeakRanger. Four functions from PeakSeq are
+included(Paper by Joel Rozowsky, et. al. Coded in C 
+by Theodore Gibson). Some sources codes from Bowtie are also 
+used. Bowtie can be downloaded from http://bowtie-bio.sf.net.
+Source codes from Bamtools are also included 
+
+PeakRanger's region detection algorithm is derived from PeakSeq.
+
+PeakRanger also uses the following files from Bowtie:
+
+assert_helpers.h
+timer.h
+
+The doc generation system is also adopted from the Bowtie package. 
+
+PeakRanger supports BAM/SAM file I/O with the help from the Bamtools 
+library, specifically, using the following files:
+
+BamAux.h  
+BamReader.cpp  
+BamReader.h  
+BGZF.cpp  
+BGZF.h
+
