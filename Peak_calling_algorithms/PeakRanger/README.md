@@ -528,7 +528,7 @@ lc measures the percentage of unique reads. The result measures how diversified 
 
 Citations:
 ===============
-If you use PeakRanger in your research, please cite:
+If you use `PeakRanger` in your research, please cite:
 
 "Feng X, Grossman R, Stein L: PeakRanger:A cloud-enabled peak caller for ChIP-seq data.BMC Bioinformatics 2011," 12(1):139.(http://www.biomedcentral.com/1471-2105/12/139/)
 
