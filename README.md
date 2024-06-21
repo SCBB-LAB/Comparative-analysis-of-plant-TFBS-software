@@ -1,6 +1,6 @@
 # Comparative-analysis-of-plant-TFBS-software: a repository for peak calling methods, transcription factor regions identification, and transcription factor binding sites or motif identification software tools based on different machine and deep learning algorithms
 
-This repository serves as a hub for 31 software tools for peak calling methods, transcription factor regions (TFBRs) identification, and transcription factor binding sites (TFBSs) or motif identification software tools for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these software tools. The tools covered some of the best performing and most recent machine learning (ML) and deep learning (DL) approaches.
+This repository serves as a hub for 30 software tools for peak calling methods, transcription factor regions (TFBRs) identification, and transcription factor binding sites (TFBSs) or motif identification software tools for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these software tools. The tools covered some of the best performing and most recent machine learning (ML) and deep learning (DL) approaches.
 
 <h2>Machine learning-based algorithms</h2>
 <ol>
