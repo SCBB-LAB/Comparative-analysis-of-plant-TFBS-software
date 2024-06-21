@@ -1,0 +1,5 @@
+[console_scripts]
+PePr = PePr.PePr:argless_main
+PePr-postprocess = PePr.post_processing.post_process_PePr:post_processing_module
+PePr-preprocess = PePr.PePr:pre_processing_module
+
