@@ -48,6 +48,7 @@ cd PeakRanger
 
 Usage
 ===================
+```
   peakranger lc sample.bam 
   
   peakranger nr --format bam sample.bam control.bam
@@ -81,6 +82,8 @@ Usage
   peakranger bcp --format bam sample.bam contro.bam bcp_result 
   
   peakranger bcp --format bam sample.bam contro.bam bcp_result_with_HTML_report_5kb_region --report --gene_annot_file hg19refGene.txt --plot_region 10000
+
+```
 
 Command line options
 ===================
