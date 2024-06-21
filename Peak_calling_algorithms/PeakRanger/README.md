@@ -24,17 +24,12 @@ System Requirement
 
 How PeakRanger works 
 =================
-To extract the source code for PeakRanger, execute the following commands:
-
-```
-unzip PeakRanger.zip
-```
-Now enter into parent directory by typying:
+To extract the source code for PeakRanger, and enter into parent directory by typying:
 
 ```
 cd PeakRanger
-```
-
+``
+`
 Usage
 ===================
 Muliple usage options are available to run different algorithms for input files in `bam` files as follows:
