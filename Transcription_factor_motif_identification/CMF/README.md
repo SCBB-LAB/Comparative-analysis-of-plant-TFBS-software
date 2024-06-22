@@ -5,6 +5,4 @@ Contrast Motif Finder (CMF) is a de novo tool for discovering differentially enr
 
 #### 1.1 Data processing
 
-In this section, we will begin by introducing the **data information** utilized in method. Next, we will describe the training **data formats**. Finally, we will provide instructions on how to create a dataset that adheres to the model's requirements.
-
-
+In this section, we will begin by introducing the **data information** utilized in method. Next, we will describe the training **data formats**. Finally, we will provide instructions on how to create a dataset that adheres to the model's requirements. [Example](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/tree/main/Transcription_factor_motif_identification/CMF/cmfcode/ExampleDataSets).
