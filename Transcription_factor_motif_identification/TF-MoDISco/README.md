@@ -18,7 +18,7 @@ The program requires:
 ## Tutorial
 ###  Usage
 ```
-python3 modisco_test.py <input fasta file> <species> <tf>
+python3 modisco_motif.py <input fasta file> <species> <tf>
 ```
 
 It should be noted ```<species>``` that one is chosen from 'Zea_mays_models','Arabidopsis_models' and 'Oryza_sativa_models'.
@@ -27,9 +27,10 @@ After running the program, a dir about tf-modisco results will be generated in t
 We here provide a `ATHB25_pos.fa` file and employed one of models of Arabidopsis thaliana for an example: 
 
 ```
-python3 modisco2.py Example/ATHB25_pos.fa models/Arabidopsis_models ATHB25
+python3 modisco_motif.py Example/ATHB25_pos.fa models/Arabidopsis_models ATHB25
 ```
-```
+**Final output:** The final motif models are saved the `Example` diectory with all the available motif files PWM (Position Weight Matrix).
+
 ### Citation
 * Huang, G., et al. Densely Connected Convolutional Networks. IEEE Computer Society 2016.
 * Shrikumar, A., Greenside, P. and Kundaje, A. Learning Important Features Through Propagating Activation Differences. 2017.
