@@ -1,11 +1,22 @@
 #     Transcription_factor_motif_identification: A repository for transcription factor binding sites (TFBSs) or motif identification software tools based on different traditional and machine learning algorithms
 
 This repository serves as a hub for 9 software tools for transcription factor binding sites (TFBSs) or motif identification software tools for both human and plant transcription factors. This repository also provides easy to run and executable source codes for all these softwares. Users can easily download, execute, and implement these software tools.
+
+<h2>Traditional motif discovery software tools</h2>
+<ol>
+  <li>Homer</li>
+  <li>Contrast motif finder (CMF)</li>
+  <li>Multiple EM for Motif Elicitation (MEME)</li>
+  <li>MEME-ChIP</li>
+  <li>iFORM</li>
+</ol>  
+
 <h2>Machine learning-based algorithms</h2>
 
-  <li>Convolutional Neural Network (CNN)</li>
-  <li>Complex CNN-based algorithms, including: (i) ResNet (ii) DenseNet</li>
-  <li>Hybrid (i) DesnseNet+Transformer</li>
+  <li>deepRAM (CNN)</li>
+  <li>DESSO (CNN)</li>
+  <li>TF-MoDISco</li>
+  <li>PTF-Vāc (Hybrid DesnseNet+Transformer)</li>
 </ol> 
 
 
