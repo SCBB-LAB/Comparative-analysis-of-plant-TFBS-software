@@ -11,7 +11,7 @@ This repository serves as a hub for 9 software tools for transcription factor bi
   <li>iFORM</li>
 </ol>  
 
-<h2>Machine learning-based algorithms</h2>
+<h2>Machine learning-based motif discovery software tools</h2>
 <ol>
   <li>deepRAM (CNN)</li>
   <li>DESSO (CNN)</li>
