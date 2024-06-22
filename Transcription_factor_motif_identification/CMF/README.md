@@ -17,7 +17,7 @@ The output files are saved to the paraent diectory as  `output.txt`.
 
 # Citation
 If you use CMF in your research, please cite the following paper
-[Co-regulation in embryonic stem cells via context-dependent binding of transcription factors](https://academic.oup.com/bioinformatics/article/29/17/2162/243962?login=true)
+[Co-regulation in embryonic stem cells via context-dependent binding of transcription factors](https://academic.oup.com/bioinformatics/article/29/17/2162/243962?login=true),
 
 
-"Identification of Context-Dependent Motifs by Contrasting ChIP Binding Data (https://academic.oup.com/bioinformatics/article/26/22/2826/227908?login=true).<br/>
+[Identification of Context-Dependent Motifs by Contrasting ChIP Binding Data](https://academic.oup.com/bioinformatics/article/26/22/2826/227908?login=true).
