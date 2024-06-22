@@ -1,5 +1,8 @@
 # Introduction
-Contrast Motif Finder (CMF) is a de novo tool for discovering differentially enriched motifs in two sets of sequences, offering non-discretized PWM estimations corrected for false positives. It generates motifs predominantly found in either experimental or control sequences and provides binding site lists for both sets. For each motif, CMF calculates a likelihood ratio (LR) score for identified sites.
+Contrast Motif Finder (CMF) is a de novo tool for discovering differentially enriched motifs in two sets of sequences, offering non-discretized PWM estimations corrected for false positives. It generates motifs predominantly found in either experimental or control sequences and provides binding site lists for both sets. For each motif, CMF calculates a likelihood ratio (LR) score for identified sites. To run CMF on your input data, enter into the paraent directory:
+```
+cd CMF
+```
 
 ## 1. Data information
 
