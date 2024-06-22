@@ -1,3 +1,12 @@
+# iFORM (Find Occurrence of Regulatory Motifs (iFORM)) 
+This is a tool for scanning DNA sequences with TF motifs represented as PWMs, which integrates five traditional motif discovery programs, namely FIMO, Consensus, STORM, RSAT, and HOMER, through Fisher’s combined probability test.
+
+## Data information
+The software require the transcription factor specific Position Weight Matrix (PWM) and the genomic fasta file.
+
+```
+./iForm --bgfile motif-file --o output_result 10_TF_pwm/AT2G28810_pwm.txt ../10_data/AT2G28810_pos.fa >> AT2G28810_out.txt
+```
 Requirements：The GSL library is required，you need to install GSL library first。You can download from the follow url： http://ftp.kaist.ac.kr/gnu/gnu/gsl/ 
 The latest version should work and version 2.2.1 has been tested. It is mentioned that the gsl library is install to /usr/local/lib by default, you should specify your valid path and add it to the LD_LIBRARY_PATH first.
 
