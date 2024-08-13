@@ -13,7 +13,7 @@ All experiments are executed on CentOS Linux 7 (core) with Python (v2.7.5). Prio
 
 Our code requires external python libraries including tensorflow v1.9.0 GPU-version, biopython v1.71, numpy v1.15.4, six v1.14.0, scikit-image v0.14.5, and matplotlib. You can install them with the pip package manager:
 
-`pip install numpy six matplotlib biopython sklearn scikit-image tensorflow-gpu==1.9.0`
+```pip install numpy six matplotlib biopython sklearn scikit-image tensorflow-gpu==1.9.0```
 
 
 #### 1.2 Install FIMO from the MEME-suite
@@ -42,7 +42,7 @@ https://drive.google.com/file/d/12mrLk9Ci7u2tKB8kuqldGXE9ghAzpbUk/view?usp=shari
 **Data for experiments with the DeepSEA architecture**
 https://drive.google.com/file/d/1UaaqgFlce9FSaBX2RoIz9pDaXacwQ3lW/view?usp=sharing
 
-If the datasets are not downloaded from obove mentioned links, then try to construct your own datasets with following instructions and command lines:
+If the datasets are not downloaded from above mentioned links, then try to construct your own datasets with following instructions and command lines:
 
 It is up to the user to choose between the `DanQ` or `DeepSea` architecture. Therefore, they should navigate to the directory and follow the instructions.
 
@@ -52,7 +52,6 @@ To run the motif scanning tool `FIMO` from the `MEME-suite`, use the following c
 
 ```
 fimo --oc example/ABF2_fimo example/ABF2/meme.txt example/genomes/tair10/tair10.fa
-
 ```
 
 This will generate the `example/ABF2_fimo` directory containing a `fimo.tsv` file and other summary files. Before proceeding, remove the last four lines from the `fimo.tsv` file to avoid an IndexError:
@@ -67,7 +66,6 @@ After these adjustments, run the following command:
 
 ```
 python3 data_prep/data_prep.py  --fimo_file example/ABF2_fimo/fimo.tsv --chipseq example/ABF2_narrow.bed --scope 1000 --resultdir example/ABF2 --datadir example --blockcore c --recorddir example/ABF2
-
 ```
 
 This command will generate three files of `training`, `test`, and `validation` files within `example/ABF2/` directory, which consists of train, test, and validation datasets for a particular TF dataset. These three files are further used to train, test, and validate the model. No run following command to train the model:
