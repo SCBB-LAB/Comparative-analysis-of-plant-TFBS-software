@@ -50,23 +50,17 @@ To preprocess your ChIP-seq dataset, ensure that the identified motifs are in Po
 
 To run the motif scanning tool `FIMO` from the `MEME-suite`, use the following command in your terminal:
 
-```
-fimo --oc example/ABF2_fimo example/ABF2/meme.txt example/genomes/tair10/tair10.fa
-```
+```fimo --oc example/ABF2_fimo example/ABF2/meme.txt example/genomes/tair10/tair10.fa```
 
 This will generate the `example/ABF2_fimo` directory containing a `fimo.tsv` file and other summary files. Before proceeding, remove the last four lines from the `fimo.tsv` file to avoid an IndexError:
 
-```
-python3 data_pre_software.py  --fimo_file example/ABF2_fimo/fimo.tsv --chipseq example/ABF2_narrow.bed --scope 1000 --resultdir example/ABF2 --datadir example --blockcore c --recorddir example/ABF2
-```
+```python3 data_pre_software.py  --fimo_file example/ABF2_fimo/fimo.tsv --chipseq example/ABF2_narrow.bed --scope 1000 --resultdir example/ABF2 --datadir example --blockcore c --recorddir example/ABF2```
 
 If you encounter an error regarding the missing `hg19.fa.fai` file, ensure that the genome file for your species is present in the `genomes/` directory (e.g., tair10.fa.fai for A. thaliana). Additionally, modify `data_prep.py` at lines 52, 53, 256, and 257, and `converter.py` at line 55.
 
 After these adjustments, run the following command:
 
-```
-python3 data_prep/data_prep.py  --fimo_file example/ABF2_fimo/fimo.tsv --chipseq example/ABF2_narrow.bed --scope 1000 --resultdir example/ABF2 --datadir example --blockcore c --recorddir example/ABF2
-```
+```python3 data_prep/data_prep.py  --fimo_file example/ABF2_fimo/fimo.tsv --chipseq example/ABF2_narrow.bed --scope 1000 --resultdir example/ABF2 --datadir example --blockcore c --recorddir example/ABF2```
 
 This command will generate three files of `training`, `test`, and `validation` files within `example/ABF2/` directory, which consists of train, test, and validation datasets for a particular TF dataset. These three files are further used to train, test, and validate the model. No run following command to train the model:
 
@@ -81,9 +75,8 @@ All data input files need to be placed in the same folder before training, such 
 Run the following command in parent directory:
 
 
-```
-python2.7 ../model/train-transfer-learning.py  --data_dir example/ABF2/training --valid_dir example/ABF2/validation --n_train_samples 8974 --n_valid_samples 2238 --train_dir ABF2_out --seq_size 1000 --checkpoint_dir ABF2_out  --batch_size 128 --n_classes 2
-```
+```python2.7 ../model/train-transfer-learning.py  --data_dir example/ABF2/training --valid_dir example/ABF2/validation --n_train_samples 8974 --n_valid_samples 2238 --train_dir ABF2_out --seq_size 1000 --checkpoint_dir ABF2_out  --batch_size 128 --n_classes 2```
+
 The output checkpoints and trained models are saved to `ABF2_out/` directory.
 
 
