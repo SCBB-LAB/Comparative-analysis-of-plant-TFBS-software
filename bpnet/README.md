@@ -185,3 +185,9 @@ Note: these commands are also accessible as python functions:
 - `dfi` - Frequently used alias for a pandas `DataFrame` containing motif instance coordinates produced by `bpnet cwm-scan`. See the [colab notebook](https://colab.research.google.com/drive/1VNsNBfugPJfJ02LBgvPwj-gPK0L_djsD) for the column description.
 
 
+## Citation
+
+Published paper: [**click here**]https://www.nature.com/articles/s41588-021-00782-6)
+
+Please cite: \
+A. Zheng, M. Lamkin, H. Zhao, C. Wu, H. Su, M. Gymrek, Deep neural networks identify sequence context features predictive of transcription factor binding, Nat Mach Intell 3 (2021) 172–180.
