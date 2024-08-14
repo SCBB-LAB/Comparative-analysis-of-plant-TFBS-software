@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: bpnet
+Version: 0.0.23
+Summary: BPNet: toolkit to learn motif synthax from high-resolution functional genomics data using convolutional neural networks
+Home-page: https://github.com/kundajelab/bpnet
+Author: Ziga Avsec
+Author-email: avsec@in.tum.de
+License: MIT license
+Description: UNKNOWN
+Keywords: deep learning,computational biology,bioinformatics,genomics
+Platform: UNKNOWN
+Provides-Extra: dev
+Provides-Extra: extras
