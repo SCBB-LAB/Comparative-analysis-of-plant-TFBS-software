@@ -184,3 +184,4 @@ Note: these commands are also accessible as python functions:
 - `bpnet.dataspecs.DataSpec` - File handle to the `dataspec.yml` file
 - `dfi` - Frequently used alias for a pandas `DataFrame` containing motif instance coordinates produced by `bpnet cwm-scan`. See the [colab notebook](https://colab.research.google.com/drive/1VNsNBfugPJfJ02LBgvPwj-gPK0L_djsD) for the column description.
 
+
