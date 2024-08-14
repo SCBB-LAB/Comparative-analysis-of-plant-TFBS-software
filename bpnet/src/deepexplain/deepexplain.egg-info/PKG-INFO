@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: deepexplain
+Version: 0.3
+Summary: Perturbation and gradient-based methods for Deep Network interpretability
+Home-page: https://github.com/marcoancona/DeepExplain
+Author: Marco Ancona (ETH Zurich)
+Author-email: marco.ancona@inf.ethz.ch
+License: MIT
+Platform: UNKNOWN
+Provides-Extra: tf
+Provides-Extra: tf_gpu
+License-File: LICENSE.md
+
+UNKNOWN
+
