@@ -187,7 +187,7 @@ Note: these commands are also accessible as python functions:
 
 ## Citation
 
-Published paper: [**click here**]https://www.nature.com/articles/s41588-021-00782-6)
+Published paper: [**click here**](https://www.nature.com/articles/s41588-021-00782-6)
 
 Please cite: \
 A. Zheng, M. Lamkin, H. Zhao, C. Wu, H. Su, M. Gymrek, Deep neural networks identify sequence context features predictive of transcription factor binding, Nat Mach Intell 3 (2021) 172–180.
