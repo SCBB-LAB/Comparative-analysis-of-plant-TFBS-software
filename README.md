@@ -69,5 +69,5 @@ If you lack other packages when you are running the code, please run `python3.8 
 Post any questions, issues or bugs on the [GitHub repository](https://github.com/SCBB-LAB/Comparative-analysis-of-plant-TFBS-software/issues). They would also be helpful to other users. Or simply drop an email at (dshwljyoti@gmail.com) or (sg927357@gmail.com) if you have any questions.
 
 ### Citation
-Jyoti, Ritu, S. Gupta, R. Shankar, Comprehensive analysis of computational approaches in plant transcription factors binding regions discovery, Heliyon 10 (2024) e39140. https://doi.org/10.1016/j.heliyon.2024.e39140.
+Jyoti, Ritu, S. Gupta, R. Shankar,(2024). Comprehensive analysis of computational approaches in plant transcription factors binding regions discovery, Heliyon 10 e39140. https://doi.org/10.1016/j.heliyon.2024.e39140.
 
